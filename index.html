@@ -475,6 +475,10 @@
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lmap-el .lt-sat { filter: brightness(.88); } }
   :root[data-theme="dark"] .lmap-el .lt-sat { filter: brightness(.88); }
   @media (prefers-reduced-motion: reduce) { .gs, .gs-back { animation: none; } .fab { transition: none; } }
+  /* Sin líneas de separación entre secciones y elementos (los campos para escribir conservan su subrayado) */
+  .bhead, .brow, .bsub, h2.sec, .eyebrow, .item label, .cat > h3, .lwrap, table.cmp th, table.cmp td, .day, footer.foot, .pe-open, .dent, .mp-row, .gday, .grow { border-top: 0 !important; border-bottom: 0 !important; }
+  h2.sec::after { display: none; }
+  textarea.ruled { border-top: 0; }
   @media (prefers-reduced-motion: reduce) { .bar i, .lrow, #toast { transition: none; } }
   @media (max-width: 380px) { .t-code { font-size: 28px; } }
 </style>
