@@ -10,8 +10,8 @@
   /* Layout: hoja blanca, una columna, filetes finos de 1px. EB Garamond para todo; el acento azul solo marca lo activo. Sin sombras, cintas ni giros. */
   :root {
     --paper: #ffffff;
-    --ink: #0e1420;
-    --muted: #475066;
+    --ink: #1a2130;
+    --muted: #59627a;
     --line: #d3d9e4;
     --line2: #aeb7c8;
     --accent: #1f4f82;
@@ -30,7 +30,7 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --paper: #12161d; --ink: #f3f6fb; --muted: #bcc4d3; --line: #343c4c; --line2: #4d586c;
+      --paper: #12161d; --ink: #e9edf4; --muted: #aab3c3; --line: #343c4c; --line2: #4d586c;
       --accent: #a6cdf7; --c-ann: #f0a8a2; --accent-fg: #0b1220; --tint: rgba(141, 184, 234, .12); --warm: #ecbf6c; --stamp: #f0a095;
       --st-have: #223a2e; --st-buy: #3f3520; --st-rent: #22364a; --danger: #c9443f; --f-white: #cfd4dc;
       --glass: rgba(24, 30, 42, .6); --glass2: rgba(44, 54, 72, .5); --glass-b: rgba(255, 255, 255, .14); --glass-sh: 0 12px 36px rgba(0, 0, 0, .5); --glass-hi: rgba(255, 255, 255, .1);
@@ -38,7 +38,7 @@
     }
   }
   :root[data-theme="dark"] {
-    --paper: #12161d; --ink: #f3f6fb; --muted: #bcc4d3; --line: #343c4c; --line2: #4d586c;
+    --paper: #12161d; --ink: #e9edf4; --muted: #aab3c3; --line: #343c4c; --line2: #4d586c;
     --accent: #a6cdf7; --c-ann: #f0a8a2; --accent-fg: #0b1220; --tint: rgba(141, 184, 234, .12); --warm: #ecbf6c; --stamp: #f0a095;
     --st-have: #223a2e; --st-buy: #3f3520; --st-rent: #22364a; --danger: #c9443f; --f-white: #cfd4dc;
       --glass: rgba(24, 30, 42, .6); --glass2: rgba(44, 54, 72, .5); --glass-b: rgba(255, 255, 255, .14); --glass-sh: 0 12px 36px rgba(0, 0, 0, .5); --glass-hi: rgba(255, 255, 255, .1);
@@ -48,7 +48,7 @@
   * { box-sizing: border-box; }
   body {
     background: var(--paper); color: var(--ink);
-    font-family: var(--serif); font-size: 18px; font-weight: 500; line-height: 1.4;
+    font-family: var(--serif); font-size: 18px; font-weight: 400; line-height: 1.4;
     padding-block: 0 48px;
     padding-left: max(16px, env(safe-area-inset-left, 0px));
     padding-right: max(16px, env(safe-area-inset-right, 0px));
