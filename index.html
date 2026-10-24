@@ -1,0 +1,2074 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Nepal 2026</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icon-180.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Nepal 2026"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap">
+<style>
+  /* Layout: hoja blanca, una columna, filetes finos de 1px. EB Garamond para todo; el acento azul solo marca lo activo. Sin sombras, cintas ni giros. */
+  :root {
+    --paper: #ffffff;
+    --ink: #0e1420;
+    --muted: #475066;
+    --line: #d3d9e4;
+    --line2: #aeb7c8;
+    --accent: #1f4f82;
+    --c-ann: #a23d39;
+    --accent-fg: #ffffff;
+    --tint: rgba(47, 95, 143, .08);
+    --warm: #7a4f0c;
+    --stamp: #92362f;
+    --st-have: #e7f1ea;
+    --st-buy: #f6ecd2;
+    --st-rent: #e3ecf5;
+    --danger: #c93a35;
+    --glass: rgba(255, 255, 255, .62); --glass2: rgba(255, 255, 255, .5); --glass-b: rgba(47, 70, 110, .16); --glass-sh: 0 12px 36px rgba(30, 45, 80, .16); --glass-hi: rgba(255, 255, 255, .85);
+    --f-blue: #4f7fa8; --f-white: #eef1f5; --f-red: #b5483f; --f-green: #5aa076; --f-yellow: #d6a93d;
+    --serif: "EB Garamond", Garamond, "Palatino Linotype", Georgia, serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12161d; --ink: #f3f6fb; --muted: #bcc4d3; --line: #343c4c; --line2: #4d586c;
+      --accent: #a6cdf7; --c-ann: #f0a8a2; --accent-fg: #0b1220; --tint: rgba(141, 184, 234, .12); --warm: #ecbf6c; --stamp: #f0a095;
+      --st-have: #223a2e; --st-buy: #3f3520; --st-rent: #22364a; --danger: #c9443f; --f-white: #cfd4dc;
+      --glass: rgba(24, 30, 42, .6); --glass2: rgba(44, 54, 72, .5); --glass-b: rgba(255, 255, 255, .14); --glass-sh: 0 12px 36px rgba(0, 0, 0, .5); --glass-hi: rgba(255, 255, 255, .1);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12161d; --ink: #f3f6fb; --muted: #bcc4d3; --line: #343c4c; --line2: #4d586c;
+    --accent: #a6cdf7; --c-ann: #f0a8a2; --accent-fg: #0b1220; --tint: rgba(141, 184, 234, .12); --warm: #ecbf6c; --stamp: #f0a095;
+    --st-have: #223a2e; --st-buy: #3f3520; --st-rent: #22364a; --danger: #c9443f; --f-white: #cfd4dc;
+      --glass: rgba(24, 30, 42, .6); --glass2: rgba(44, 54, 72, .5); --glass-b: rgba(255, 255, 255, .14); --glass-sh: 0 12px 36px rgba(0, 0, 0, .5); --glass-hi: rgba(255, 255, 255, .1);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--serif); font-size: 18px; font-weight: 500; line-height: 1.4;
+    padding-block: 0 48px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); background: var(--paper); z-index: 10; }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  h1, h2, h3, h4, p, ul { margin: 0; }
+  button, select, input, textarea { font-family: inherit; }
+  :focus-visible { outline: 1.5px solid var(--accent); outline-offset: 2px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+
+  nav.index { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--glass); -webkit-backdrop-filter: blur(22px) saturate(1.8); backdrop-filter: blur(22px) saturate(1.8); border-bottom: 1px solid var(--glass-b); padding: 8px 0; }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { nav.index { background: var(--paper); } .gd-menu, .gd-btn { background: var(--paper) !important; } }
+  .gd { position: relative; display: flex; justify-content: flex-start; }
+  .gd-btn { display: inline-flex; align-items: baseline; gap: 10px; cursor: pointer; color: var(--ink); font-size: 19px; font-weight: 500; line-height: 1.1; padding: 7px 14px 7px 18px; border-radius: 999px; background: var(--glass2); border: 1px solid var(--glass-b); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); box-shadow: inset 0 1px 0 var(--glass-hi), 0 2px 10px rgba(30, 45, 80, .08); }
+  .gd-wrap { position: relative; }
+  .gd-h { font-size: clamp(26px, 7.5vw, 32px) !important; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; -webkit-user-select: none; }
+  .gd-h .gd-chev { width: 13px; height: 13px; margin-top: 3px; }
+  .gd-h[aria-expanded="true"] .gd-chev { transform: rotate(180deg); }
+  .gd-btn small { font-size: 13px; font-style: italic; font-weight: 400; color: var(--muted); }
+  .gd-chev { width: 11px; height: 11px; align-self: center; fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s ease; }
+  .gd-btn[aria-expanded="true"] .gd-chev { transform: rotate(180deg); }
+  .gd-menu { position: absolute; top: calc(100% + 6px); left: 0; width: min(340px, calc(100vw - 32px)); padding: 6px; border-radius: 18px; background: color-mix(in srgb, var(--paper) 80%, transparent); -webkit-backdrop-filter: blur(28px) saturate(1.9); backdrop-filter: blur(28px) saturate(1.9); border: 1px solid var(--glass-b); box-shadow: inset 0 1px 0 var(--glass-hi), var(--glass-sh); z-index: 40; }
+  .gd-it { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; width: 100%; border: 0; background: transparent; color: var(--ink); text-align: left; font-size: 19px; padding: 10px 14px; border-radius: 12px; cursor: pointer; }
+  .gd-it small { font-size: 13.5px; font-style: italic; color: var(--muted); }
+  .gd-it:hover { background: rgba(127, 140, 160, .14); }
+  .gd-it[aria-current="true"] { background: var(--tint); color: var(--accent); }
+  .bsum { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 3px; margin: 8px 0 12px; }
+  .bsum div { text-align: center; padding: 8px 4px; min-width: 0; }
+  .bsum div + div { border-left: 1px solid var(--line); }
+  .bsum b { display: block; font-size: 20px; font-weight: 500; line-height: 1.1; white-space: nowrap; font-variant-numeric: lining-nums; }
+  .bsum span { font-size: 14px; color: var(--muted); font-style: italic; }
+  .bhead, .brow, .bsub { display: grid; grid-template-columns: minmax(0, 1fr) 92px 92px; gap: 8px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .bhead { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-bottom: 4px; border-bottom-color: var(--line2); }
+  .bhead span:nth-child(n+2), .bsub span:nth-child(n+2) { text-align: right; }
+  .bnm { background: none; border: 0; padding: 0; font: inherit; font-size: 18px; line-height: 1.2; text-align: left; color: var(--ink); cursor: text; }
+  .bamt { background: none; border: 0; padding: 0; font: inherit; font-size: 17px; text-align: right; color: var(--ink); cursor: text; white-space: nowrap; font-variant-numeric: lining-nums; }
+  .bamt.z { color: var(--muted); }
+  .bin { font: inherit; font-size: 17px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; width: 100%; min-width: 0; padding: 2px 0; text-align: right; outline: none; }
+  .bin.bn { text-align: left; font-size: 18px; }
+  .bsub { font-weight: 600; border-top: 1px solid var(--line2); border-bottom: 0; font-size: 18px; }
+  .bsub span:first-child { font-style: italic; font-weight: 500; }
+  .bsub.big { font-size: 20px; color: var(--accent); }
+  .bsub.real { color: var(--c-ann); border-top: 0; padding-top: 0; }
+  ul.blist { list-style: none; padding: 0; }
+  .mp-sb { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+  .map text.mp-sbt { font-size: 10px; fill: var(--ink); text-anchor: middle; stroke: none; }
+
+  .index .row { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .itab { border: 0; background: transparent; cursor: pointer; min-width: 0; text-align: center; padding: 8px 2px 8px; color: var(--muted); font-size: 18px; font-weight: 500; line-height: 1.1; }
+  .itab small { display: block; font-size: 13px; font-weight: 400; font-style: italic; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .itab[aria-selected="true"] { color: var(--ink); box-shadow: inset 0 -1.5px 0 var(--accent); }
+
+  .topbar { display: flex; align-items: center; gap: 8px; margin: -8px 0 14px; min-height: 28px; }
+  .who { flex: 1; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin: 0; font-size: 15px; font-style: italic; color: var(--muted); }
+  .sync { margin-left: auto; font-size: 13px; font-style: italic; color: var(--muted); white-space: nowrap; }
+  .sync.live::before { content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-right: 5px; transform: translateY(-1px); }
+  .juntos { font-style: italic; color: var(--c-ann); }
+  .themebtn { margin-left: 0; width: 28px; height: 28px; padding: 0; display: inline-grid; place-items: center; background: transparent; border: 0; border-radius: 50%; color: var(--muted); cursor: pointer; }
+  .themebtn:hover { color: var(--ink); }
+  .themebtn svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .who .pill { font-size: 15px; padding: 1px 10px; font-style: normal; }
+  .sheet { padding: 22px 0 28px; min-height: 60vh; }
+  .page-head { padding-bottom: 4px; }
+  svg.flags { display: block; width: 100%; height: auto; overflow: visible; margin-bottom: 10px; opacity: .9; }
+  h1 { font-size: clamp(34px, 10vw, 46px); font-weight: 500; font-style: italic; letter-spacing: -.01em; line-height: 1.02; }
+  .hand { display: block; font-style: italic; font-size: 18px; line-height: 1.3; color: var(--muted); margin-top: 6px; }
+  h2.sec { font-size: 14px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin: 30px 0 12px; padding-bottom: 5px; border-bottom: 1px solid var(--line); }
+  .lbl { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .muted { color: var(--muted); }
+
+  .scrap { border: 1px solid var(--line); padding: 14px 14px 13px; margin: 12px 0; border-radius: 2px; background: transparent; }
+  .scrap h3 { font-size: 19px; font-weight: 600; margin-bottom: 3px; }
+  .scrap p + p { margin-top: 8px; }
+  .scrap p, .scrap li { text-wrap: pretty; }
+  .tape::before { display: none; }
+  .scrap ul.plain { list-style: none; padding: 0; display: grid; gap: 6px; }
+  .scrap ul.plain li { display: grid; grid-template-columns: 62px minmax(0, 1fr); gap: 10px; align-items: baseline; }
+  .scrap ul.plain b { font-style: italic; font-weight: 500; color: var(--accent); }
+
+  .ticket { --stub: 88px; display: grid; grid-template-columns: minmax(0, 1fr) var(--stub); border: 1px solid var(--line2); margin: 16px 0 4px; border-radius: 3px; }
+  .t-main { padding: 12px 12px 11px 14px; min-width: 0; }
+  .t-route { display: grid; grid-template-columns: auto minmax(20px, 1fr) auto; gap: 8px; align-items: center; margin-top: 4px; }
+  .t-code { font-size: 32px; font-weight: 500; line-height: 1; letter-spacing: .03em; }
+  .t-time { display: block; font-size: 19px; font-variant-numeric: lining-nums tabular-nums; }
+  .t-time em { font-size: 13px; color: var(--warm); font-style: italic; }
+  .t-city { display: block; font-size: 14px; color: var(--muted); font-style: italic; }
+  .t-arrow { height: 1px; background: var(--line2); position: relative; }
+  .t-arrow::after { content: ""; position: absolute; right: 0; top: -3.5px; border: 4px solid transparent; border-left: 6px solid var(--line2); }
+  .t-stub { border-left: 1px dashed var(--line2); padding: 12px 6px; display: grid; align-content: center; justify-items: center; text-align: center; gap: 1px; }
+  .t-stub b { font-size: 28px; line-height: 1; font-weight: 500; color: var(--accent); }
+  .t-stub span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .t-stub i { font-size: 14px; margin-top: 6px; }
+  .t-note { margin: 6px 2px 0; }
+  .t-between { text-align: center; margin: 12px 0 0; }
+
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 6px; }
+  .pill { border: 1px solid var(--line2); background: transparent; color: var(--muted); cursor: pointer; border-radius: 999px; padding: 3px 12px; font-size: 17px; line-height: 1.25; }
+  .pill[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); color: var(--accent); }
+  .pill small { font-size: 14px; font-style: italic; opacity: .85; margin-left: 4px; }
+
+  .dayhead { margin: 14px 0 2px; }
+  .dayhead h2 { font-size: 28px; font-weight: 500; font-style: italic; line-height: 1.08; text-wrap: balance; }
+  section.blk { margin-top: 20px; }
+  .eyebrow { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 3px; }
+  .eyebrow h3 { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .eyebrow span { font-size: 16px; font-style: italic; color: var(--muted); }
+  ul.items { list-style: none; padding: 0; }
+  .item label { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 12px; padding: 9px 0; cursor: pointer; align-items: start; border-bottom: 1px solid var(--line); }
+  ul.items li:last-child label { border-bottom: 0; }
+  .item input[type="checkbox"] { width: 20px; height: 20px; margin: 3px 0 0; accent-color: var(--accent); cursor: pointer; }
+  .item .t { display: block; font-weight: 600; font-size: 19px; line-height: 1.2; }
+  .item .tip { display: block; color: var(--muted); font-size: 17.5px; margin-top: 2px; text-wrap: pretty; }
+  .item.done .t { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
+  .item.done .tip { opacity: .7; }
+
+  .fx { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .fx label { display: block; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .fx input { width: 100%; margin-top: 3px; font-size: 20px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line2); padding: 4px 2px; border-radius: 0; font-variant-numeric: lining-nums tabular-nums; }
+  .fx-out { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding-top: 8px; }
+  .fx-out b { font-size: 26px; font-weight: 500; font-variant-numeric: lining-nums tabular-nums; }
+  .picks { display: grid; gap: 8px; margin-top: 10px; }
+  .pick { text-align: left; cursor: pointer; color: var(--ink); background: transparent; border: 1px solid var(--line2); border-radius: 3px; padding: 10px 12px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; }
+  .pick strong { display: block; font-size: 19px; font-weight: 500; line-height: 1.2; }
+  .pick small { display: block; color: var(--muted); font-size: 17px; font-style: italic; }
+  .pick .st { font-size: 15px; font-style: italic; color: var(--muted); }
+  [hidden] { display: none !important; }
+  .pick.last { border-color: var(--accent); }
+  .choice { display: grid; gap: 8px; }
+  .pick[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
+  .pick[aria-pressed="true"] .st { color: var(--accent); }
+  .free { margin: 8px 0; padding: 12px 14px; border: 1px dashed var(--line2); color: var(--muted); font-style: italic; }
+  .note { margin-top: 26px; }
+  textarea.ruled { width: 100%; min-height: 124px; resize: vertical; color: var(--ink); font-size: 18px; line-height: 30px; background-color: transparent; background-image: repeating-linear-gradient(transparent 0 29px, var(--line) 29px 30px); background-attachment: local; border: 0; border-top: 1px solid var(--line); padding: 0 2px; }
+  textarea.ruled::placeholder { font-style: italic; color: var(--muted); }
+
+  .meter { display: flex; align-items: center; gap: 12px; margin: 10px 0 12px; }
+  .bar { flex: 1; height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+  .meter b { font-size: 17px; font-weight: 500; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+  .tally { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 3px; margin: 6px 0 12px; }
+  .tally div { text-align: center; padding: 7px 4px; }
+  .tally div + div { border-left: 1px solid var(--line); }
+  .tally b { display: block; font-size: 26px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+  .tally span { font-size: 14px; color: var(--muted); font-style: italic; }
+  .cat { margin-top: 24px; }
+  .cat > h3 { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); font-weight: 600; padding-bottom: 4px; border-bottom: 1px solid var(--line2); }
+  .cat > h3 small { font-weight: 400; font-style: italic; letter-spacing: 0; text-transform: none; color: var(--muted); margin-left: 8px; font-size: 14px; }
+  .cat ul { list-style: none; padding: 0; }
+  .lwrap { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .lrow { position: relative; z-index: 1; display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 3px 10px; padding: 9px 0; align-items: start; background: var(--paper); touch-action: pan-y; transition: transform .22s ease; will-change: transform; }
+  .lrow.drag { transition: none; user-select: none; -webkit-user-select: none; }
+  .sdel { position: absolute; top: 0; right: 0; bottom: 0; width: 96px; border: 0; background: var(--danger); color: #fff; font-size: 17px; font-weight: 500; cursor: pointer; visibility: hidden; }
+  .lwrap.open .sdel, .lwrap.dragging .sdel { visibility: visible; }
+  #toast { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px)); max-width: 608px; margin: 0 auto; z-index: 30; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--ink); color: var(--paper); padding: 10px 14px; border-radius: 6px; font-size: 17px; box-shadow: 0 4px 14px rgba(0, 0, 0, .22); transform: translateY(160%); visibility: hidden; transition: transform .25s ease, visibility 0s .25s; }
+  #toast.show { transform: none; visibility: visible; transition-delay: 0s; }
+  #toast span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #toast button { background: transparent; border: 0; color: inherit; text-decoration: underline; font-size: 17px; font-weight: 600; cursor: pointer; flex: none; }
+  .lrow input[type="checkbox"] { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); cursor: pointer; }
+  .lrow .nm { font-weight: 600; font-size: 18px; line-height: 1.2; cursor: pointer; }
+  .lrow .qty { font-style: italic; font-weight: 400; color: var(--accent); margin-left: 6px; font-size: 16px; }
+  .lrow.packed .nm { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
+  .lrow .ln { grid-column: 2 / -1; font-size: 16.5px; color: var(--muted); font-style: italic; text-wrap: pretty; }
+  .lrow .ln.x { color: var(--warm); }
+  .lrow button.ln { background: none; border: 0; padding: 0; margin: 0; text-align: left; font: inherit; cursor: pointer; }
+  .lrow button.ln.edit { font-size: 16.5px; font-style: italic; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
+  .lrow .pk { display: block; width: calc(100% + 10px); padding: 9px 0; margin: -9px 0; cursor: pointer; }
+  .lrow .pk input { margin-top: 2px; }
+  .lrow button.nm { background: none; border: 0; padding: 0; margin: 0; text-align: left; font-family: inherit; font-size: 18px; font-weight: 600; line-height: 1.2; color: var(--ink); cursor: pointer; }
+  .led { grid-column: 2 / -1; display: grid; gap: 6px; padding: 2px 0; }
+  .led-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .led label { display: block; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .led input.nmi { display: block; width: 100%; font-size: 18px; font-weight: 500; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0 3px; }
+  .led input.q { display: block; width: 84px; margin-top: 2px; font-size: 18px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0; font-variant-numeric: lining-nums; }
+  .led textarea.n { width: 100%; font-size: 16px; line-height: 1.35; font-style: italic; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0 3px; resize: none; overflow: hidden; }
+  .led button.ok { font-size: 16px; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 3px; padding: 1px 12px; cursor: pointer; }
+  select.st { font-size: 15px; color: var(--ink); border: 1px solid var(--line2); border-radius: 999px; padding: 1px 8px; max-width: 118px; background-color: transparent; cursor: pointer; }
+  select.st[data-v="tengo"], select.st[data-v="rose"] { background-color: var(--st-have); border-color: transparent; }
+  select.st[data-v="comprar"], select.st[data-v="papa"] { background-color: var(--st-buy); border-color: transparent; }
+  select.st[data-v="alquilar"] { background-color: var(--st-rent); border-color: transparent; }
+  select.st option { color: #1a2030; background: #ffffff; }
+  .addbox { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; margin-top: 8px; }
+  .addbox input, .addbox select { font-size: 18px; color: var(--ink); background: transparent; border: 1px solid var(--line2); border-radius: 3px; padding: 6px 8px; min-width: 0; width: 100%; }
+  .addbox button, .btn { font-size: 17px; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 3px; padding: 6px 14px; cursor: pointer; }
+  .empty { padding: 14px 0; font-style: italic; color: var(--muted); }
+
+  .choice { display: grid; gap: 8px; margin-top: 8px; }
+  .tablewrap { overflow-x: auto; margin: 10px 0; border: 1px solid var(--line); border-radius: 3px; }
+  table.cmp { border-collapse: collapse; width: 100%; min-width: 440px; font-size: 17px; }
+  table.cmp th, table.cmp td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+  table.cmp tbody tr:last-child > * { border-bottom: 0; }
+  table.cmp thead th { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--accent); font-weight: 600; border-bottom: 1px solid var(--line2); }
+  table.cmp tbody th { font-weight: 500; font-style: italic; width: 30%; }
+  table.cmp td { font-variant-numeric: lining-nums; }
+  .days { list-style: none; padding: 0; display: grid; gap: 0; margin-top: 8px; }
+  .day { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .day .dt { text-align: center; color: var(--accent); }
+  .day .dt b { display: block; font-size: 28px; line-height: 1; font-weight: 500; font-variant-numeric: lining-nums; }
+  .day .dt span { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .day h4 { font-size: 19px; line-height: 1.2; font-weight: 500; }
+  .day p { color: var(--muted); font-size: 17px; margin-top: 2px; }
+  .day.peak h4 { color: var(--stamp); }
+  .day .flag { display: inline-block; font-size: 15px; font-style: italic; font-weight: 400; margin-left: 8px; }
+  details { margin-top: 10px; border: 1px solid var(--line); border-radius: 3px; padding: 8px 12px; }
+  details summary { cursor: pointer; font-weight: 500; font-size: 18px; }
+  details ul { margin: 8px 0 4px 18px; padding: 0; display: grid; gap: 4px; }
+
+  .quote { margin: 0 0 18px; padding: 0; border: 0; }
+  .quote blockquote { margin: 0; font-size: 17px; font-style: italic; line-height: 1.4; text-wrap: balance; color: var(--muted); }
+  .quote figcaption { margin-top: 2px; font-size: 14px; color: var(--muted); opacity: .8; }
+  .quote figcaption::before { content: "— "; }
+  footer.foot { margin-top: 30px; padding-top: 12px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; align-items: center; color: var(--muted); font-size: 15px; font-style: italic; }
+  .reset { font-size: 14px; color: var(--muted); background: transparent; border: 1px solid var(--line2); border-radius: 3px; padding: 3px 10px; cursor: pointer; font-style: normal; }
+  .foot-b { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+  .sync[role="button"] { cursor: pointer; text-decoration: underline; text-underline-offset: 3px; color: var(--accent); font-style: normal; }
+  .sync.offline, .sync.code { color: var(--stamp); }
+  .reset[data-armed="true"] { color: var(--stamp); border-color: var(--stamp); }
+
+  .profile { margin: 12px 0 4px; }
+  .profile h3 { font-size: 18px; font-weight: 500; font-style: italic; margin-bottom: 2px; }
+  .profile h3 small { font-size: 14px; color: var(--muted); font-weight: 400; margin-left: 6px; }
+  svg.prof { display: block; width: 100%; height: auto; overflow: visible; }
+  .prof text { font-family: var(--serif); fill: var(--muted); font-size: 10.5px; }
+  .prof .p-grid { stroke: var(--line); stroke-width: 1; }
+  .prof .p-g3 { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 3 3; opacity: .55; }
+  .prof .p-area { fill: var(--tint); stroke: none; }
+  .prof .p-line { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linejoin: round; stroke-linecap: round; }
+  .prof .p-exc { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2.5 2.5; opacity: .8; }
+  .prof .p-dot { fill: var(--paper); stroke: var(--accent); stroke-width: 1.3; }
+  .prof .p-peak { fill: var(--stamp); stroke: none; }
+  .prof .p-alt { fill: var(--ink); font-size: 10px; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .prof .p-pk { fill: var(--stamp); font-size: 10.5px; font-style: italic; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .prof .p-ax { font-size: 11px; }
+  .prof .o-man { color: var(--accent); }
+  .prof .o-ann { color: var(--c-ann); }
+  .prof .o-area { stroke: none; fill: currentColor; opacity: .07; }
+  .prof .o-line { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+  .prof .o-exc { fill: none; stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2.5 2.5; opacity: .8; }
+  .prof .o-dot { fill: var(--paper); stroke: currentColor; stroke-width: 1.3; }
+  .prof text.o-pk { fill: currentColor; font-size: 10.5px; font-style: italic; paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .tap { cursor: text; }
+  .txt { cursor: text; }
+  .pe { font: inherit; font-size: 17px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line2); border-radius: 0; padding: 4px 0; width: 100%; min-width: 0; outline: none; }
+  .pe:focus { border-bottom-color: var(--accent); }
+  textarea.pe { resize: none; overflow: hidden; display: block; line-height: 1.35; }
+  .pe-tip { font-size: 16px; font-style: italic; color: var(--muted); margin-top: 4px; }
+  .pe-open { padding: 8px 0 10px; border-bottom: 1px solid var(--line); }
+  .pe-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .pe-name { font-weight: 500; }
+  .pe-time { font-style: italic; color: var(--muted); }
+  .pe-eb { padding-bottom: 4px; }
+  .pe-day { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px; margin: 14px 0 4px; }
+  .pe-day label { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .pe-day label:nth-child(-n+2) { grid-column: 1 / -1; }
+  .pe-day .pe { letter-spacing: 0; text-transform: none; font-weight: 400; }
+  .pe-btns { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 6px; grid-column: 1 / -1; }
+  .pe-ok { font: inherit; font-size: 15px; color: var(--accent); background: transparent; border: 0; border-bottom: 1px solid var(--line2); padding: 0 0 1px; cursor: pointer; margin-left: auto; }
+  .pe-link { font: inherit; font-size: 15px; font-style: italic; color: var(--muted); background: transparent; border: 0; padding: 0; cursor: pointer; }
+  .pe-link.armed { color: var(--c-ann); }
+  .pe-plus, .pe-plusday { font: inherit; color: var(--muted); background: transparent; cursor: pointer; }
+  .pe-plus { display: inline-grid; place-items: center; width: 26px; height: 26px; margin-top: 6px; border: 1px solid var(--line2); border-radius: 50%; font-size: 18px; line-height: 1; padding: 0 0 2px; }
+  .pe-plus:hover, .pe-plusday:hover { color: var(--accent); border-color: var(--accent); }
+  .pe-plusday { border: 1px solid var(--line2); border-radius: 999px; padding: 2px 11px; font-size: 18px; line-height: 1.3; }
+  .dcomp { margin: 16px 0 6px; }
+  .dcomp .dta, .dent .dta { border: 1px solid var(--line2); padding: 8px 10px; border-radius: 3px; font-size: 18px; line-height: 1.4; font-style: normal; color: var(--ink); min-height: 64px; }
+  .dcomp .dta:focus, .dent .dta:focus { border-color: var(--accent); }
+  .dent { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  .dent:last-child { border-bottom: 0; }
+  .dent .pe-ed { grid-column: 1 / -1; }
+  .dtime { font-size: 14px; font-style: italic; color: var(--muted); padding-top: 3px; }
+  .dtxt { white-space: pre-wrap; font-size: 18px; line-height: 1.4; cursor: text; text-wrap: pretty; }
+  .pe-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  /* pequeños detalles rojos */
+  h2.sec { position: relative; }
+  h2.sec::after { content: ""; position: absolute; left: 0; bottom: -1px; width: 28px; height: 1.5px; background: var(--c-ann); }
+  .quote figcaption { color: var(--c-ann); opacity: 1; }
+  table.cmp th:nth-child(2) { color: var(--accent); }
+  table.cmp th:nth-child(3) { color: var(--c-ann); }
+  ::selection { background: color-mix(in srgb, var(--c-ann) 22%, transparent); }
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 4px; font-size: 17px; }
+  .legend span { display: inline-flex; align-items: baseline; gap: 6px; }
+  .legend i { display: inline-block; width: 18px; height: 0; border-top: 2px solid currentColor; transform: translateY(-4px); }
+  .legend .o-man { color: var(--accent); }
+  .legend .o-ann { color: var(--c-ann); }
+  .legend small { font-size: 14px; color: var(--muted); font-style: italic; }
+  .figcap { font-size: 16px; font-style: italic; color: var(--muted); margin: 2px 0 8px; text-wrap: pretty; }
+  .day .alt { color: var(--muted); font-size: 15.5px; font-style: italic; margin-top: 1px; }
+  .day .alt.up { color: var(--warm); }
+  .index .row.dense .itab { font-size: clamp(13px, 3.7vw, 16px); padding-inline: 0; letter-spacing: -.01em; }
+  .index .row.dense .itab small { font-size: 11.5px; }
+  .mapbox { margin: 8px 0 4px; border: 1px solid var(--line); border-radius: 3px; background: var(--tint); overflow: hidden; scroll-margin-top: 76px; }
+  svg.map { display: block; width: 100%; height: auto; user-select: none; -webkit-user-select: none; }
+  .map text { font-family: var(--serif); pointer-events: none; }
+  .map .mp-g { stroke: var(--line); stroke-width: .6; }
+  .map .mp-gl { font-size: 8.5px; fill: var(--muted); }
+  .map .mp-t { font-size: 11.5px; fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .map .mp-pk { font-size: 10.5px; font-style: italic; fill: var(--muted); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; stroke-linejoin: round; }
+  .map .mp-n { font-size: 10px; font-weight: 600; fill: var(--accent-fg); text-anchor: middle; }
+  .map .mp-hit { fill: transparent; }
+  .map .mp-pt { cursor: pointer; outline: none; }
+  .map .mp-pt:focus-visible .mp-hit { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 2 2; }
+  .map .mp-r { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .map .mp-rm { stroke: var(--accent); }
+  .map .mp-ra { stroke: var(--c-ann); }
+  .map .mp-rj { fill: none; stroke: var(--muted); stroke-width: 1.2; stroke-dasharray: 4 3; }
+  .map .mp-raj { stroke: var(--c-ann); }
+  .map .mp-rx { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-dasharray: 2 2; }
+  .map .mp-pkm { fill: var(--muted); opacity: .55; }
+  .map .mp-ring { fill: none; stroke: var(--ink); stroke-width: 1.6; pointer-events: none; }
+  .mp-card { margin-top: 10px; }
+  .mp-list { list-style: none; padding: 0; }
+  .mp-row { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 10px; width: 100%; padding: 8px 4px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); text-align: left; cursor: pointer; align-items: center; font-size: 18px; }
+  .mp-row strong { display: block; font-weight: 500; line-height: 1.2; }
+  .mp-row small { display: block; color: var(--muted); font-size: 15.5px; font-style: italic; }
+  .mp-row[aria-pressed="true"] { background: var(--tint); }
+  .mp-b { display: inline-grid; place-items: center; min-width: 26px; height: 26px; padding: 0 3px; border-radius: 13px; color: var(--accent-fg); font-size: 13px; font-weight: 600; font-style: normal; }
+  .wx { margin-top: 20px; }
+  .wx-row { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; padding: 10px 0 2px; }
+  .wx-t { font-size: 32px; font-weight: 500; line-height: 1; font-variant-numeric: lining-nums; }
+  .wx-t small { font-size: 21px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+  .wx-d { font-size: 19px; font-style: italic; color: var(--accent); }
+  .wx-r { font-size: 16px; font-style: italic; color: var(--c-ann); }
+  .wx-b { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: 3px; margin-top: 10px; }
+  .wx-b > div { padding: 6px 5px 7px 7px; min-width: 0; overflow: hidden; }
+  .wx-b > div + div { border-left: 1px solid var(--line); }
+  .wx-b b { display: block; font-size: 11px; letter-spacing: .03em; text-transform: uppercase; color: var(--accent); font-weight: 600; line-height: 1.2; }
+  .wx-b b small { display: block; font-size: 12.5px; letter-spacing: 0; text-transform: none; font-weight: 400; font-style: italic; color: var(--muted); }
+  .wx-b span { display: block; margin-top: 3px; font-size: 15.5px; line-height: 1.2; }
+  .wx-src { font-size: 15.5px; font-style: italic; color: var(--muted); margin-top: 4px; text-wrap: pretty; }
+  @media (prefers-reduced-motion: reduce) { .bar i, .lrow, #toast { transition: none; } }
+  @media (max-width: 380px) { .t-code { font-size: 28px; } }
+</style>
+</head><body>
+
+<div class="wrap">
+  <nav class="index" aria-label="Secciones"><div class="row" id="tabs"></div></nav>
+  <div class="sheet">
+    <div class="topbar"><div class="who" id="who" hidden></div><span class="sync" id="sync"></span><button type="button" class="themebtn" id="theme" aria-label="Cambiar entre modo claro y oscuro"></button></div>
+    <main id="view" role="tabpanel"></main>
+    <footer class="foot">
+      <span>Se guarda en Google Sheets y se sincroniza entre dispositivos.</span>
+      <span class="foot-b"><button class="reset" id="import" type="button">Importar datos</button><button class="reset" id="reset" type="button">Borrar marcas</button></span>
+    </footer>
+  </div>
+</div>
+
+<script>
+(function () {
+  var KEY = "plan-ktm-v2", KEY_ROSE = "plan-ktm-v2-rose", OLD = "plan-ktm-v1", WHOKEY = "plan-ktm-who";
+  var LOG_A = [{"id": "l5", "cat": "Documentación y dinero", "name": "Pasaporte", "qty": "1", "state": "tengo", "note": ""}, {"id": "l6", "cat": "Documentación y dinero", "name": "Visado de Nepal", "qty": "1", "state": "revisar", "note": "Mirar cómo se consigue en el aeropuerto", "extra": "Tu estancia es de 17 días: visado de 30 días (50 USD). Detalle en Viaje."}, {"id": "l7", "cat": "Documentación y dinero", "name": "Seguro de viaje", "qty": "1", "state": "tengo", "note": "Que cubra rescate en helicóptero y accidentes.", "extra": "Las agencias piden que cubra rescate en helicóptero y accidentes."}, {"id": "l8", "cat": "Documentación y dinero", "name": "Copia impresa pasaporte", "qty": "1", "state": "preparar", "note": ""}, {"id": "l9", "cat": "Documentación y dinero", "name": "Copias digitales de documentos", "qty": "1", "state": "preparar", "note": "Pasaporte, seguro y billetes en el móvil y la nube"}, {"id": "l10", "cat": "Documentación y dinero", "name": "Efectivo", "qty": "1", "state": "preparar", "note": "Decidir exactamente cuánto dinero llevo Las ofertas no incluyen bebidas, duchas calientes, carga de baterías ni wifi.", "extra": "Las ofertas no incluyen propinas, bebidas, duchas ni carga de baterías."}, {"id": "l90", "cat": "Documentación y dinero", "name": "Propinas para guía y porteador", "qty": "", "state": "preparar", "note": "No están incluidas en la oferta."}, {"id": "l14", "cat": "Electrónica y cámara", "name": "Cámara de fotos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l15", "cat": "Electrónica y cámara", "name": "Baterías de cámara", "qty": "3", "state": "tengo", "note": "Llevar las tres cargadas"}, {"id": "l16", "cat": "Electrónica y cámara", "name": "Cargador baterías cámara", "qty": "1", "state": "tengo", "note": ""}, {"id": "l17", "cat": "Electrónica y cámara", "name": "Batería portátil (power bank)", "qty": "1", "state": "tengo", "note": ""}, {"id": "l18", "cat": "Electrónica y cámara", "name": "Adaptador de enchufe tipo C/D", "qty": "1", "state": "comprar", "note": "Nepal usa 230 V y 50 Hz; el de EE. UU. parece que no sirve"}, {"id": "l19", "cat": "Electrónica y cámara", "name": "Funda para cámara (pequeña)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l20", "cat": "Electrónica y cámara", "name": "Click para cámara en mochila", "qty": "1", "state": "comprar", "note": "Llevar la cámara a mano en la mochila (en la correa)"}, {"id": "l21", "cat": "Electrónica y cámara", "name": "Cargador del móvil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l22", "cat": "Electrónica y cámara", "name": "Tarjetas de memoria", "qty": "2", "state": "comprar", "note": ""}, {"id": "l23", "cat": "Electrónica y cámara", "name": "Adaptador tarjeta memoria a USB-C", "qty": "1", "state": "tengo", "note": ""}, {"id": "l24", "cat": "Electrónica y cámara", "name": "Pilas de repuesto", "qty": "2", "state": "comprar", "note": ""}, {"id": "l25", "cat": "Electrónica y cámara", "name": "Bolsa estanca (Decathlon)", "qty": "2?", "state": "comprar", "note": "Proteger cámara, electrónica y documentos de la lluvia"}, {"id": "l26", "cat": "Electrónica y cámara", "name": "SIM", "qty": "1", "state": "comprar", "note": "Me dice Rose NTC en Katmandú"}, {"id": "l28", "cat": "Ropa y accesorios", "name": "Camisetas lana merino", "qty": "4", "state": "tengo", "note": ""}, {"id": "l29", "cat": "Ropa y accesorios", "name": "Camisetas deporte", "qty": "?", "state": "tengo", "note": ""}, {"id": "l30", "cat": "Ropa y accesorios", "name": "Capa base manga larga merino", "qty": "3", "state": "tengo", "note": ""}, {"id": "l31", "cat": "Ropa y accesorios", "name": "Capa base manga larga deporte", "qty": "2", "state": "tengo", "note": ""}, {"id": "l32", "cat": "Ropa y accesorios", "name": "Forro polar", "qty": "1-2?", "state": "tengo", "note": ""}, {"id": "l33", "cat": "Ropa y accesorios", "name": "Abrigo de plumas", "qty": "1", "state": "alquilar", "note": "No sé si es mejor alquilar o llevar"}, {"id": "l34", "cat": "Ropa y accesorios", "name": "Gore Tex", "qty": "1?", "state": "tengo", "note": ""}, {"id": "l35", "cat": "Ropa y accesorios", "name": "Ropa interior", "qty": "15", "state": "comprar", "note": ""}, {"id": "l36", "cat": "Ropa y accesorios", "name": "Calcetines monte", "qty": "15?", "state": "comprar", "note": ""}, {"id": "l37", "cat": "Ropa y accesorios", "name": "Saco de dormir", "qty": "1", "state": "alquilar", "note": "Confirmar temperatura mínima. Tengo de confort 0ºC", "extra": "La agencia del Manaslu pide uno de −15 °C y dice que se alquila o compra fácil en Katmandú."}, {"id": "l38", "cat": "Ropa y accesorios", "name": "Bastones de trekking", "qty": "1", "state": "alquilar", "note": ""}, {"id": "l39", "cat": "Ropa y accesorios", "name": "Pantalones de monte", "qty": "2?", "state": "comprar", "note": ""}, {"id": "l40", "cat": "Ropa y accesorios", "name": "Sobrepantalón impermeable", "qty": "1", "state": "comprar", "note": ""}, {"id": "l41", "cat": "Ropa y accesorios", "name": "Tevas?", "qty": "1", "state": "tengo", "note": "Para descansar, no sé si llevar Tevas o unas deportivas"}, {"id": "l42", "cat": "Ropa y accesorios", "name": "Pantaloneta descansar?", "qty": "2", "state": "tengo", "note": ""}, {"id": "l43", "cat": "Ropa y accesorios", "name": "Pijama?", "qty": "1", "state": "tengo", "note": ""}, {"id": "l44", "cat": "Ropa y accesorios", "name": "Botas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l45", "cat": "Ropa y accesorios", "name": "Gorro de explorador", "qty": "1", "state": "tengo", "note": ""}, {"id": "l46", "cat": "Ropa y accesorios", "name": "Gorro de lana merino", "qty": "1", "state": "tengo", "note": ""}, {"id": "l47", "cat": "Ropa y accesorios", "name": "Guantes", "qty": "1", "state": "comprar", "note": ""}, {"id": "l48", "cat": "Ropa y accesorios", "name": "Buff", "qty": "1", "state": "tengo", "note": ""}, {"id": "l50", "cat": "Equipo", "name": "Hornillo camping gas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l51", "cat": "Equipo", "name": "Frontal", "qty": "1", "state": "tengo", "note": ""}, {"id": "l52", "cat": "Equipo", "name": "Gafas de sol", "qty": "1", "state": "tengo", "note": "Recomendado CAT 4. Las mías son de óptica graduadas, no sé qué CAT son. Llamar a óptica y preguntar."}, {"id": "l53", "cat": "Equipo", "name": "¿Envolvente protección lateral gafas?", "qty": "1", "state": "comprar", "note": "¿Merece la pena?"}, {"id": "l54", "cat": "Equipo", "name": "¿Sobregafas CAT 4?", "qty": "", "state": "comprar", "note": "Puedo ponerla en mis gafas de ver, con la envolvente lateral."}, {"id": "l55", "cat": "Equipo", "name": "Bolsa de agua para mochila", "qty": "1", "state": "tengo", "note": ""}, {"id": "l57", "cat": "Neceser", "name": "Crema solar (SPF 50)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l58", "cat": "Neceser", "name": "Protector labial", "qty": "1", "state": "tengo", "note": ""}, {"id": "l59", "cat": "Neceser", "name": "Cepillo y pasta de dientes", "qty": "1", "state": "tengo", "note": ""}, {"id": "l60", "cat": "Neceser", "name": "Pastilla de jabón", "qty": "1", "state": "comprar", "note": ""}, {"id": "l61", "cat": "Neceser", "name": "Tapones para los oídos", "qty": "1", "state": "comprar", "note": ""}, {"id": "l62", "cat": "Neceser", "name": "Toalla microfibra decathlon", "qty": "1", "state": "tengo", "note": ""}, {"id": "l63", "cat": "Neceser", "name": "Cortaúñas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l65", "cat": "Botiquín", "name": "Rodilleras", "qty": "2", "state": "tengo", "note": "¿Comprar buenas?"}, {"id": "l66", "cat": "Botiquín", "name": "Repelente de insectos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l67", "cat": "Botiquín", "name": "Pastillero", "qty": "1", "state": "comprar", "note": ""}, {"id": "l68", "cat": "Botiquín", "name": "Ventolín/Terbasmín", "qty": "1", "state": "comprar", "note": "Por si acaso nos enfriamos y se cierran bronquios"}, {"id": "l69", "cat": "Botiquín", "name": "Minoxidil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l70", "cat": "Botiquín", "name": "Malaria", "qty": "1", "state": "tengo", "note": "Hasta que termine tratamiento de Camerún"}, {"id": "l71", "cat": "Botiquín", "name": "Paracetamol (1g)", "qty": "1", "state": "casa", "note": ""}, {"id": "l72", "cat": "Botiquín", "name": "Ibuprofeno", "qty": "1", "state": "casa", "note": ""}, {"id": "l73", "cat": "Botiquín", "name": "¿Aspirina?", "qty": "", "state": "comprar", "note": "Para tomar por las noches"}, {"id": "l74", "cat": "Botiquín", "name": "Crema analgésica/antiinflamatoria", "qty": "1", "state": "casa", "note": ""}, {"id": "l75", "cat": "Botiquín", "name": "Compeed para ampollas", "qty": "", "state": "casa", "note": ""}, {"id": "l76", "cat": "Botiquín", "name": "Vaselina", "qty": "1", "state": "comprar", "note": ""}, {"id": "l77", "cat": "Botiquín", "name": "Tiritas", "qty": "", "state": "casa", "note": ""}, {"id": "l91", "cat": "Botiquín", "name": "Vendas", "qty": "", "state": "comprar", "note": "La agencia las pide."}, {"id": "l78", "cat": "Botiquín", "name": "Antidiarréico", "qty": "", "state": "comprar", "note": "¿Merece la pena? ¿Receta?"}, {"id": "l92", "cat": "Botiquín", "name": "Medicina para el dolor de estómago", "qty": "", "state": "comprar", "note": "La agencia la pide, aparte del antidiarréico."}, {"id": "l79", "cat": "Botiquín", "name": "Sales de hidratación", "qty": "¿cuántas?", "state": "comprar", "note": "¿Isotónicas de deporte sirven?"}, {"id": "l80", "cat": "Botiquín", "name": "Pastillas potabilizadoras", "qty": "", "state": "comprar", "note": ""}, {"id": "l81", "cat": "Botiquín", "name": "Gasas", "qty": "", "state": "casa", "note": ""}, {"id": "l82", "cat": "Botiquín", "name": "Esparadrapo", "qty": "", "state": "casa", "note": ""}, {"id": "l83", "cat": "Botiquín", "name": "Betadine? Desinfectante antiséptico?", "qty": "", "state": "casa", "note": ""}, {"id": "l84", "cat": "Botiquín", "name": "Pastillas mal de altura (Diamox, acetazolamida)", "qty": "", "state": "rose", "note": "La lleva Rose para los dos. Necesitan receta."}, {"id": "l85", "cat": "Botiquín", "name": "¿Parches de calor?", "qty": "", "state": "comprar", "note": ""}, {"id": "l87", "cat": "Comida/bebida", "name": "Snacks energéticos?", "qty": "", "state": "comprar", "note": "¿Comprar en Pamplona o en Kathmandú?"}, {"id": "l88", "cat": "Comida/bebida", "name": "Pastillas isotónicas", "qty": "", "state": "papa", "note": ""}];
+  var ROSE_OUT = { l14: 1, l15: 1, l16: 1, l19: 1, l20: 1, l22: 1, l23: 1, l69: 1 };
+  var LOG_R = LOG_A.filter(function (i) { return !ROSE_OUT[i.id]; }).map(function (i) {
+    if (i.id === "l84") return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "comprar", note: "La llevas tú para los dos. Necesita receta." };
+    return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "revisar", note: i.note && /agencia|helicóptero|incluyen|incluida/.test(i.note) ? i.note : "" };
+  });
+  var LOGS = { alejandro: LOG_A, rose: LOG_R };
+  var LOG = LOG_A;
+  var WHO = null, LAST = null;
+
+  function freshState() {
+    return { done: {}, visited: { swayam: false, kopan: false }, notes: {}, eur: 100, rate: 169.9, lstate: {}, lpack: {}, custom: [], lfilter: "todo", removed: {}, lnotes: {}, lqty: {}, lnames: {}, bud: null, plan: null, planV: 0, sh: null, diary: [], trek: "", tview: "comparar", day: "jueves" };
+  }
+  var S = freshState();
+  function keyFor(who) { return who === "rose" ? KEY_ROSE : KEY; }
+  function load(k) {
+    try {
+      var raw = localStorage.getItem(k);
+      if (!raw) return false;
+      var p = JSON.parse(raw);
+      if (!p || typeof p !== "object") return false;
+      Object.keys(S).forEach(function (key) { if (p[key] !== undefined && p[key] !== null) S[key] = p[key]; });
+      S.visited = Object.assign({ swayam: false, kopan: false }, S.visited);
+      return true;
+    } catch (e) { return false; }
+  }
+  function saveLocal() { if (!WHO) return; try { localStorage.setItem(keyFor(WHO), JSON.stringify(S)); } catch (e) {} }
+  function save() { saveLocal(); queuePersonal(); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  /* ---------- Katmandú ---------- */
+  var PLACES = {
+    swayam: { id: "s-swayam", name: "Templo de los monos (Swayambhunath)", tip: "Stupa en lo alto de una colina, con vistas al valle." },
+    kopan:  { id: "s-kopan",  name: "Monasterio de Kopan", tip: "Monasterio en una colina, al norte de la stupa." }
+  };
+  var DAYS_BASE = [
+    { id: "jueves", label: "Jue", date: "29 oct", full: "Jueves 29 de octubre", title: "Llegada y barrio de la stupa", blocks: [
+      { name: "Llegada", time: "aterrizas a las 11:20", items: [
+        { id: "j-visa", text: "Sacar el visado en el aeropuerto", tip: "Tu estancia es de 17 días, así que te toca el de 30 días. Más detalle en la pestaña Viaje." },
+        { id: "j-hotel", text: "Ir del aeropuerto al hotel", tip: "Hotel Bhrikuti Tara, 3.500 rupias la noche. Las ofertas del trek no incluyen la recogida en el aeropuerto ni el alojamiento en Katmandú." }
+      ]},
+      { name: "Tarde", time: "descanso", items: [
+        { id: "j-rest", text: "Descansar en el hotel" },
+        { id: "j-walk", text: "Pasear por el barrio" }
+      ]},
+      { name: "Gestiones", time: "pasaporte y foto del DNI", items: [
+        { id: "j-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias en la avenida que cruza hacia la stupa. Lleva el pasaporte y una foto del DNI; da igual que no esté actualizada. Rose recomienda NTC." },
+        { id: "j-cash", text: "Cambiar euros a rupias en un comercio de al lado", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" }
+      ]},
+      { name: "Atardecer", time: "", items: [
+        { id: "j-kora", text: "Dar un par de vueltas a la stupa", tip: "Con calma, para ver el ambiente." }
+      ]},
+      { name: "Noche", time: "rooftop", items: [
+        { id: "j-dinner", text: "Cenar en un rooftop con vistas a la stupa", tip: "No pidas dal bhat: será lo único que haya en el trek, salvo que quieras. Los momos son buenísimos." }
+      ]}
+    ]},
+    { id: "viernes", label: "Vie", date: "30 oct", full: "Viernes 30 de octubre", title: "Colina por la mañana, río al caer la tarde", blocks: [
+      { name: "Mañana", time: "", items: [
+        { id: "f-break", text: "Desayunar en un café cerca de la stupa", tip: "Utpala mola." }
+      ], extra: "picks", after: [
+        { id: "f-lunch", text: "Comer por la zona de la visita", tip: "Come por ahí, donde acabes tras el templo o el monasterio." }
+      ]},
+      { name: "Tarde", time: "sobre las 18:00", items: [
+        { id: "f-pashu", text: "Ir al templo de Pashupatinath", tip: "Ve sobre las 18:00. Los muertos son cremados junto al río y sus cenizas van al agua: el ciclo continúa. El sol se pone alrededor de las 17:20; sé discreto con la cámara." }
+      ]}
+    ]},
+    { id: "sabado", label: "Sáb", date: "31 oct", full: "Sábado 31 de octubre", title: "Bhaktapur por la mañana, y Rose por la tarde", blocks: [
+      { name: "Mañana", time: "de vuelta antes de las 18:00", dynamic: "satMorning", items: [
+        { id: "s-bhak", text: "Ir a Bhaktapur", tip: "Una de las tres ciudades del valle de Katmandú, la más antigua y bonita, para ver calles tradicionales. Basta con volver para las 18:00." }
+      ] },
+      { name: "Tarde", time: "", items: [
+        { id: "s-rose", text: "Encontrarse en Katmandú", tip: "Rose se une por la tarde. Plan abierto." }
+      ]},
+      { name: "Noche", time: "", items: [
+        { id: "s-dinner", text: "Cenar juntos", tip: "Cerca del hotel, sin prisa tras el viaje." },
+        { id: "s-rest", text: "Descansar en el hotel" }
+      ]}
+    ]},
+    { id: "domingo", label: "Dom", date: "1 nov", full: "Domingo 1 de noviembre", title: "Víspera del trek", blocks: [
+      { name: "Mañana", time: "", items: [
+        { id: "d-misa", text: "Ir a misa" }
+      ]},
+      { name: "Mediodía", time: "", items: [
+        { id: "d-comer", text: "Comer" }
+      ]},
+      { name: "Tarde en la agencia", time: "el trek sale el 2", items: [
+        { id: "d-confirm", text: "Confirmar con la agencia qué trek sale", tip: "Manaslu si se puede; si no, Annapurna. Los dos salen el 2 de noviembre y vuelven a Katmandú el 11." },
+        { id: "d-pay", text: "Acordar cuándo se paga el saldo", tip: "Adelanto de 200 USD. Saldo para dos: 1.780 USD (Manaslu con jeep privado) o 1.440 USD (Annapurna)." },
+        { id: "d-talk", text: "Que nos expliquen el trekking en la agencia", tip: "Aprovecha para preguntar por el recorrido, la hora de recogida, el seguro y lo que llevar." },
+        { id: "d-gear", text: "Comprar o alquilar lo que falte en la zona de compras", tip: "La agencia pide un saco de −15 °C y dice que se alquila o compra fácil en Katmandú. La zona de compras está donde está la agencia." }
+      ]},
+      { name: "Noche", time: "", items: [
+        { id: "d-bag", text: "Dejar la maleta en el Hotel Bhrikuti Tara", tip: "Se queda guardada allí durante el trek. Al trek solo va la mochila. Se vuelve a ese hotel después, del 11 al 14 de noviembre." },
+        { id: "d-pack", text: "Dejar la mochila lista", tip: "En el programa del Manaslu el guía te recoge en el hotel el 2 de noviembre; confirma la hora." }
+      ]}
+    ]}
+  ];
+
+  var DAYS = DAYS_BASE;
+  function jclone(o) { return JSON.parse(JSON.stringify(o)); }
+  function clean(o) { return JSON.parse(JSON.stringify(o, function (k, v) { return k === "shared" ? undefined : v; })); }
+  var RETURN_DAYS = [
+    { id: "mie11", label: "Mié", date: "11 nov", full: "Miércoles 11 de noviembre", title: "Vuelta del trek", blocks: [
+      { name: "Llegada", time: "", items: [
+        { id: "v-hotel", text: "Volver al Hotel Bhrikuti Tara", tip: "Aquí está la maleta que dejasteis antes del trek." },
+        { id: "v-maleta", text: "Recoger la maleta y ducharse" },
+        { id: "v-laundry", text: "Dar la ropa del trek a lavar" }
+      ]},
+      { name: "Noche", time: "", items: [
+        { id: "v-cena", text: "Cenar juntos para celebrar el trek" }
+      ]}
+    ]},
+    { id: "jue12", label: "Jue", date: "12 nov", full: "Jueves 12 de noviembre", title: "Katmandú sin prisa", blocks: [
+      { name: "Día libre", time: "", items: [
+        { id: "v-descanso", text: "Descansar las piernas" },
+        { id: "v-pend", text: "Visitar lo que se quedó pendiente", tip: "Por ejemplo Patan, Boudhanath o Pashupatinath. Ajústalo a lo que os apetezca." }
+      ]}
+    ]},
+    { id: "vie13", label: "Vie", date: "13 nov", full: "Viernes 13 de noviembre", title: "Compras y maleta", blocks: [
+      { name: "Día libre", time: "", items: [
+        { id: "v-regalos", text: "Comprar regalos y recuerdos" },
+        { id: "v-rupias", text: "Gastar o cambiar las rupias que sobren", tip: "Normalmente se cambian mejor antes de volar; guarda lo justo para el taxi al aeropuerto." },
+        { id: "v-maleta2", text: "Hacer la maleta" }
+      ]}
+    ]},
+    { id: "sab14", label: "Sáb", date: "14 nov", full: "Sábado 14 de noviembre", title: "Vuelo de vuelta", blocks: [
+      { name: "Salida", time: "vuelo 3U 3902 de Alejandro, hora por confirmar", items: [
+        { id: "v-out", text: "Dejar el hotel e ir al aeropuerto", tip: "Llega con margen; el aeropuerto de Katmandú es lento en facturación y control." }
+      ]}
+    ]}
+  ];
+  var COMMON_DEFAULT = (function () {
+    var sat = DAYS_BASE.filter(function (x) { return x.id === "sabado"; })[0], dom = DAYS_BASE.filter(function (x) { return x.id === "domingo"; })[0];
+    return { sat: jclone(sat.blocks.filter(function (b) { return b.name === "Tarde" || b.name === "Noche"; })), days: [jclone(dom)].concat(jclone(RETURN_DAYS)), ret: 1 };
+  })();
+  function buildDays(who) {
+    var d = jclone(DAYS_BASE).filter(function (x) { return x.id !== "domingo"; });
+    d.forEach(function (x) { if (x.id === "sabado") x.blocks = x.blocks.filter(function (b) { return b.dynamic === "satMorning"; }); });
+    if (who !== "rose") return d;
+    return [{
+      id: "sabado", label: "Sáb", date: "31 oct", full: "Sábado 31 de octubre", title: "Llegada y encuentro con Alejandro", blocks: [
+        { name: "Llegada", time: "tu hora de aterrizaje, por confirmar", items: [
+          { id: "r-visa", text: "Sacar el visado en el aeropuerto", tip: "Depende de cuántos días te quedes: hasta 15 días son 30 USD y hasta 30 días son 50 USD. Confirma tu fecha de salida y ten el pasaporte a mano." },
+          { id: "r-hotel", text: "Ir del aeropuerto al hotel", tip: "Hotel Bhrikuti Tara, 3.500 rupias la noche. Las ofertas del trek no incluyen la recogida en el aeropuerto ni el alojamiento en Katmandú." }
+        ]},
+        { name: "Gestiones", time: "pasaporte y foto del DNI", items: [
+          { id: "r-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias cerca de la stupa. Lleva el pasaporte y una foto del DNI. Una opción es NTC." },
+          { id: "r-cash", text: "Cambiar euros a rupias en un comercio", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" }
+        ]}
+      ]
+    }];
+  }
+  /* ---------- lo común (Rose y Alejandro) ---------- */
+  var SH = { plan: null, done: {}, trek: undefined }, REMOTE = { plan: null, done: null, trek: undefined };
+  var SHARED_IDS = {}, pendingRender = false;
+  function sharedPlan() {
+    if (!SH.plan) return COMMON_DEFAULT;
+    if (!SH.plan.ret) { var p = jclone(SH.plan); p.days = (p.days || []).concat(jclone(RETURN_DAYS)); p.ret = 1; return p; }
+    return SH.plan;
+  }
+  function curTrek() { return SH.trek !== undefined ? SH.trek : S.trek; }
+  function doneOf(id) { return SHARED_IDS[id] ? !!SH.done[id] : !!S.done[id]; }
+  function applyRemote() {
+    if (REMOTE.plan) SH.plan = REMOTE.plan;
+    if (REMOTE.done) SH.done = REMOTE.done;
+    if (REMOTE.trek !== undefined) SH.trek = REMOTE.trek;
+    if (WHO) { S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek }; saveLocal(); }
+  }
+  function mergeDays() {
+    var personal = S.plan ? jclone(S.plan) : buildDays(WHO), sh = sharedPlan();
+    SHARED_IDS = {};
+    personal.forEach(function (d) { if (d.id === "sabado") jclone(sh.sat || []).forEach(function (b) { b.shared = true; d.blocks.push(b); }); });
+    (sh.days || []).forEach(function (d) { var c = jclone(d); c.shared = true; c.blocks.forEach(function (b) { b.shared = true; }); personal.push(c); });
+    personal.forEach(function (d) { d.blocks.forEach(function (b) { if (b.shared) b.items.concat(b.after || []).forEach(function (i) { SHARED_IDS[i.id] = true; }); }); });
+    return personal;
+  }
+  function persist() {
+    var personal = [], sat = null, shd = [];
+    DAYS.forEach(function (d) {
+      if (d.shared) { shd.push(clean(d)); return; }
+      var c = jclone(d); c.blocks = c.blocks.filter(function (b) { return !b.shared; });
+      if (d.id === "sabado") sat = d.blocks.filter(function (b) { return b.shared; }).map(clean);
+      personal.push(clean(c));
+    });
+    S.plan = personal; S.planV = 3;
+    var cur = sharedPlan(), np = { sat: sat === null ? (cur.sat || []) : sat, days: shd, ret: 1 };
+    if (JSON.stringify(np) !== JSON.stringify(cur)) { SH.plan = np; pushShared("plan", np); }
+    S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek };
+    DAYS = mergeDays();
+    save();
+  }
+  /* ---------- Sincronización con Google Sheets (Apps Script) ---------- */
+  var API = "https://script.google.com/macros/s/AKfycbxRR_wlJmfbRqZM0aS2p-eQpa0-n4COy3rBUs4lGYfDYx1k6hzx8PGFlzJcqtuYpYA4/exec";
+  var CODEKEY = "nepal-code", TKEY = "nepal-sync-t", QKEY = "nepal-sync-q";
+  var CODE = null, ST = {}, Q = {}, pulled = false, pushing = false, pushTimer = null, persTimer = null, syncState = "local";
+  try { CODE = localStorage.getItem(CODEKEY); ST = JSON.parse(localStorage.getItem(TKEY) || "{}") || {}; Q = JSON.parse(localStorage.getItem(QKEY) || "{}") || {}; } catch (e) {}
+  var NOSYNC = { sh: 1, day: 1, lfilter: 1, tview: 1 };
+  function metaSave() { try { localStorage.setItem(TKEY, JSON.stringify(ST)); localStorage.setItem(QKEY, JSON.stringify(Q)); } catch (e) {} }
+  function enqueue(k, v) {
+    var t = Date.now(); if (ST[k] && t <= ST[k]) t = ST[k] + 1;
+    ST[k] = t; Q[k] = { v: JSON.stringify(v === undefined ? null : v), t: t }; metaSave(); schedulePush();
+  }
+  function personalOf(st) { var o = {}; Object.keys(st).forEach(function (k) { if (!NOSYNC[k]) o[k] = st[k]; }); return o; }
+  function queuePersonal() {
+    if (!WHO) return;
+    var k = "p:" + WHO;
+    if (!pulled && !ST[k]) return; /* dispositivo nuevo: primero se baja lo que hay en la hoja */
+    clearTimeout(persTimer); var who = WHO;
+    persTimer = setTimeout(function () { if (WHO === who) enqueue("p:" + who, personalOf(S)); }, 600);
+  }
+  function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushNow, 1200); }
+  function pushNow() {
+    if (!CODE || pushing || !pulled) return;
+    var ks = Object.keys(Q); if (!ks.length) return;
+    pushing = true;
+    var batch = ks.map(function (k) { return { k: k, v: Q[k].v, t: Q[k].t }; });
+    fetch(API, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify({ c: CODE, cambios: batch }) })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (j && j.ok) { batch.forEach(function (x) { if (Q[x.k] && Q[x.k].t === x.t) delete Q[x.k]; }); metaSave(); setSync("live"); }
+        else setSync(j && j.error === "codigo" ? "code" : "offline");
+      }, function () { setSync("offline"); })
+      .then(function () { pushing = false; if (Object.keys(Q).length && syncState === "live") schedulePush(); });
+  }
+  function applyKey(k, v) {
+    if (k === "plan") { SH.plan = v; return true; }
+    if (k === "trek") { SH.trek = v === null ? undefined : v; return true; }
+    if (k.indexOf("done:") === 0) { SH.done[k.slice(5)] = !!v; return true; }
+    if (k.indexOf("p:") === 0 && v && typeof v === "object") {
+      var who = k.slice(2); if (who !== "alejandro" && who !== "rose") return false;
+      if (who === WHO) {
+        clearTimeout(persTimer);
+        var keep = { sh: S.sh, day: S.day, lfilter: S.lfilter, tview: S.tview };
+        S = freshState(); Object.keys(v).forEach(function (x) { if (v[x] !== undefined && v[x] !== null && x in S) S[x] = v[x]; });
+        Object.keys(keep).forEach(function (x) { if (keep[x] !== undefined) S[x] = keep[x]; });
+        S.visited = Object.assign({ swayam: false, kopan: false }, S.visited);
+        saveLocal(); return true;
+      }
+      try { var old = JSON.parse(localStorage.getItem(keyFor(who)) || "{}") || {}; Object.keys(NOSYNC).forEach(function (x) { if (old[x] !== undefined) v[x] = old[x]; }); localStorage.setItem(keyFor(who), JSON.stringify(v)); } catch (e) {}
+      return false;
+    }
+    return false;
+  }
+  function pullNow() {
+    if (!CODE) { setSync("nocode"); return Promise.resolve(); }
+    return fetch(API + "?k=" + encodeURIComponent(CODE)).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j || !j.ok) { setSync(j && j.error === "codigo" ? "code" : "offline"); return; }
+      var data = j.data || {}, changed = false;
+      Object.keys(data).forEach(function (k) {
+        var r = data[k]; if (!r || !(r.t > (ST[k] || 0))) return;
+        if (Q[k]) { if (Q[k].t >= r.t) return; delete Q[k]; }
+        var v; try { v = JSON.parse(r.v); } catch (e) { return; }
+        ST[k] = r.t; if (applyKey(k, v)) changed = true;
+      });
+      metaSave(); pulled = true; setSync("live");
+      if (changed && WHO) { S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek }; saveLocal(); remoteRender(); }
+      pushNow();
+    }, function () { setSync("offline"); });
+  }
+  function pushShared(kind, val) {
+    if (kind === "plan") enqueue("plan", val);
+    else if (kind === "done") enqueue("done:" + val.id, !!val.v);
+    else if (kind === "trek") enqueue("trek", val === undefined ? null : val);
+  }
+  function setSharedDone(id, v) { SH.done[id] = v; S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek }; saveLocal(); pushShared("done", { id: id, v: v }); }
+  function setTrek(v) { S.trek = v; SH.trek = v; S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek }; save(); pushShared("trek", v); }
+  function setSync(st) {
+    syncState = st;
+    var el = document.getElementById("sync"); if (!el) return;
+    var m = {
+      live: ["sincronizado", "Guardado en Google Sheets: se ve igual en el móvil, el ordenador y en el de Rose"],
+      offline: ["sin conexión", "Los cambios se guardan aquí y se suben solos cuando vuelva la conexión"],
+      code: ["palabra incorrecta", "Toca para escribir otra vez la palabra de la app"],
+      nocode: ["conectar", "Toca para escribir la palabra de la app y sincronizar"],
+      local: ["…", "Conectando"]
+    }[st] || ["", ""];
+    el.textContent = m[0]; el.title = m[1]; el.className = "sync " + st;
+    el.setAttribute("role", st === "code" || st === "nocode" ? "button" : "status");
+    el.tabIndex = st === "code" || st === "nocode" ? 0 : -1;
+  }
+  function askCode() {
+    var w = window.prompt("Palabra de la app (la misma para Rose y para ti):", "");
+    if (w === null) return;
+    w = w.trim(); if (!w) return;
+    CODE = w; try { localStorage.setItem(CODEKEY, w); } catch (e) {}
+    setSync("local"); pullNow();
+  }
+  function remoteRender() {
+    if (!WHO) return;
+    var ae = document.activeElement, busy = pedit || (ae && view.contains(ae) && /^(INPUT|TEXTAREA)$/.test(ae.tagName));
+    if (busy) { pendingRender = true; return; }
+    DAYS = mergeDays(); LOG = LOGS[WHO]; renderAll(true);
+  }
+  function initSync() {
+    var el = document.getElementById("sync");
+    el.addEventListener("click", function () { if (syncState === "code" || syncState === "nocode") askCode(); else pullNow(); });
+    el.addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && (syncState === "code" || syncState === "nocode")) { e.preventDefault(); askCode(); } });
+    document.addEventListener("visibilitychange", function () { if (document.visibilityState === "visible") pullNow(); });
+    window.addEventListener("online", function () { pullNow(); });
+    window.addEventListener("pagehide", function () { if (persTimer) { clearTimeout(persTimer); if (WHO) enqueue("p:" + WHO, personalOf(S)); } });
+    setInterval(function () { if (document.visibilityState === "visible") pullNow(); }, 45000);
+    pullNow();
+  }
+  var pedit = null, armed = null, armTimer = null;
+  function uid() { return "x" + Date.now().toString(36) + Math.floor(Math.random() * 46656).toString(36); }
+  function dayById(id) { return DAYS.filter(function (d) { return d.id === id; })[0]; }
+  function isArmed(k) { return armed === k; }
+  function arm(k) { armed = k; clearTimeout(armTimer); armTimer = setTimeout(function () { armed = null; if (current === "katmandu") renderAll(true); }, 3500); renderAll(true); }
+  function attr(x) { return esc(x == null ? "" : x); }
+  function findItem(id) {
+    for (var i = 0; i < DAYS.length; i++) for (var j = 0; j < DAYS[i].blocks.length; j++) {
+      var bl = DAYS[i].blocks[j];
+      for (var k = 0; k < bl.items.length; k++) if (bl.items[k].id === id) return { day: DAYS[i], b: bl, list: bl.items, idx: k };
+      if (bl.after) for (var m = 0; m < bl.after.length; m++) if (bl.after[m].id === id) return { day: DAYS[i], b: bl, list: bl.after, idx: m };
+    }
+    return null;
+  }
+  function itemEditorHTML(it) {
+    return '<li class="item pe-open"><div class="pe-ed" data-ped="item" data-id="' + it.id + '"><input class="pe" data-f="text" value="' + attr(it.text) + '" placeholder="Qué hacer" enterkeyhint="done">' +
+      '<textarea class="pe pe-tip" rows="1" data-f="tip" placeholder="Nota (opcional)">' + esc(it.tip || "") + '</textarea>' +
+      '<div class="pe-btns"><button type="button" class="pe-link" data-prm>Quitar</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div></li>';
+  }
+  function blockEditorHTML(day, bi) {
+    var b = day.blocks[bi];
+    return '<div class="pe-ed pe-eb" data-ped="blk" data-d="' + day.id + '" data-b="' + bi + '"><div class="pe-row"><input class="pe pe-name" data-f="name" value="' + attr(b.name) + '" placeholder="Sección (Mañana, Tarde…)" enterkeyhint="done"><input class="pe pe-time" data-f="time" value="' + attr(b.time) + '" placeholder="hora o nota" enterkeyhint="done"></div>' +
+      '<div class="pe-btns">' + (day.id === "sabado" && !b.dynamic ? '<button type="button" class="pe-link" data-pshare="' + day.id + "|" + bi + '">' + (b.shared ? "Hacer solo mío" : "Hacer común") + "</button>" : "") + '<button type="button" class="pe-link' + (isArmed("b" + day.id + bi) ? " armed" : "") + '" data-prm>' + (isArmed("b" + day.id + bi) ? "¿Seguro? Toca otra vez" : "Quitar sección") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
+  }
+  function dayEditorHTML(day) {
+    return '<div class="pe-ed pe-day" data-ped="day" data-d="' + day.id + '"><label>Día completo<input class="pe" data-f="full" value="' + attr(day.full) + '" enterkeyhint="done"></label>' +
+      '<label>Título<input class="pe" data-f="title" value="' + attr(day.title) + '" enterkeyhint="done"></label>' +
+      '<label>Pestaña<input class="pe" data-f="label" value="' + attr(day.label) + '" maxlength="12" enterkeyhint="done"></label><label>Fecha<input class="pe" data-f="date" value="' + attr(day.date) + '" maxlength="12" enterkeyhint="done"></label>' +
+      '<div class="pe-btns"><button type="button" class="pe-link' + (isArmed("d" + day.id) ? " armed" : "") + '" data-prm' + (DAYS.length < 2 ? " hidden" : "") + ">" + (isArmed("d" + day.id) ? "¿Seguro? Toca otra vez" : "Quitar día") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
+  }
+  function commitPed(ed, cancel) {
+    if (!ed || ed._done) return;
+    ed._done = true;
+    var kind = ed.getAttribute("data-ped");
+    function val(f) { var el = ed.querySelector('[data-f="' + f + '"]'); return el ? el.value.trim() : ""; }
+    var isNew = pedit && pedit.isNew;
+    if (kind === "diary") {
+      if (!cancel) {
+        var en = S.diary.filter(function (x) { return x.id === ed.getAttribute("data-id"); })[0];
+        if (en) { if (!val("text")) S.diary.splice(S.diary.indexOf(en), 1); else en.text = ed.querySelector("textarea").value.trim(); save(); }
+      }
+      pedit = null; armed = null; renderAll(true); return;
+    }
+    if (!cancel) {
+      if (kind === "item") {
+        var loc = findItem(ed.getAttribute("data-id"));
+        if (loc) { if (!val("text")) loc.list.splice(loc.idx, 1); else { loc.list[loc.idx].text = val("text"); loc.list[loc.idx].tip = val("tip"); } }
+      } else if (kind === "blk") {
+        var d1 = dayById(ed.getAttribute("data-d")), bl = d1 && d1.blocks[+ed.getAttribute("data-b")];
+        if (bl) { bl.name = val("name"); bl.time = val("time"); if (!bl.name && !bl.time && !bl.items.length && !bl.dynamic && !bl.extra && !(bl.after && bl.after.length)) d1.blocks.splice(+ed.getAttribute("data-b"), 1); }
+      } else if (kind === "day") {
+        var d2 = dayById(ed.getAttribute("data-d"));
+        if (d2) ["full", "title", "label", "date"].forEach(function (f) { if (val(f) || f === "date") d2[f] = val(f); });
+      }
+      persist();
+    } else if (kind === "item" && isNew) {
+      var l2 = findItem(ed.getAttribute("data-id")); if (l2 && !(l2.list[l2.idx].text || "").trim()) { l2.list.splice(l2.idx, 1); persist(); }
+    }
+    pedit = null; armed = null; renderAll(true);
+  }
+  function removePed(ed) {
+    if (!ed) return;
+    var kind = ed.getAttribute("data-ped");
+    if (kind === "diary") {
+      var en2 = S.diary.filter(function (x) { return x.id === ed.getAttribute("data-id"); })[0];
+      if (en2) S.diary.splice(S.diary.indexOf(en2), 1);
+      ed._done = true; pedit = null; save(); renderAll(true); return;
+    }
+    if (kind === "item") { var loc = findItem(ed.getAttribute("data-id")); if (loc) loc.list.splice(loc.idx, 1); }
+    else if (kind === "blk") {
+      var d1 = dayById(ed.getAttribute("data-d")), bi = +ed.getAttribute("data-b"), k = "b" + d1.id + bi;
+      if (d1.blocks[bi].items.length && !isArmed(k)) { arm(k); return; }
+      d1.blocks.splice(bi, 1);
+    } else if (kind === "day") {
+      var d2 = dayById(ed.getAttribute("data-d")), k2 = "d" + d2.id;
+      if (!isArmed(k2)) { arm(k2); return; }
+      DAYS.splice(DAYS.indexOf(d2), 1); S.day = DAYS[0].id;
+    }
+    ed._done = true; pedit = null; armed = null; persist(); renderAll(true);
+  }
+  function planClick(t, e) {
+    var x;
+    if ((x = t.closest("[data-pok]"))) { commitPed(x.closest(".pe-ed"), false); return true; }
+    if ((x = t.closest("[data-prm]"))) { removePed(x.closest(".pe-ed")); return true; }
+    if ((x = t.closest("[data-dsave]"))) { saveEntry(x.closest(".dcomp")); return true; }
+    if ((x = t.closest("[data-dedit]"))) { pedit = { k: "diary", id: x.getAttribute("data-dedit") }; renderAll(true); return true; }
+    if (t.closest("[data-godiario]")) { e.preventDefault(); current = "diario"; try { history.replaceState(null, "", "#diario"); } catch (er) {} renderAll(false); window.scrollTo({ top: 0 }); return true; }
+    if ((x = t.closest("[data-eid]"))) { e.preventDefault(); pedit = { k: "item", id: x.getAttribute("data-eid") }; renderAll(true); return true; }
+    if ((x = t.closest("[data-pblk]"))) { var p = x.getAttribute("data-pblk").split("|"); pedit = { k: "blk", d: p[0], b: +p[1] }; renderAll(true); return true; }
+    if (t.closest("[data-pday]")) { pedit = { k: "day", d: t.closest("[data-pday]").getAttribute("data-pday") }; renderAll(true); return true; }
+    if ((x = t.closest("[data-pshare]"))) {
+      var ps = x.getAttribute("data-pshare").split("|"), dy = dayById(ps[0]), bk = dy && dy.blocks[+ps[1]];
+      if (bk) { bk.shared = !bk.shared; pedit = null; persist(); renderAll(true); }
+      return true;
+    }
+    if ((x = t.closest("[data-padd]"))) {
+      var q = x.getAttribute("data-padd").split("|"), day = dayById(q[0]), id = uid();
+      day.blocks[+q[1]].items.push({ id: id, text: "", tip: "" });
+      pedit = { k: "item", id: id, isNew: true }; persist(); renderAll(true); return true;
+    }
+    if (t.closest("[data-paddblk]")) {
+      var dd = dayById(S.day) || DAYS[0]; dd.blocks.push({ name: "", time: "", items: [], shared: !!dd.shared });
+      pedit = { k: "blk", d: dd.id, b: dd.blocks.length - 1 }; persist(); renderAll(true); return true;
+    }
+    if (t.closest("[data-paddday]")) {
+      var nid = "d" + uid(); DAYS.push({ id: nid, label: "Día", date: "", full: "Nuevo día", title: "Nuevo día", shared: true, blocks: [{ name: "Mañana", time: "", items: [], shared: true }] });
+      S.day = nid; pedit = { k: "day", d: nid }; persist(); renderAll(true); return true;
+    }
+    if (t.closest("[data-prestore]")) {
+      if (!isArmed("restore")) { arm("restore"); return true; }
+      S.plan = null; SH.plan = jclone(COMMON_DEFAULT); pushShared("plan", SH.plan);
+      S.sh = { plan: SH.plan, done: SH.done, trek: SH.trek }; DAYS = mergeDays(); S.day = DAYS[0].id; armed = null; pedit = null; save(); renderAll(true); return true;
+    }
+    return false;
+  }
+  var DAY_DATES = { jueves: "2026-10-29", viernes: "2026-10-30", sabado: "2026-10-31", domingo: "2026-11-01", mie11: "2026-11-11", jue12: "2026-11-12", vie13: "2026-11-13", sab14: "2026-11-14" };
+  function migrateNotes() {
+    var ks = Object.keys(S.notes || {}).filter(function (k) { return (S.notes[k] || "").trim(); });
+    if (!ks.length) return;
+    ks.forEach(function (k) {
+      var ts = DAY_DATES[k] ? new Date(DAY_DATES[k] + "T12:00:00").getTime() : Date.now();
+      S.diary.push({ id: uid(), ts: ts, text: S.notes[k].trim() });
+    });
+    S.notes = {}; save();
+  }
+  function p2(n) { return n < 10 ? "0" + n : "" + n; }
+  function dkey(ts) { var d = new Date(ts); return d.getFullYear() + "-" + p2(d.getMonth() + 1) + "-" + p2(d.getDate()); }
+  var dayFmt = new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long" });
+  function dayLabel(key) {
+    var d = new Date(key + "T12:00:00"), s = dayFmt.format(d);
+    s = s.charAt(0).toUpperCase() + s.slice(1);
+    return key === dkey(Date.now()) ? "Hoy · " + s.toLowerCase() : s;
+  }
+  function entryHTML(en) {
+    var d = new Date(en.ts), hm = p2(d.getHours()) + ":" + p2(d.getMinutes());
+    if (pedit && pedit.k === "diary" && pedit.id === en.id) {
+      return '<article class="dent"><div class="pe-ed" data-ped="diary" data-id="' + en.id + '"><textarea class="pe dta" rows="3" data-f="text" placeholder="Escribe…">' + esc(en.text) + '</textarea>' +
+        '<div class="pe-btns"><button type="button" class="pe-link" data-prm>Quitar</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div></article>';
+    }
+    return '<article class="dent"><span class="dtime">' + hm + '</span><div class="dtxt" data-dedit="' + en.id + '">' + esc(en.text) + "</div></article>";
+  }
+  function composerHTML(ph, dayId) {
+    var key = dayId && DAY_DATES[dayId], lab = key ? dayLabel(key) : dayLabel(dkey(Date.now()));
+    return '<div class="dcomp"' + (dayId ? ' data-day="' + dayId + '"' : "") + '><textarea class="pe dta" rows="2" placeholder="' + esc(ph) + '"></textarea><div class="pe-btns"><span class="muted">' + esc(lab) + '</span><button type="button" class="pe-ok" data-dsave>Guardar</button></div></div>';
+  }
+  function viewDiario() {
+    var html = '<div class="page-head"><span class="lbl">Diario</span><h1 style="font-size:clamp(32px,9vw,42px)">Lo que va pasando</h1><span class="hand">cada entrada se apunta en el día en que la escribes</span></div>';
+    html += composerHTML("¿Qué ha pasado hoy?");
+    var groups = {}, keys = [];
+    S.diary.slice().sort(function (a, b) { return b.ts - a.ts; }).forEach(function (en) {
+      var k = dkey(en.ts); if (!groups[k]) { groups[k] = []; keys.push(k); } groups[k].push(en);
+    });
+    if (!keys.length) html += '<p class="figcap" style="margin-top:18px">Aún no hay entradas. Lo que escribas aparecerá aquí y también en el día correspondiente de la pestaña Katmandú.</p>';
+    keys.forEach(function (k) {
+      html += '<section class="blk"><div class="eyebrow"><h3>' + esc(dayLabel(k)) + "</h3><span>" + groups[k].length + (groups[k].length === 1 ? " entrada" : " entradas") + "</span></div>";
+      html += groups[k].slice().reverse().map(entryHTML).join("") + "</section>";
+    });
+    return html;
+  }
+  function diaryDayHTML(day) {
+    var key = DAY_DATES[day.id], html = "";
+    var list = S.diary.filter(function (en) { return en.day === day.id || (key && !en.day && dkey(en.ts) === key); }).sort(function (a, b) { return a.ts - b.ts; });
+    html += '<section class="blk"><div class="eyebrow"><h3>Diario</h3><span>' + (list.length ? list.length + (list.length === 1 ? " entrada" : " entradas") : "") + "</span></div>";
+    html += list.map(entryHTML).join("");
+    return html + composerHTML("Apunta algo de este día…", day.id) + "</section>";
+  }
+  function saveEntry(comp) {
+    var ta = comp.querySelector("textarea"), txt = ta.value.trim();
+    if (!txt) { ta.focus(); return; }
+    var dayId = comp.getAttribute("data-day"), key = dayId && DAY_DATES[dayId], now = new Date(), ts = Date.now();
+    if (key && key !== dkey(ts)) { var p = key.split("-"); ts = new Date(+p[0], +p[1] - 1, +p[2], now.getHours(), now.getMinutes(), now.getSeconds()).getTime(); }
+    var en = { id: uid(), ts: ts, text: txt }; if (dayId) en.day = dayId;
+    S.diary.push(en); save(); renderAll(true);
+  }
+  function satItems() {
+    return ["swayam", "kopan"].filter(function (k) { return !S.visited[k]; }).map(function (k) {
+      return { id: PLACES[k].id, text: PLACES[k].name, tip: PLACES[k].tip };
+    });
+  }
+  function dayItems(day) {
+    var out = [];
+    day.blocks.forEach(function (b) {
+      if (b.dynamic === "satMorning") out = out.concat(satItems());
+      out = out.concat(b.items);
+      if (b.after) out = out.concat(b.after);
+    });
+    return out;
+  }
+  function dayCounts(day) {
+    var its = dayItems(day), d = 0;
+    its.forEach(function (i) { if (doneOf(i.id)) d++; });
+    return { done: d, total: its.length };
+  }
+  function ktmCounts() {
+    var d = 0, t = 0;
+    DAYS.forEach(function (x) { var c = dayCounts(x); d += c.done; t += c.total; });
+    return { done: d, total: t };
+  }
+  var fmt = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 });
+
+  function itemHTML(it) {
+    if (pedit && pedit.k === "item" && pedit.id === it.id && findItem(it.id)) return itemEditorHTML(it);
+    var d = !!doneOf(it.id);
+    return '<li class="item' + (d ? " done" : "") + '"><label><input type="checkbox" data-id="' + it.id + '"' + (d ? " checked" : "") + '>' +
+      '<span' + (findItem(it.id) ? ' class="txt" data-eid="' + it.id + '"' : "") + '><span class="t">' + esc(it.text) + '</span>' + (it.tip ? '<span class="tip">' + esc(it.tip) + "</span>" : "") + "</span></label></li>";
+  }
+  function fxHTML() {
+    return '<div class="scrap tape g" style="--r:-.7deg"><h3>Euros a rupias</h3><p class="muted">Tasa oficial de compra del Nepal Rastra Bank del 20 de octubre de 2026. Los comercios de cambio suelen dar algo menos: pon la del cartel del día.</p>' +
+      '<div class="fx"><div><label for="eur">Euros</label><input id="eur" type="number" inputmode="decimal" min="0" step="any" value="' + S.eur + '"></div>' +
+      '<div><label for="rate">Rupias por €</label><input id="rate" type="number" inputmode="decimal" min="0" step="any" value="' + S.rate + '"></div>' +
+      '<div class="fx-out"><span class="hand">recibirías</span><b id="fxout">' + fmt.format(S.eur * S.rate) + ' NPR</b></div></div></div>';
+  }
+  function picksHTML() {
+    function btn(k, r) {
+      var p = PLACES[k], on = S.visited[k];
+      return '<button type="button" class="pick tape ' + (k === "kopan" ? "b" : "") + '" style="--r:' + r + '" data-visit="' + k + '" aria-pressed="' + on + '"><span><strong>' + esc(p.name) + "</strong><small>" + esc(p.tip) + '</small></span><span class="st">' + (on ? "hoy" : "sábado") + "</span></button>";
+    }
+    return '<div class="picks"><p class="muted">A dónde vas en moto. Lo que dejes sin marcar pasa a la mañana del sábado.</p>' + btn("swayam", "-.8deg") + btn("kopan", ".7deg") + "</div>";
+  }
+
+  /* ---------- Tiempo (Open-Meteo) ---------- */
+  var WX_KEY = "plan-ktm-wx", WX_LAT = 27.7172, WX_LON = 85.324;
+  var WX_SNAP = { fecha: "23 de octubre", fuente: "yr.no", days: {
+    "2026-10-29": { tmax: 18, tmin: 15, rain: 17, d: "Lluvia, de ligera a fuerte", b: ["Lluvia ligera", "Lluvia fuerte", "Lluvia fuerte", "Lluvia ligera"] },
+    "2026-10-30": { tmax: 18, tmin: 15, rain: 57, d: "Lluvia fuerte todo el día", b: ["Lluvia fuerte", "Lluvia fuerte", "Lluvia fuerte", "Lluvia fuerte"] },
+    "2026-10-31": { tmax: 25, tmin: 15, rain: 0.3, d: "Casi despejado", b: ["Nublado", "Buen tiempo", "Despejado", "Buen tiempo"] },
+    "2026-11-01": { tmax: 22, tmin: 14, rain: 1.2, d: "Nublado, lluvia por la tarde", b: ["Nublado", "Nublado", "Lluvia", "Algo nublado"] }
+  } };
+  var WX = { fc: {}, cl: {}, status: "idle", t: 0 };
+  var WX_TXT = { 0: "Despejado", 1: "Casi despejado", 2: "Algo nublado", 3: "Nublado", 45: "Niebla", 48: "Niebla", 51: "Llovizna", 53: "Llovizna", 55: "Llovizna", 56: "Llovizna helada", 57: "Llovizna helada", 61: "Lluvia débil", 63: "Lluvia", 65: "Lluvia fuerte", 66: "Lluvia helada", 67: "Lluvia helada", 71: "Nieve débil", 73: "Nieve", 75: "Nieve fuerte", 77: "Granizo fino", 80: "Chubascos", 81: "Chubascos", 82: "Chubascos fuertes", 85: "Nieve en chubascos", 86: "Nieve en chubascos", 95: "Tormenta", 96: "Tormenta con granizo", 99: "Tormenta con granizo" };
+  try {
+    var wxc = JSON.parse(localStorage.getItem(WX_KEY) || "null");
+    if (wxc && wxc.fc) { WX.fc = wxc.fc; WX.cl = wxc.cl || {}; WX.t = wxc.t || 0; if (Object.keys(WX.fc).length) WX.status = "ok"; }
+  } catch (e) {}
+  function wxSave() { try { localStorage.setItem(WX_KEY, JSON.stringify({ fc: WX.fc, cl: WX.cl, t: WX.t })); } catch (e) {} }
+  function wxNeeded() {
+    var out = []; Object.keys(DAY_DATES).forEach(function (k) { out.push(DAY_DATES[k]); }); return out.sort();
+  }
+  function wxFetchJSON(url) {
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error("http"); return r.json(); });
+  }
+  function wxEnsure() {
+    if (typeof fetch !== "function") { if (WX.status === "idle") WX.status = "err"; return; }
+    if (WX.status === "loading") return;
+    if (WX.status === "ok" && Date.now() - WX.t < 3 * 3600 * 1000) return;
+    if (WX.status === "err" && Date.now() - WX.t < 60 * 1000) return;
+    var had = WX.status === "ok";
+    WX.status = "loading"; WX.t = Date.now();
+    var base = "latitude=" + WX_LAT + "&longitude=" + WX_LON + "&timezone=Asia%2FKathmandu";
+    var p1 = wxFetchJSON("https://api.open-meteo.com/v1/forecast?" + base + "&forecast_days=16&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max").then(function (j) {
+      var d = j && j.daily, fc = {};
+      if (!d || !d.time) throw new Error("fmt");
+      d.time.forEach(function (day, i) { fc[day] = { code: d.weather_code[i], tmax: d.temperature_2m_max[i], tmin: d.temperature_2m_min[i], rain: d.precipitation_sum[i], prob: d.precipitation_probability_max[i] }; });
+      return fc;
+    });
+    var need = wxNeeded(), y0 = new Date().getFullYear(), years = [1, 2, 3, 4, 5].map(function (n) { return y0 - n; });
+    var p2 = Promise.all(years.map(function (y) {
+      return wxFetchJSON("https://archive-api.open-meteo.com/v1/archive?" + base + "&start_date=" + y + "-10-29&end_date=" + y + "-11-14&daily=temperature_2m_max,temperature_2m_min,precipitation_sum").then(function (j) { return j && j.daily ? j.daily : null; }, function () { return null; });
+    })).then(function (list) {
+      var acc = {};
+      list.forEach(function (d) {
+        if (!d || !d.time) return;
+        d.time.forEach(function (day, i) {
+          var md = day.slice(5); if (d.temperature_2m_max[i] == null) return;
+          var a = acc[md] || (acc[md] = { n: 0, tmax: 0, tmin: 0, rain: 0 });
+          a.n++; a.tmax += d.temperature_2m_max[i]; a.tmin += d.temperature_2m_min[i]; a.rain += d.precipitation_sum[i] || 0;
+        });
+      });
+      var cl = {};
+      Object.keys(acc).forEach(function (md) { var a = acc[md]; cl[md] = { tmax: a.tmax / a.n, tmin: a.tmin / a.n, rain: a.rain / a.n, n: a.n }; });
+      return cl;
+    });
+    Promise.all([p1.catch(function (e) { WX.err = String((e && (e.name + ": " + e.message)) || e); return null; }), p2.catch(function () { return null; })]).then(function (r) {
+      if (r[0]) WX.fc = r[0];
+      if (r[1] && Object.keys(r[1]).length) WX.cl = r[1];
+      WX.status = (r[0] || r[1] || had) ? "ok" : "err"; WX.t = Date.now();
+      if (WX.status === "ok") wxSave();
+      wxRepaint();
+    });
+  }
+  function wxRepaint() {
+    var el = document.getElementById("wx"); if (!el || current !== "katmandu") return;
+    var day = DAYS.filter(function (d) { return d.id === S.day; })[0] || DAYS[0];
+    el.outerHTML = wxHTML(day);
+  }
+  function wxNormal(key) {
+    var d = new Date(key + "T12:00:00"), a = new Date(d.getFullYear() + "-10-16T12:00:00"), b = new Date(d.getFullYear() + "-11-15T12:00:00");
+    var k = Math.max(0, Math.min(1, (d - a) / (b - a)));
+    return { tmax: Math.round(27.2 - 3.6 * k), tmin: Math.round(13.9 - 5.5 * k), dry: d >= new Date(d.getFullYear() + "-11-01T00:00:00") };
+  }
+  function wxHTML(day) {
+    var key = DAY_DATES[day.id];
+    if (!key) return '<section class="blk wx" id="wx" hidden></section>';
+    var h = '<section class="blk wx" id="wx"><div class="eyebrow"><h3>Tiempo</h3><span>Katmandú</span></div>';
+    var f = WX.fc[key], c = WX.cl[key.slice(5)], sn = WX_SNAP.days[key];
+    if (sn && !(f && f.tmax != null) && WX.status !== "loading") {
+      h += '<div class="wx-row"><span class="wx-t">' + sn.tmax + '°<small>/ ' + sn.tmin + '°</small></span><span class="wx-d">' + esc(sn.d) + '</span>' +
+        '<span class="wx-r">' + (sn.rain >= 0.1 ? "lluvia " + (Math.round(sn.rain * 10) / 10).toString().replace(".", ",") + " mm" : "sin lluvia") + '</span></div>' +
+        (sn.b ? '<div class="wx-b">' + ["Madrugada", "Mañana", "Tarde", "Noche"].map(function (n, i) { return '<div><b>' + n + '<small>' + ["0–6 h", "6–12 h", "12–18 h", "18–24 h"][i] + '</small></b><span>' + esc(sn.b[i]) + '</span></div>'; }).join("") + '</div>' : '') +
+        '<p class="wx-src">Previsión de ' + WX_SNAP.fuente + ' del ' + WX_SNAP.fecha + '. Se sustituye sola por la previsión en directo cuando hay conexión.</p>';
+    } else if (f && f.tmax != null) {
+      h += '<div class="wx-row"><span class="wx-t">' + Math.round(f.tmax) + '°<small>/ ' + Math.round(f.tmin) + '°</small></span><span class="wx-d">' + esc(WX_TXT[f.code] || "") + '</span>' +
+        '<span class="wx-r">' + (f.prob != null ? "lluvia " + Math.round(f.prob) + " %" : "") + (f.rain > 0 ? (f.prob != null ? " · " : "") + (Math.round(f.rain * 10) / 10).toString().replace(".", ",") + " mm" : "") + '</span></div>' +
+        '<p class="wx-src">Previsión de Open-Meteo para ese día. Se actualiza al abrir la app con conexión.</p>';
+    } else if (c) {
+      h += '<div class="wx-row"><span class="wx-t">' + Math.round(c.tmax) + '°<small>/ ' + Math.round(c.tmin) + '°</small></span><span class="wx-d">media de esa fecha</span>' +
+        '<span class="wx-r">' + (c.rain >= 0.1 ? "lluvia " + (Math.round(c.rain * 10) / 10).toString().replace(".", ",") + " mm" : "sin lluvia habitual") + '</span></div>' +
+        '<p class="wx-src">Todavía no hay previsión para esta fecha (solo llega a 16 días). Se muestra la media de los últimos años en el mismo día.</p>';
+    } else if (WX.status === "loading") {
+      h += '<p class="wx-src">Cargando el tiempo…</p>';
+    } else {
+      var nm = wxNormal(key);
+      h += '<div class="wx-row"><span class="wx-t">' + nm.tmax + '°<small>/ ' + nm.tmin + '°</small></span><span class="wx-d">media de la época</span><span class="wx-r">' + (nm.dry ? "lluvia muy poco habitual" : "algo de lluvia posible") + '</span></div>' +
+        '<p class="wx-src">Todavía no hay previsión para esta fecha: esto es la media aproximada de la época en Katmandú (aeropuerto, 1991–2020: octubre 27°/14°, noviembre 24°/8°). La previsión aparece sola unos 16 días antes.</p>';
+    }
+    return h + "</section>";
+  }
+  function viewKtm() {
+    var day = DAYS.filter(function (d) { return d.id === S.day; })[0] || DAYS[0];
+    var html = '<div class="page-head"><span class="lbl">Plan por días</span><h1>Katmandú</h1><div class="pills" id="pills" style="margin-top:10px">';
+    DAYS.forEach(function (d) {
+      var c = dayCounts(d);
+      html += '<button type="button" class="pill" data-day="' + d.id + '" aria-pressed="' + (d.id === day.id) + '">' + d.label + " " + d.date.split(" ")[0] + "<small>" + c.done + "/" + c.total + "</small></button>";
+    });
+    html += '<button type="button" class="pill pe-plusday" data-paddday aria-label="Añadir día" title="Añadir día">+</button>';
+    html += "</div>" + (WHO === "rose" && !S.plan ? '<p class="figcap" style="margin-top:8px">Plan provisional: toca un título para editarlo y usa «+» para añadir.</p>' : "") + "</div>";
+    if (pedit && pedit.k === "day" && pedit.d === day.id) html += dayEditorHTML(day);
+    else html += '<div class="dayhead tap" data-pday="' + day.id + '"><p class="hand">' + esc(day.full) + "</p><h2>" + esc(day.title) + "</h2></div>";
+    wxEnsure(); html += wxHTML(day);
+    day.blocks.forEach(function (b, bi) {
+      html += '<section class="blk">';
+      if (pedit && pedit.k === "blk" && pedit.d === day.id && pedit.b === bi) html += blockEditorHTML(day, bi);
+      else html += '<div class="eyebrow tap" data-pblk="' + day.id + "|" + bi + '"><h3>' + (b.name ? esc(b.name) : "Nueva sección") + "</h3>" + (b.time || (b.shared && !day.shared) ? "<span>" + esc(b.time || "") + (b.shared && !day.shared ? (b.time ? " · " : "") + '<em class="juntos">juntos</em>' : "") + "</span>" : "") + "</div>";
+      var items = b.items;
+      if (b.dynamic === "satMorning") {
+        items = b.items.concat(satItems());
+        if (items.length === 0) html += '<p class="free">Ya hiciste las dos visitas el viernes. La mañana queda libre.</p>';
+      }
+      if (items.length) {
+        html += '<ul class="items">';
+        items.forEach(function (it) {
+          html += itemHTML(it);
+          if (it.extra === "fx") html += "</ul>" + fxHTML() + '<ul class="items">';
+        });
+        html += "</ul>";
+      }
+      if (b.extra === "picks") html += picksHTML();
+      if (b.after) html += '<ul class="items">' + b.after.map(itemHTML).join("") + "</ul>";
+      html += '<button type="button" class="pe-plus" data-padd="' + day.id + "|" + bi + '" aria-label="Añadir a esta sección" title="Añadir">+</button>';
+      html += "</section>";
+    });
+    html += '<div class="pe-foot"><button type="button" class="pe-link" data-paddblk>+ Añadir sección</button>' + (S.plan ? '<button type="button" class="pe-link' + (isArmed("restore") ? " armed" : "") + '" data-prestore>' + (isArmed("restore") ? "¿Seguro? Toca otra vez" : "Volver al plan original") + "</button>" : "") + "</div>";
+    html += diaryDayHTML(day);
+    return html;
+  }
+
+  /* ---------- Viaje ---------- */
+  function viewViaje() {
+    return '' +
+    '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg>' +
+      '<h1>Nepal 2026</h1><span class="hand">Madrid, Chengdu, Katmandú y a caminar</span></div>' +
+
+    '<h2 class="sec">Antes de volar</h2>' +
+    '<div class="scrap tape" style="--r:-.6deg"><ul class="plain">' +
+      '<li><b>24 oct</b><span>Vuelves de Camerún a España y llegas a Pamplona por la noche.</span></li>' +
+      '<li><b>27 oct</b><span>Sales de Pamplona por la tarde.</span></li>' +
+      '<li><b>28 oct</b><span>Vuelo a Katmandú con escala en Chengdu.</span></li>' +
+    '</ul></div>' +
+
+    '<h2 class="sec">Vuelos</h2>' +
+    ticket("28 OCT", "mié", "3U 3804", "MAD", "Madrid", "11:05", "TFU", "Chengdu Tianfu", "05:45", "+1", "-.5deg") +
+    '<p class="hand t-note">11 h 40 min de vuelo. Hora de Chengdu a la llegada.</p>' +
+    '<p class="hand t-between">Escala en Chengdu: 3 h 20 min</p>' +
+    ticket("29 OCT", "jue", "3U 3901", "TFU", "Chengdu Tianfu", "09:05", "KTM", "Katmandú", "11:20", "", ".6deg") +
+    '<p class="hand t-note">4 h 30 min de vuelo. Aterrizas el jueves a mediodía.</p>' +
+    '<div style="height:18px"></div>' +
+    ticket("14 NOV", "sáb", "3U 3902", "KTM", "Katmandú", "12:20", "TFU", "Chengdu Tianfu", "18:15", "", "-.4deg") +
+    '<p class="hand t-note">3 h 40 min de vuelo.</p>' +
+    '<p class="hand t-between">Escala en Chengdu</p>' +
+    ticket("15 NOV", "dom", "3U 3803", "TFU", "Chengdu Tianfu", "por confirmar", "MAD", "Madrid", "07:15", "", ".5deg") +
+    '<p class="hand t-note">Llegas a Madrid hacia las 7:15 (hora de Madrid, según tu calendario). La hora de salida de Chengdu no se ve en la captura: mírala en el billete.</p>' +
+    '<div class="scrap tape b" style="--r:.5deg;margin-top:20px"><h3>Tren a Pamplona</h3><p>Domingo 15 de noviembre, a media mañana. Revisa la hora exacta en el billete.</p></div>' +
+
+    '<h2 class="sec">Para tener a mano</h2>' +
+    '<div class="scrap tape g" style="--r:-.5deg"><h3>Hora</h3><p>Nepal va 4 h 45 min por delante de España (UTC+5:45 frente a UTC+1). Chengdu va 7 h por delante.</p></div>' +
+    '<div class="scrap tape c" style="--r:.6deg"><h3>Visado</h3>' +
+      '<p>Entras el 29 de octubre y sales el 14 de noviembre: 17 días. El visado de 15 días (30 USD, el que cita la oferta del Annapurna) se queda corto. Te toca el de 30 días, 50 USD.</p>' +
+      '<p>Lleva el pasaporte con al menos 6 meses de validez, una foto tipo carnet y dólares. Los datos se meten en las máquinas del aeropuerto o con el formulario online, que ha dado problemas.</p>' +
+      '<p class="muted">Tarifas según <a href="https://thelongestwayhome.com/travel-guides/nepal/nepal-visa-information.html">The Longest Way Home</a> (actualizada en enero de 2026). Confírmalas en la web del Departamento de Inmigración de Nepal antes de viajar.</p></div>';
+  }
+  function ticket(dn, wd, flight, c1, city1, t1, c2, city2, t2, plus, r) {
+    return '<div class="ticket" style="--r:' + r + '"><div class="t-main"><span class="lbl">Billete</span><div class="t-route">' +
+      '<div><span class="t-code">' + c1 + '</span><span class="t-city">' + city1 + '</span><span class="t-time">' + t1 + '</span></div><div class="t-arrow"></div>' +
+      '<div style="text-align:right"><span class="t-code">' + c2 + '</span><span class="t-city">' + city2 + '</span><span class="t-time">' + t2 + (plus ? ' <em>' + plus + '</em>' : '') + '</span></div></div></div>' +
+      '<div class="t-stub"><span>' + wd + '</span><b>' + dn.split(" ")[0] + '</b><span>' + dn.split(" ")[1] + '</span><i>' + flight + '</i></div></div>';
+  }
+
+  /* ---------- Logística ---------- */
+  var STATES = [["tengo", "Tengo"], ["rose", "La lleva Rose"], ["comprar", "Comprar"], ["alquilar", "Alquilar"], ["revisar", "Revisar"], ["preparar", "Preparar"], ["casa", "Mirar en casa"], ["papa", "Decir a papá"]];
+  var GET = { comprar: 1, alquilar: 1, papa: 1 }, CHECK = { revisar: 1, preparar: 1, casa: 1 };
+  var editingId = null;
+  function noteOf(it) { return Object.prototype.hasOwnProperty.call(S.lnotes, it.id) ? S.lnotes[it.id] : (it.note || ""); }
+  function nameOf(it) { return Object.prototype.hasOwnProperty.call(S.lnames, it.id) ? S.lnames[it.id] : (it.name || ""); }
+  var editFocus = "note";
+  function qtyOf(it) { return Object.prototype.hasOwnProperty.call(S.lqty, it.id) ? S.lqty[it.id] : (it.qty || ""); }
+  function noteHTML(it) {
+    var n = noteOf(it);
+    return n ? '<button type="button" class="ln edit" data-edit="' + it.id + '" aria-label="Editar ' + esc(nameOf(it)) + '">' + esc(n) + "</button>" : "";
+  }
+  function editorHTML(it) {
+    var nm = esc(nameOf(it));
+    return '<div class="led" data-ed="' + it.id + '"><input class="nmi" type="text" enterkeyhint="done" value="' + nm + '" placeholder="Nombre del artículo" aria-label="Nombre del artículo">' +
+      '<div class="led-top"><label>Uds.<input class="q" type="text" maxlength="12" enterkeyhint="done" value="' + esc(qtyOf(it)) + '" aria-label="Unidades de ' + nm + '"></label>' +
+      '<button type="button" class="ok" data-ok="1">Listo</button></div>' +
+      '<textarea class="n" rows="1" enterkeyhint="done" placeholder="Nota" aria-label="Nota de ' + nm + '">' + esc(noteOf(it)) + "</textarea></div>";
+  }
+  function rowHTML(it) {
+    var s = stOf(it), pkd = !!S.lpack[it.id], q = qtyOf(it), nm = esc(nameOf(it) || "Nuevo artículo");
+    return '<li class="lwrap"><div class="lrow' + (pkd ? " packed" : "") + '"><label class="pk"><input type="checkbox" data-pack="' + it.id + '"' + (pkd ? " checked" : "") + ' aria-label="En la mochila: ' + nm + '"></label>' +
+      '<button type="button" class="nm" data-edit="' + it.id + '" aria-label="Editar ' + nm + '">' + nm + (q ? '<span class="qty">×' + esc(q) + "</span>" : "") + "</button>" +
+      '<select class="st" data-st="' + it.id + '" data-v="' + s + '" aria-label="Estado de ' + nm + '">' +
+      STATES.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === s ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select>" +
+      (editingId === it.id ? editorHTML(it) : noteHTML(it)) +
+      (it.extra ? '<span class="ln x">' + esc(it.extra) + "</span>" : "") +
+      '</div><button type="button" class="sdel" data-del="' + it.id + '" tabindex="-1" aria-label="Eliminar ' + nm + '">Eliminar</button></li>';
+  }
+  function autosize(ta) { ta.style.height = "auto"; ta.style.height = ta.scrollHeight + "px"; }
+  function commitEdit(ed, cancel) {
+    if (ed._done) return;
+    ed._done = true;
+    var id = ed.getAttribute("data-ed"), it = itemById(id), gone = false;
+    if (it) {
+      if (!cancel) {
+        var nn = ed.querySelector("input.nmi").value.trim(), qv = ed.querySelector("input.q").value.trim(), nv = ed.querySelector("textarea.n").value.trim();
+        if (nn && nn !== (it.name || "")) S.lnames[id] = nn; else if (nn) delete S.lnames[id];
+        if (qv === (it.qty || "")) delete S.lqty[id]; else S.lqty[id] = qv;
+        if (nv === (it.note || "")) delete S.lnotes[id]; else S.lnotes[id] = nv;
+      }
+      if (!nameOf(it)) gone = true;
+      if (gone && it.custom) { S.custom = S.custom.filter(function (x) { return x.id !== id; }); delete S.lnames[id]; delete S.lqty[id]; delete S.lnotes[id]; }
+      save();
+    }
+    editingId = null;
+    if (!it) return;
+    if (gone) { renderAll(true); return; }
+    var wrap = ed.closest(".lwrap"), h = document.createElement("ul");
+    h.innerHTML = rowHTML(it);
+    wrap.replaceWith(h.firstChild);
+  }
+  function allItems() { return LOG.concat(S.custom).filter(function (it) { return !S.removed[it.id]; }); }
+  function itemById(id) { return LOG.concat(S.custom).filter(function (it) { return it.id === id; })[0]; }
+  function stOf(it) { return S.lstate[it.id] || it.state; }
+  function lStats() {
+    var all = allItems(), g = 0, c = 0, p = 0;
+    all.forEach(function (it) { var s = stOf(it); if (GET[s]) g++; else if (CHECK[s]) c++; if (S.lpack[it.id]) p++; });
+    return { total: all.length, get: g, check: c, packed: p };
+  }
+  function passes(it) {
+    var s = stOf(it), f = S.lfilter;
+    if (f === "conseguir") return !!GET[s];
+    if (f === "revisar") return !!CHECK[s];
+    if (f === "tengo") return s === "tengo" || s === "rose";
+    if (f === "mochila") return !!S.lpack[it.id];
+    return true;
+  }
+  function viewLog() {
+    var st = lStats(), pct = st.total ? Math.round(st.packed / st.total * 100) : 0;
+    var html = '<div class="page-head"><span class="lbl">Logística del trek</span><h1 style="font-size:clamp(32px,9vw,42px)">Qué llevar</h1><span class="hand">una marca para la mochila, un estado para cada cosa</span></div>';
+    html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Mochila" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + '%"></i></div><b>' + st.packed + " de " + st.total + "</b></div>";
+    html += '<div class="tally"><div><b>' + st.get + "</b><span>por conseguir</span></div><div><b>" + st.check + "</b><span>por revisar</span></div><div><b>" + st.packed + "</b><span>en la mochila</span></div></div>";
+    var F = [["todo", "Todo"], ["conseguir", "Por conseguir"], ["revisar", "Por revisar"], ["tengo", "Tengo"], ["mochila", "En la mochila"]];
+    html += '<div class="pills">' + F.map(function (f) { return '<button type="button" class="pill" data-filter="' + f[0] + '" aria-pressed="' + (S.lfilter === f[0]) + '">' + f[1] + "</button>"; }).join("") + "</div>";
+    html += '<p class="figcap">Desliza una fila hacia la izquierda para eliminarla.</p>';
+    if (WHO === "rose") html += '<p class="figcap">Lista de partida: la misma que la de Alejandro, sin lo de la cámara. Todo en «revisar» para que lo ajustes tú: cambia cantidades, quita y añade.</p>';
+    var cats = [];
+    allItems().forEach(function (it) { if (cats.indexOf(it.cat) < 0) cats.push(it.cat); });
+    var shown = 0;
+    cats.forEach(function (cat) {
+      var rows = allItems().filter(function (it) { return it.cat === cat; });
+      var vis = rows.filter(passes);
+      if (!vis.length) return;
+      shown += vis.length;
+      var pk = rows.filter(function (it) { return S.lpack[it.id]; }).length;
+      html += '<section class="cat"><h3>' + esc(cat) + "<small>" + pk + "/" + rows.length + "</small></h3><ul>";
+      vis.forEach(function (it) { html += rowHTML(it); });
+      html += '</ul><button type="button" class="pe-plus" data-ladd="' + esc(cat) + '" aria-label="Añadir a ' + esc(cat) + '" title="Añadir">+</button></section>';
+    });
+    if (!shown) html += '<p class="empty">Nada en este filtro.</p>';
+    var nrem = Object.keys(S.removed).filter(function (k) { return itemById(k); }).length;
+    if (nrem) html += '<p style="margin-top:14px"><button type="button" class="reset" data-restore="1">Restaurar eliminados (' + nrem + ")</button></p>";
+    return html;
+  }
+
+  /* ---------- Trek ---------- */
+  var MAN = [
+    ["2", "Katmandú → Maccha Khola", "Jeep privado · 8–10 h · ~160 km", ""],
+    ["3", "Maccha Khola → Jagat", "6–7 h · ~22 km", ""],
+    ["4", "Jagat → Deng", "6–7 h · ~20 km", ""],
+    ["5", "Deng → Namrung", "6–7 h · ~19 km", ""],
+    ["6", "Namrung → Sama Gaon, y paseo al lago Birendra", "6–7 h + 1–2 h · ~21 km", ""],
+    ["7", "Sama Gaon → campo base del Manaslu y vuelta", "7–9 h · ~16–18 km · paseo de aclimatación por la tarde", ""],
+    ["8", "Sama Gaon → Dharmasala", "4–5 h · ~11 km", ""],
+    ["9", "Paso Larkya La (5.106 m) → Bimthang", "8–9 h · ~24 km", "peak"],
+    ["10", "Bimthang → Dharapani", "7–8 h · ~25 km", ""],
+    ["11", "Dharapani → Katmandú", "Jeep privado · 9–11 h · ~210 km", ""]
+  ];
+  var ANN = [
+    ["2", "Katmandú → Dharapani", "Jeep privado · 8,5 h · ~230 km · 1.860 m", ""],
+    ["3", "Dharapani → Chame", "5–6 h · 15–16 km · 2.670 m", ""],
+    ["4", "Chame → Upper Pisang", "5–6 h · 14–15 km · 3.300 m", ""],
+    ["5", "Upper Pisang → Manang por la ruta alta (Ghyaru y Ngawal)", "6–7 h · 17–20 km · 3.540 m", ""],
+    ["6", "Aclimatación en Manang", "Paseo opcional hacia Ice Lake · 4–9 h · 8–12 km · 3.540 m", ""],
+    ["7", "Manang → Yak Kharka", "3–4 h · 9–10 km · 4.020 m", ""],
+    ["8", "Yak Kharka → Thorong Phedi", "4–5 h · 7–9 km · 4.450 m", ""],
+    ["9", "Thorong Phedi → paso Thorong La (5.416 m) → Muktinath", "8–10+ h · 15–16 km · duermes a 3.760 m", "peak"],
+    ["10", "Muktinath → Pokhara por Tatopani", "Jeep privado · 7–10 h · 180–200 km · hotel Splendid View o similar", ""],
+    ["11", "Pokhara → Katmandú", "Bus turístico · 6–8+ h · 200–210 km · día del Tihar (Bhai Tika)", ""]
+  ];
+
+  /* Altitud de cada noche (m). x = una etapa por tramo. Annapurna: del documento de la agencia. Manaslu: guías públicas (la agencia no las da); varían 100–200 m según la fuente. */
+  function fmtm(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "."); }
+  var PROF = {
+    manaslu: {
+      label: "Manaslu", pts: [[0, 1400, "s", "KTM"], [1, 900, "s", "2"], [2, 1410, "s", "3"], [3, 1860, "s", "4"], [4, 2660, "s", "5"], [5, 3530, "s", "6"], [6, 3530, "s", "7"], [7, 4480, "s", "8"], [7.5, 5106, "p", "Larkya La 5.106"], [8, 3790, "s", "9"], [9, 1860, "s", "10"], [10, 1400, "s", "11"]],
+      exc: [[5, 3530], [5.5, 4800], [6, 3530]], excLabel: "Campo base 4.800"
+    },
+    annapurna: {
+      label: "Annapurna", pts: [[0, 1400, "s", "KTM"], [1, 1860, "s", "2"], [2, 2670, "s", "3"], [3, 3300, "s", "4"], [4, 3540, "s", "5"], [5, 3540, "s", "6"], [6, 4020, "s", "7"], [7, 4450, "s", "8"], [7.5, 5416, "p", "Thorong La 5.416"], [8, 3760, "s", "9"], [9, 822, "s", "10"], [10, 1400, "s", "11"]],
+      exc: null
+    }
+  };
+  function sleeps(key) { return PROF[key].pts.filter(function (p) { return p[2] === "s"; }); }
+  function profSVG(key) {
+    var P = PROF[key], W = 360, H = 196, L = 36, R = 10, T = 22, B = 26, ymax = 5500;
+    function X(x) { return L + (W - L - R) * x / 10; }
+    function Y(y) { return T + (H - T - B) * (1 - y / ymax); }
+    function pt(p) { return X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }
+    var s = '<svg class="prof" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Perfil de altitud del ' + P.label + ': noche a noche">';
+    [1000, 2000, 3000, 4000, 5000].forEach(function (v) {
+      var y = Y(v).toFixed(1);
+      s += '<line class="' + (v === 3000 ? "p-g3" : "p-grid") + '" x1="' + L + '" x2="' + (W - R) + '" y1="' + y + '" y2="' + y + '"/><text x="' + (L - 5) + '" y="' + (+y + 3.5) + '" text-anchor="end">' + fmtm(v) + "</text>";
+    });
+    var line = P.pts.map(pt);
+    s += '<path class="p-area" d="M' + line.join(" L") + " L" + X(10).toFixed(1) + " " + Y(0).toFixed(1) + " L" + X(0).toFixed(1) + " " + Y(0).toFixed(1) + ' Z"/>';
+    if (P.exc) s += '<path class="p-exc" d="M' + P.exc.map(function (p) { return X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(" L") + '"/>' +
+      '<text class="p-pk" x="' + X(P.exc[1][0]).toFixed(1) + '" y="' + (Y(P.exc[1][1]) - 6).toFixed(1) + '" text-anchor="middle">' + P.excLabel + "</text>";
+    s += '<path class="p-line" d="M' + line.join(" L") + '"/>';
+    var prev = null;
+    P.pts.forEach(function (p) {
+      var x = X(p[0]).toFixed(1), y = Y(p[1]).toFixed(1);
+      if (p[2] === "p") {
+        s += '<circle class="p-peak" cx="' + x + '" cy="' + y + '" r="3"/><text class="p-pk" x="' + x + '" y="' + (Y(p[1]) - 7).toFixed(1) + '" text-anchor="middle">' + p[3] + "</text>";
+      } else {
+        s += '<circle class="p-dot" cx="' + x + '" cy="' + y + '" r="2.6"/>';
+        if (p[1] >= 3000 && !(prev && prev[1] === p[1])) s += '<text class="p-alt" x="' + x + '" y="' + (Y(p[1]) + 14).toFixed(1) + '" text-anchor="middle">' + fmtm(p[1]) + "</text>";
+        s += '<text class="p-ax" x="' + x + '" y="' + (H - 8) + '" text-anchor="middle">' + p[3] + "</text>";
+        prev = p;
+      }
+    });
+    return s + "</svg>";
+  }
+  function overlaySVG() {
+    var M = PROF.manaslu, A = PROF.annapurna, W = 360, H = 206, L = 36, R = 10, T = 24, B = 26, ymax = 5500;
+    function X(x) { return L + (W - L - R) * x / 10; }
+    function Y(y) { return T + (H - T - B) * (1 - y / ymax); }
+    function f(n) { return n.toFixed(1); }
+    function path(P) { return "M" + P.pts.map(function (p) { return f(X(p[0])) + " " + f(Y(p[1])); }).join(" L"); }
+    var s = '<svg class="prof" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="Perfil de altitud del Manaslu y del Annapurna superpuestos">';
+    [1000, 2000, 3000, 4000, 5000].forEach(function (v) {
+      var y = f(Y(v));
+      s += '<line class="' + (v === 3000 ? "p-g3" : "p-grid") + '" x1="' + L + '" x2="' + (W - R) + '" y1="' + y + '" y2="' + y + '"/><text x="' + (L - 5) + '" y="' + (+y + 3.5) + '" text-anchor="end">' + fmtm(v) + "</text>";
+    });
+    [[M, "o-man"], [A, "o-ann"]].forEach(function (o) {
+      var P = o[0], c = o[1];
+      s += '<path class="o-area ' + c + '" d="' + path(P) + " L" + f(X(10)) + " " + f(Y(0)) + " L" + f(X(0)) + " " + f(Y(0)) + ' Z"/>';
+    });
+    s += '<path class="o-exc" d="M' + M.exc.map(function (p) { return f(X(p[0])) + " " + f(Y(p[1])); }).join(" L") + '"/>';
+    [[M, "o-man"], [A, "o-ann"]].forEach(function (o) {
+      var P = o[0], c = o[1];
+      s += '<path class="o-line ' + c + '" d="' + path(P) + '"/>';
+      P.pts.forEach(function (p) {
+        s += '<circle class="o-dot ' + c + '" cx="' + f(X(p[0])) + '" cy="' + f(Y(p[1])) + '" r="' + (p[2] === "p" ? 3 : 2.3) + '"' + (p[2] === "p" ? ' style="fill:currentColor"' : "") + "/>";
+      });
+    });
+    s += '<text class="o-pk o-ann" x="' + f(X(7.5)) + '" y="' + f(Y(5416) - 7) + '" text-anchor="middle">Thorong La 5.416</text>';
+    s += '<text class="o-pk o-man" x="' + f(X(7.5) - 14) + '" y="' + f(Y(5106) + 4) + '" text-anchor="end">Larkya La 5.106</text>';
+    M.pts.forEach(function (p) {
+      if (p[2] === "s") s += '<text class="p-ax" x="' + f(X(p[0])) + '" y="' + (H - 8) + '" text-anchor="middle">' + p[3] + "</text>";
+    });
+    return s + "</svg>";
+  }
+  function overlayBlock() {
+    function hi(k) { return Math.max.apply(null, sleeps(k).map(function (p) { return p[1]; })); }
+    return '<div class="profile"><div class="legend"><span class="o-man"><i></i>Manaslu<small>noche más alta ' + fmtm(hi("manaslu")) + ' m</small></span><span class="o-ann"><i></i>Annapurna<small>noche más alta ' + fmtm(hi("annapurna")) + " m</small></span></div>" + overlaySVG() + "</div>";
+  }
+  function profBlock(key, withTitle) {
+    var P = PROF[key], hi = Math.max.apply(null, sleeps(key).map(function (p) { return p[1]; }));
+    return '<div class="profile">' + (withTitle ? "<h3>" + P.label + "<small>noche más alta: " + fmtm(hi) + " m</small></h3>" : "") + profSVG(key) + "</div>";
+  }
+  var PROF_CAP = '<p class="figcap">Altitud de cada noche, en metros. Los números de abajo son los días de noviembre (KTM es la salida). El eje horizontal es una etapa por tramo, no a escala. La línea discontinua marca 3.000 m.</p>';
+  var PROF_SRC = '<p class="figcap">Annapurna: altitudes del documento de la agencia. Manaslu: la agencia no las da; salen de guías públicas (<a href="https://followalice.com/adventure-trips/manaslu-circuit/posts/manaslu-circuit-trek-route-a-detailed-day-by-day-itinerary">Follow Alice</a>, <a href="https://heavenhimalaya.com/samagaun-in-manaslu/">Heaven Himalaya</a>) y varían entre 100 y 200 m según la fuente. Katmandú, 1.400 m.</p>';
+
+  function daysHTML(list, key) {
+    var sl = key ? sleeps(key) : null;
+    return '<ul class="days">' + list.map(function (d, i) {
+      var alt = "";
+      if (sl) {
+        var a = sl[i + 1][1], dl = a - sl[i][1];
+        var up = dl > 500 && a > 3000;
+        alt = '<p class="alt' + (up ? " up" : "") + '">Duermes a ' + fmtm(a) + " m · " + (dl === 0 ? "mismo nivel" : (dl > 0 ? "+" : "−") + fmtm(Math.abs(dl)) + " m") + (up ? " · subida fuerte" : "") + "</p>";
+      }
+      return '<li class="day' + (d[3] ? " peak" : "") + '"><div class="dt"><b>' + d[0] + "</b><span>nov</span></div><div><h4>" + esc(d[1]) + (d[3] ? '<span class="flag">el día grande</span>' : "") + "</h4><p>" + esc(d[2]) + "</p>" + alt + "</div></li>";
+    }).join("") + "</ul>";
+  }
+  function listHTML(arr) { return "<ul>" + arr.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul>"; }
+  var MAN_IN = ["Guía de habla inglesa y 1 porteador para 2 personas", "Alojamiento en teahouses con baño compartido", "Desayuno, comida y cena durante el trek", "Permisos: ACAP, Manaslu, especial del Manaslu, Chumnubri y TIMS", "Seguro del guía y del porteador", "Jeep privado Katmandú–Maccha Khola y Dharapani–Katmandú (ver nota de precio)"];
+  var MAN_OUT = ["Saco de −15 °C, plumas, botas, toalla, frontal, guantes, bastones, ropa de abrigo, gafas y crema", "Botiquín: dolor de cabeza, fiebre, vendas, estómago, diarrea, Diamox", "Seguro personal y rescate de emergencia", "Comidas y alojamiento en Katmandú", "Recogida y traslado al aeropuerto", "Té, café, chocolate caliente, sopa y demás bebidas", "Dulces, ducha caliente, lavandería e internet", "Propinas para guía y porteador"];
+  var ANN_IN = ["Guía de habla inglesa y 1 porteador para 2 personas (20–22 kg)", "Alojamiento en teahouses con baño compartido", "Desayuno, comida y cena durante el trek", "1 noche en Pokhara (Splendid View o similar) con desayuno", "Permiso ACAP y TIMS", "Seguro del guía y del porteador", "Jeep privado Katmandú–Dharapani y Muktinath–Pokhara; bus turístico Pokhara–Katmandú"];
+  var ANN_OUT = ["Visado (30 USD, según la oferta)", "Alojamiento en Katmandú y recogida o traslado al aeropuerto", "Equipo personal: saco, plumas, botas, guantes, crema, gafas, gorro, bastones", "Seguro personal que cubra rescate en helicóptero y accidentes", "Comidas en Katmandú y Pokhara (3–7 USD por plato)", "Té, café, agua, sopa y demás bebidas; dulces", "Ducha caliente y lavandería durante el trek (2 USD)", "Wifi, llamadas y carga de baterías", "Propinas para guía y porteador"];
+
+  function viewTrek() {
+    var html = '<div class="page-head"><span class="lbl">Trek · salida el 2 de noviembre</span><h1 style="font-size:clamp(32px,9vw,42px)">Manaslu o Annapurna</h1><span class="hand">por las inundaciones, dos planes abiertos</span></div>';
+    html += '<div class="scrap tape" style="--r:-.5deg"><p>Si se puede ir al Manaslu, vais al Manaslu. Si las inundaciones lo impiden, el plan B es el Annapurna. Los dos salen de Katmandú el 2 de noviembre y vuelven el 11.</p></div>';
+    html += '<div class="choice"><span class="lbl">Cuál va ganando</span>';
+    [["", "Sin decidir", "Esperando a ver cómo está la zona del Manaslu."], ["manaslu", "Manaslu Circuit", "Plan A. Paso Larkya La, 5.106 m."], ["annapurna", "Annapurna Circuit", "Plan B. Paso Thorong La, 5.416 m."]].forEach(function (o, i) {
+      html += '<button type="button" class="pick" style="--r:' + (i === 1 ? "-.5deg" : i === 2 ? ".5deg" : "0deg") + '" data-trek="' + o[0] + '" aria-pressed="' + (curTrek() === o[0]) + '"><span><strong>' + o[1] + "</strong><small>" + o[2] + '</small></span><span class="st">' + (curTrek() === o[0] ? "elegido" : "") + "</span></button>";
+    });
+    html += "</div>";
+    if (!curTrek()) {
+      html += '<h2 class="sec">Perfil de altitud</h2>' + overlayBlock() + PROF_CAP.replace("La línea discontinua marca 3.000 m.", "La línea discontinua azul claro marca 3.000 m; la discontinua del Manaslu es la excursión al campo base.") + PROF_SRC;
+      html += '<div class="tablewrap"><table class="cmp"><thead><tr><th></th><th>Manaslu</th><th>Annapurna</th></tr></thead><tbody>' +
+        row("Salida", "Katmandú, 2 nov", "Katmandú, 2 nov") +
+        row("Vuelta a Katmandú", "11 nov, jeep desde Dharapani", "11 nov, bus desde Pokhara") +
+        row("Punto de partida", "Maccha Khola, jeep de 8–10 h", "Dharapani, jeep de 8,5 h") +
+        row("Paso más alto", "Larkya La, 5.106 m (9 nov)", "Thorong La, 5.416 m (9 nov)") +
+        row("Noche más alta", "Dharmasala, 4.480 m (8 nov)", "Thorong Phedi, 4.450 m (8 nov)") +
+        row("Noches sobre 3.000 m", "4", "6") +
+        row("Mayor subida de dormida sobre 3.000 m", "+950 m (Dharmasala)", "+630 m (Upper Pisang)") +
+        row("Aclimatación", "Sama Gaon, 7 nov (campo base)", "Manang, 6 nov") +
+        row("Precio por persona", "790 USD", "820 USD") +
+        row("Total para dos", "1.580 USD, o 1.980 USD con jeep privado", "1.640 USD") +
+        row("Adelanto", "200 USD", "200 USD") +
+        row("Saldo", "1.780 USD (con jeep)", "1.440 USD") +
+        row("Permisos", "ACAP, Manaslu, especial, Chumnubri, TIMS", "ACAP y TIMS") +
+        row("Extra", "Se puede alargar a 11 días por 60 USD por persona", "1 noche de hotel en Pokhara incluida; se puede alargar una más") +
+        "</tbody></table></div>";
+      html += '<div class="scrap tape c" style="--r:.5deg"><h3>Dos cosas a confirmar</h3><p>El presupuesto del Manaslu da el jeep privado como incluido y también como mejora de 200 USD por tramo. El total de 1.980 USD suma esos 400. Pregunta cuál es el precio real.</p><p>El 11 de noviembre es el Bhai Tika del Tihar y puede complicar el bus de Pokhara a Katmandú en el Annapurna.</p></div>';
+      html += '<div class="scrap tape" style="--r:.4deg"><h3>Ritmo de subida</h3><p>Una pauta habitual en montaña: por encima de 3.000 m, no subir más de unos 500 m de altitud de dormida al día y descansar un día cada 3 o 4. En el Manaslu hay dos días con +870 y +950 m (Sama Gaon y Dharmasala), justo antes del paso. En el Annapurna la mayor es +630 m. Los dos tienen un día de aclimatación (Sama Gaon y Manang).</p><p>No es consejo médico. Si pides la receta de Diamox, coméntalo con tu médico.</p></div>';
+      html += '<div class="scrap tape g" style="--r:-.4deg"><h3>Gastos aparte</h3><p>Ninguna de las dos ofertas incluye propinas, bebidas, duchas calientes, lavandería ni carga de baterías. Cuéntalo cuando decidas cuánto efectivo llevar.</p></div>';
+    } else {
+      var man = curTrek() === "manaslu";
+      html += '<div class="scrap tape c" style="--r:-.3deg"><h3>Hotel en Katmandú</h3><p>Hotel Bhrikuti Tara, 3.500 rupias la noche. Es el mismo antes y después del trek. La maleta se queda allí y al trek se va solo con la mochila.</p></div>';
+      html += '<h2 class="sec">' + (man ? "Manaslu Circuit, 10 días" : "Annapurna Circuit, 10 días") + "</h2>" + profBlock(man ? "manaslu" : "annapurna", false) + PROF_CAP + daysHTML(man ? MAN : ANN, man ? "manaslu" : "annapurna") + PROF_SRC;
+      if (!man) html += '<div class="scrap tape c" style="--r:.4deg"><h3>Pokhara al final</h3><p>La oferta incluye 1 noche en un hotel de Pokhara, la del día en que se baja en jeep desde Muktinath. Hay dos opciones: quedarse otra noche en Pokhara o volver a Katmandú al día siguiente, como marca el programa. El vuelo de vuelta sale de Katmandú el 14 de noviembre, así que hay margen para las dos.</p></div>';
+      if (man) html += '<div class="scrap tape" style="--r:-.5deg"><p>Es un itinerario ajustado y pide buen ritmo. Si hace falta, se puede alargar a 11 días por 60 USD por persona.</p></div>';
+      html += '<details><summary>Qué incluye</summary>' + listHTML(man ? MAN_IN : ANN_IN) + "</details>";
+      html += '<details><summary>Qué no incluye</summary>' + listHTML(man ? MAN_OUT : ANN_OUT) + "</details>";
+    }
+    return html;
+  }
+  function row(a, b, c) { return "<tr><th>" + a + "</th><td>" + b + "</td><td>" + c + "</td></tr>"; }
+
+  /* ---------- Lugares ---------- */
+  var MAPREG = {
+    todo: { label: "Todo", b: [83.5, 85.5, 27.55, 28.95], g: 0.5 },
+    ktm: { label: "Katmandú", b: [85.27, 85.455, 27.655, 27.755], g: 0.05 },
+    manaslu: { label: "Manaslu", b: [84.33, 85.0, 28.1, 28.68], g: 0.2 },
+    annapurna: { label: "Annapurna", b: [83.55, 84.42, 28.17, 28.9], g: 0.2 }
+  };
+  var MAPCOL = { ktm: "var(--warm)", manaslu: "var(--accent)", annapurna: "var(--c-ann)" };
+  var KTM_LL = [27.7172, 85.324];
+  function altOf(key, day) { var sl = sleeps(key); return sl[day - 1] ? sl[day - 1][1] : null; }
+  var PL_KTM = [
+    { id: "k-air", n: "Aeropuerto de Katmandú", s: "Aeropuerto", ll: [27.6966, 85.3591], a: "r", d: "29 oct · 31 oct · 14 nov", t: "Alejandro aterriza el 29 de octubre a las 11:20; Rose llega el 31. El vuelo de vuelta sale el 14 de noviembre." },
+    { id: "k-hotel", n: "Hotel Bhrikuti Tara", s: "Hotel", ll: [27.73, 85.371], a: "r", d: "29 oct – 14 nov", t: "3.500 rupias la noche. La maleta se queda aquí del 2 al 11 de noviembre, y se vuelve a este hotel después. Posición orientativa: la ficha del hotel lo sitúa junto a Boudhanath." },
+    { id: "k-boudha", n: "La stupa (Boudhanath)", s: "Stupa", ll: [27.7215, 85.362], a: "l", d: "29 y 30 oct", t: "Vueltas a la stupa al atardecer del 29 y cena en un rooftop con vistas. El 30, desayuno en un café cercano (Utpala)." },
+    { id: "k-swayam", n: "Templo de los monos (Swayambhunath)", s: "Swayambhunath", ll: [27.7149, 85.2906], a: "r", d: "vie 30 oct", t: "Stupa en lo alto de una colina, con vistas al valle. Se va en moto el viernes por la mañana; si no, pasa al sábado." },
+    { id: "k-kopan", n: "Monasterio de Kopan", s: "Kopan", ll: [27.7396, 85.3627], a: "r", d: "vie 30 oct", t: "Monasterio en una colina, al norte de la stupa. Se va en moto; lo que dejes sin marcar el viernes pasa a la mañana del sábado." },
+    { id: "k-pashu", n: "Pashupatinath", s: "Pashupatinath", ll: [27.7109, 85.3488], a: "b", d: "vie 30 oct, sobre las 18:00", t: "Las cremaciones se hacen junto al río y el ciclo continúa. El sol se pone alrededor de las 17:20; sé discreto con la cámara." },
+    { id: "k-bhak", n: "Bhaktapur", s: "Bhaktapur", ll: [27.6721, 85.4298], a: "l", d: "sáb 31 oct", t: "Una de las tres ciudades del valle de Katmandú, la más antigua y bonita, para ver calles tradicionales. Basta con volver para las 18:00." },
+    { id: "k-patan", n: "Patan", s: "Patan", ll: [27.6727, 85.325], a: "r", d: "12 nov, opcional", t: "Sugerido para el día libre del 12 de noviembre, junto con Boudhanath y Pashupatinath." }
+  ];
+  var PL_MAN = [
+    { id: "m-mach", n: "Maccha Khola", ll: [28.2056, 84.8806], a: "l", at: "r", lab: "2", d: "2 nov", alt: altOf("manaslu", 2), t: "Llegada en jeep privado desde Katmandú (8–10 h, ~160 km). Primera noche del trek." },
+    { id: "m-jagat", n: "Jagat", ll: [28.27, 84.88], a: "l", lab: "3", d: "3 nov", alt: altOf("manaslu", 3), t: "6–7 h caminando, ~22 km desde Maccha Khola." },
+    { id: "m-deng", n: "Deng", ll: [28.36, 84.865], a: "l", lab: "4", d: "4 nov", alt: altOf("manaslu", 4), t: "6–7 h, ~20 km desde Jagat." },
+    { id: "m-nam", n: "Namrung", ll: [28.56, 84.86], a: "r", lab: "5", d: "5 nov", alt: altOf("manaslu", 5), t: "6–7 h, ~19 km desde Deng." },
+    { id: "m-sama", n: "Sama Gaon", ll: [28.59, 84.84], a: "r", lab: "6–7", d: "6 y 7 nov", alt: altOf("manaslu", 6), t: "Dos noches para aclimatar. El día 6 hay paseo al lago Birendra; el 7, al campo base del Manaslu y vuelta." },
+    { id: "m-base", n: "Campo base del Manaslu", s: "Campo base", ll: [28.55, 84.78], a: "b", k: "exc", d: "7 nov, excursión", alt: 4800, t: "Ida y vuelta desde Sama Gaon: 7–9 h, ~16–18 km. Es el paseo de aclimatación del día 7." },
+    { id: "m-dharm", n: "Dharmasala", ll: [28.6, 84.75], a: "t", lab: "8", d: "8 nov", alt: altOf("manaslu", 8), t: "4–5 h, ~11 km desde Sama Gaon. Es la noche previa al paso." },
+    { id: "m-larkya", n: "Paso Larkya La", s: "Larkya La", ll: [28.56, 84.7], a: "l", k: "pass", d: "9 nov", alt: 5106, t: "El día grande: 8–9 h y ~24 km, del paso a Bimthang." },
+    { id: "m-bim", n: "Bimthang", ll: [28.5, 84.62], a: "l", lab: "9", d: "9 nov", alt: altOf("manaslu", 9), t: "Duermes aquí tras cruzar el Larkya La." },
+    { id: "m-dhara", n: "Dharapani", ll: [28.5008, 84.35], a: "r", lab: "10", d: "10 nov", alt: altOf("manaslu", 10), skipTodo: true, t: "7–8 h, ~25 km desde Bimthang. El 11 de noviembre, jeep privado a Katmandú (9–11 h, ~210 km). También es el punto de partida del Annapurna." }
+  ];
+  var PL_ANN = [
+    { id: "a-dhara", n: "Dharapani", ll: [28.5008, 84.35], a: "l", at: "t", lab: "2", d: "2 nov", alt: altOf("annapurna", 2), t: "Jeep privado desde Katmandú (8,5 h, ~230 km). Primera noche del trek; es también el final del Manaslu." },
+    { id: "a-chame", n: "Chame", ll: [28.5486, 84.2381], a: "l", lab: "3", d: "3 nov", alt: altOf("annapurna", 3), t: "5–6 h, 15–16 km desde Dharapani." },
+    { id: "a-pisang", n: "Upper Pisang", ll: [28.6, 84.1], a: "l", lab: "4", d: "4 nov", alt: altOf("annapurna", 4), t: "5–6 h, 14–15 km desde Chame." },
+    { id: "a-manang", n: "Manang", ll: [28.6667, 84.0167], a: "l", lab: "5–6", d: "5 y 6 nov", alt: altOf("annapurna", 5), t: "Se llega el 5 por la ruta alta (Ghyaru y Ngawal). El 6 es de aclimatación, con paseo opcional hacia Ice Lake." },
+    { id: "a-yak", n: "Yak Kharka", ll: [28.71, 83.965], a: "l", lab: "7", d: "7 nov", alt: altOf("annapurna", 7), t: "3–4 h, 9–10 km desde Manang." },
+    { id: "a-phedi", n: "Thorong Phedi", ll: [28.775, 83.955], a: "l", lab: "8", d: "8 nov", alt: altOf("annapurna", 8), t: "4–5 h, 7–9 km desde Yak Kharka. Es la noche previa al paso." },
+    { id: "a-thorong", n: "Paso Thorong La", s: "Thorong La", ll: [28.795, 83.935], a: "u", k: "pass", d: "9 nov", alt: 5416, t: "El día grande: 8–10+ h y 15–16 km desde Thorong Phedi hasta Muktinath." },
+    { id: "a-mukti", n: "Muktinath", ll: [28.8167, 83.8714], a: "l", at: "l", lab: "9", d: "9 nov", alt: altOf("annapurna", 9), t: "Duermes aquí tras cruzar el Thorong La." },
+    { id: "a-tato", n: "Tatopani", ll: [28.4936, 83.6469], a: "r", k: "via", d: "10 nov, de paso", t: "El jeep privado de Muktinath a Pokhara pasa por aquí (7–10 h, 180–200 km)." },
+    { id: "a-pokhara", n: "Pokhara", ll: [28.2096, 83.9856], a: "r", at: "r", lab: "10", d: "10 nov", alt: altOf("annapurna", 10), t: "Noche en el hotel Splendid View o similar. El 11, bus turístico a Katmandú (6–8+ h, 200–210 km), día del Tihar (Bhai Tika)." }
+  ];
+  [[PL_KTM, "ktm"], [PL_MAN, "manaslu"], [PL_ANN, "annapurna"]].forEach(function (g) { g[0].forEach(function (p, i) { p.tr = g[1]; if (g[1] === "ktm") p.lab = String(i + 1); }); });
+  var MAP_PEAKS = [
+    { n: "Manaslu", alt: 8163, ll: [28.55, 84.56], regs: ["todo", "manaslu"] },
+    { n: "Annapurna I", alt: 8091, ll: [28.5961, 83.8203], regs: ["todo", "annapurna"] }
+  ];
+  function llOf(id) { var all = PL_KTM.concat(PL_MAN, PL_ANN); for (var i = 0; i < all.length; i++) if (all[i].id === id) return all[i].ll; return null; }
+  var ROUTE_MAN = ["m-mach", "m-jagat", "m-deng", "m-nam", "m-sama", "m-dharm", "m-larkya", "m-bim", "m-dhara"].map(llOf);
+  var ROUTE_ANN = ["a-dhara", "a-chame", "a-pisang", "a-manang", "a-yak", "a-phedi", "a-thorong", "a-mukti"].map(llOf);
+  var ROUTE_ANN_JEEP = [llOf("a-mukti"), [28.78, 83.72], [28.6, 83.64], llOf("a-tato"), [28.34, 83.58], llOf("a-pokhara")];
+  var ROUTE_EXC = [llOf("m-sama"), llOf("m-base")];
+  var ROAD_DHARA = [KTM_LL, [27.73, 85.15], [27.85, 84.56], [27.93, 84.43], [28.23, 84.38], llOf("a-dhara")];
+  var ROAD_MACH = [KTM_LL, [27.73, 85.15], [27.86, 84.9], [28.0, 84.82], llOf("m-mach")];
+  var ROAD_POK = [llOf("a-pokhara"), [27.98, 84.28], [27.85, 84.56], [27.73, 85.15], KTM_LL];
+  var mapReg = "todo", mapSel = null;
+  function mapPlaces(reg) { return reg === "ktm" ? PL_KTM : reg === "manaslu" ? PL_MAN : reg === "annapurna" ? PL_ANN : PL_KTM.concat(PL_MAN, PL_ANN); }
+  function placeById(id) { var all = PL_KTM.concat(PL_MAN, PL_ANN); for (var i = 0; i < all.length; i++) if (all[i].id === id) return all[i]; return null; }
+  function coordTxt(v) { return (Math.round(v * 100) / 100).toString().replace(".", ","); }
+  function mapSVG() {
+    var R = MAPREG[mapReg], b = R.b, W = 360, todo = mapReg === "todo";
+    var H = Math.round(W * (b[3] - b[2]) / ((b[1] - b[0]) * Math.cos((b[2] + b[3]) / 2 * Math.PI / 180)));
+    function X(p) { return (p[1] - b[0]) / (b[1] - b[0]) * W; }
+    function Y(p) { return (b[3] - p[0]) / (b[3] - b[2]) * H; }
+    function f(n) { return n.toFixed(1); }
+    function pts(arr) { return arr.map(function (p) { return f(X(p)) + " " + f(Y(p)); }).join(" L"); }
+    function path(arr, cls) { return '<path class="' + cls + '" d="M' + pts(arr) + '"/>'; }
+    var s = '<svg class="map" viewBox="0 0 ' + W + " " + H + '" role="group" aria-label="Mapa de los lugares del viaje">', i, v;
+    for (i = Math.ceil(b[2] / R.g - 1e-9); i * R.g < b[3]; i++) {
+      v = Math.round(i * R.g * 1000) / 1000;
+      var y = f(Y([v, 0]));
+      s += '<line class="mp-g" x1="0" x2="' + W + '" y1="' + y + '" y2="' + y + '"/><text class="mp-gl" x="3" y="' + (+y - 2.5).toFixed(1) + '">' + coordTxt(v) + "°N</text>";
+    }
+    for (i = Math.ceil(b[0] / R.g - 1e-9); i * R.g < b[1]; i++) {
+      v = Math.round(i * R.g * 1000) / 1000;
+      var x = f(X([0, v]));
+      s += '<line class="mp-g" y1="0" y2="' + H + '" x1="' + x + '" x2="' + x + '"/><text class="mp-gl" x="' + (+x + 3).toFixed(1) + '" y="' + (H - 3) + '">' + coordTxt(v) + "°E</text>";
+    }
+    if (todo) s += path(ROAD_DHARA, "mp-rj") + path(ROAD_MACH, "mp-rj") + path(ROAD_POK, "mp-rj");
+    if (todo || mapReg === "manaslu") s += path(ROUTE_MAN, "mp-r mp-rm") + path(ROUTE_EXC, "mp-rx");
+    if (todo || mapReg === "annapurna") s += path(ROUTE_ANN, "mp-r mp-ra") + path(ROUTE_ANN_JEEP, "mp-rj mp-raj");
+    MAP_PEAKS.forEach(function (pk) {
+      if (pk.regs.indexOf(mapReg) < 0) return;
+      var x = X(pk.ll), y = Y(pk.ll);
+      s += '<path class="mp-pkm" d="M' + f(x) + " " + f(y - 6) + " L" + f(x + 6) + " " + f(y + 4) + " L" + f(x - 6) + " " + f(y + 4) + ' Z"/><text class="mp-pk" x="' + f(x) + '" y="' + f(y + 17) + '" text-anchor="middle">' + pk.n + (todo ? "" : " " + fmtm(pk.alt) + " m") + "</text>";
+    });
+    var sel = mapSel ? placeById(mapSel) : null, labels = "", ring = "";
+    function rad(p) { return todo ? 3.4 : p.k === "pass" ? 5.5 : (p.k === "via" || p.k === "exc") ? 4.5 : 8.5; }
+    function tag(p, txt, a) {
+      var x = X(p.ll), y = Y(p.ll), r = rad(p), ax = x, ay = y, an = "middle";
+      if (a === "r") { ax = x + r + 4; ay = y + 4; an = "start"; }
+      else if (a === "l") { ax = x - r - 4; ay = y + 4; an = "end"; }
+      else if (a === "t") { ay = y - r - 5; }
+      else if (a === "u") { ax = x - 2; ay = y - r - 5; an = "start"; }
+      else { ay = y + r + 13; }
+      return '<text class="mp-t" x="' + f(ax) + '" y="' + f(ay) + '" text-anchor="' + an + '">' + esc(txt) + "</text>";
+    }
+    var marks = "";
+    mapPlaces(mapReg).forEach(function (p) {
+      if (todo && (p.tr === "ktm" || p.skipTodo || p.k === "exc")) return;
+      var x = X(p.ll), y = Y(p.ll), r = rad(p), col = MAPCOL[p.tr];
+      marks += '<g class="mp-pt" data-mpl="' + p.id + '" tabindex="0" role="button" aria-label="' + esc(p.n) + '" transform="translate(' + f(x) + "," + f(y) + ')"><circle class="mp-hit" r="13"/>';
+      if (p.k === "pass") marks += '<path d="M0 -' + r + " L" + r + " 0 L0 " + r + " L-" + r + ' 0 Z" fill="' + col + '" stroke="var(--paper)" stroke-width="1.2"/>';
+      else if (p.k === "via" || p.k === "exc") marks += '<circle r="' + r + '" fill="var(--paper)" stroke="' + col + '" stroke-width="1.8"/>';
+      else marks += '<circle r="' + r + '" fill="' + col + '" stroke="var(--paper)" stroke-width="1.2"/>' + (todo ? "" : '<text class="mp-n"' + (p.lab.length > 2 ? ' style="font-size:7.5px"' : "") + ' y="3.4">' + p.lab + "</text>");
+      marks += "</g>";
+      if (todo) { if (p.at) labels += tag(p, p.n, p.at); }
+      else labels += tag(p, p.k === "pass" ? (p.s || p.n) + " " + fmtm(p.alt) : (p.s || p.n), p.a);
+    });
+    if (todo) {
+      var kn = { ll: KTM_LL, k: "" };
+      marks += '<g class="mp-pt" data-mpl="ktm-node" tabindex="0" role="button" aria-label="Katmandú: ver el valle" transform="translate(' + f(X(KTM_LL)) + "," + f(Y(KTM_LL)) + ')"><circle class="mp-hit" r="13"/><circle r="5" fill="var(--warm)" stroke="var(--paper)" stroke-width="1.2"/></g>';
+      kn.ll = KTM_LL; labels += tag(kn, "Katmandú", "l");
+    }
+    if (sel) {
+      var inNode = todo && sel.tr === "ktm", rp = inNode ? KTM_LL : sel.ll;
+      ring = '<circle class="mp-ring" cx="' + f(X(rp)) + '" cy="' + f(Y(rp)) + '" r="' + ((inNode ? 5 : rad(sel)) + 4.5) + '"/>';
+    }
+    var wkm = (b[1] - b[0]) * 111.32 * Math.cos((b[2] + b[3]) / 2 * Math.PI / 180), kmN = [1, 2, 5, 10, 20, 50, 100], km = 1;
+    kmN.forEach(function (n) { if (n <= wkm * 0.35) km = n; });
+    var sx = W - 14 - km * W / wkm, sy = H - 12, sbar = '<path class="mp-sb" d="M' + f(sx) + " " + f(sy - 4) + " V" + f(sy) + " H" + f(sx + km * W / wkm) + " V" + f(sy - 4) + '"/><text class="mp-sbt" x="' + f(sx + km * W / wkm / 2) + '" y="' + f(sy - 6) + '">' + km + " km</text>";
+    return s + marks + ring + labels + sbar + "</svg>";
+  }
+  function viewLugares() {
+    var html = '<div class="page-head"><span class="lbl">Lugares</span><h1 style="font-size:clamp(32px,9vw,42px)">El mapa del viaje</h1><span class="hand">Katmandú y los dos treks, en un solo sitio</span></div>';
+    html += '<div class="pills" style="margin-top:12px">' + Object.keys(MAPREG).map(function (k) {
+      return '<button type="button" class="pill" data-mreg="' + k + '" aria-pressed="' + (k === mapReg) + '">' + MAPREG[k].label + "</button>";
+    }).join("") + "</div>";
+    html += '<div class="mapbox" id="mapbox">' + mapSVG() + "</div>";
+    var b0 = MAPREG[mapReg].b, wk = (b0[1] - b0[0]) * 111.32 * Math.cos((b0[2] + b0[3]) / 2 * Math.PI / 180), hk = (b0[3] - b0[2]) * 110.57;
+    html += '<p class="figcap" style="margin-top:6px">Recuadro: ' + coordTxt(b0[2]) + "–" + coordTxt(b0[3]) + " °N, " + coordTxt(b0[0]) + "–" + coordTxt(b0[1]) + " °E. Unos " + Math.round(wk) + " × " + Math.round(hk) + " km. Rejilla cada " + String(MAPREG[mapReg].g).replace(".", ",") + "°.</p>";
+    var sel = mapSel ? placeById(mapSel) : null;
+    if (sel) {
+      html += '<div class="scrap mp-card"><h3>' + esc(sel.n) + '</h3><p class="hand" style="margin-top:0">' + esc(sel.d) + (sel.alt ? " · " + fmtm(sel.alt) + " m" : "") + '</p><p class="muted" style="margin-top:2px">' + sel.ll[0].toFixed(4).replace(".", ",") + " °N, " + sel.ll[1].toFixed(4).replace(".", ",") + " °E</p><p style=\"margin-top:6px\">" + esc(sel.t) + "</p></div>";
+    } else {
+      html += '<p class="figcap" style="margin-top:8px">Toca un punto del mapa o un lugar de la lista para ver los detalles.</p>';
+    }
+    html += '<div class="legend" style="margin-top:6px">' +
+      (mapReg === "todo" || mapReg === "manaslu" ? '<span class="o-man"><i></i>Manaslu</span>' : "") +
+      (mapReg === "todo" || mapReg === "annapurna" ? '<span class="o-ann"><i></i>Annapurna</span>' : "") +
+      (mapReg === "todo" || mapReg === "annapurna" ? '<span style="color:var(--muted)"><i style="border-top-style:dashed"></i>jeep o bus</span>' : "") + "</div>";
+    html += '<p class="figcap">Posiciones aproximadas, para orientarse y no para navegar. ' + (mapReg === "ktm" ? "Los números siguen el orden de la lista." : mapReg === "todo" ? "Las líneas discontinuas entre ciudades son carreteras trazadas a ojo." : "El número de cada punto es la noche de noviembre en que duermes allí.") + "</p>";
+    var groups = mapReg === "todo" ? [["Katmandú", PL_KTM], ["Manaslu", PL_MAN], ["Annapurna", PL_ANN]] : [[MAPREG[mapReg].label, mapPlaces(mapReg)]];
+    groups.forEach(function (g) {
+      html += '<h2 class="sec">' + g[0] + "</h2><ul class=\"mp-list\">" + g[1].map(function (p) {
+        var on = mapSel === p.id;
+        return '<li><button type="button" class="mp-row" data-mpl="' + p.id + '" data-fromlist="1" aria-pressed="' + on + '"><span class="mp-b" style="background:' + MAPCOL[p.tr] + '">' + (p.lab || "·") + '</span><span><strong>' + esc(p.n) + "</strong><small>" + esc(p.d) + (p.alt ? " · " + fmtm(p.alt) + " m" : "") + "</small></span></button></li>";
+      }).join("") + "</ul>";
+    });
+    return html;
+  }
+
+
+  /* ---------- Presupuesto (solo Alejandro) ---------- */
+  var bedit = null;
+  var fmtE = new Intl.NumberFormat("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2, useGrouping: true });
+  function eur(n) { return fmtE.format(+n || 0) + " €"; }
+  function bud() {
+    if (!S.bud) {
+      S.bud = {
+        items: [["hotel", "Hotel en Katmandú", 90], ["trek", "Trek (parte pendiente de pago)", 720], ["comida", "Comida y bebida en Katmandú", 175], ["ropa", "Ropa de montaña/deporte y recuerdos", 150], ["alq", "Alquiler de material (saco, bastones…)", 25], ["cult", "Visitas culturales", 100], ["ocio", "Ocio y otros", 80], ["transp", "Transporte local", 20], ["visa", "Visado de Nepal", 50], ["comu", "Comunicaciones (SIM/datos)", 20], ["prop", "Propinas", 10], ["banco", "Comisiones bancarias y cambio de divisa", 10], ["medic", "Medicamentos", 20], ["imprev", "Imprevistos", 30]].map(function (a) { return { id: a[0], n: a[1], b: a[2], s: 0 }; }),
+        paid: [["vuelo", "Vuelo", 673.31], ["trekp", "Trek", 92], ["seguro", "Seguro", 106.92]].map(function (a) { return { id: a[0], n: a[1], b: a[2] }; }), med: 1
+      };
+    }
+    if (!S.bud.med) {
+      S.bud.med = 1;
+      if (!S.bud.items.some(function (x) { return x.id === "medic"; })) {
+        var ix = S.bud.items.map(function (x) { return x.id; }).indexOf("imprev");
+        S.bud.items.splice(ix < 0 ? S.bud.items.length : ix, 0, { id: "medic", n: "Medicamentos", b: 20, s: 0 });
+      }
+      save();
+    }
+    return S.bud;
+  }
+  function bsum(list, f) { return list.reduce(function (a, x) { return a + (+x[f] || 0); }, 0); }
+  function budTotal() { var B = bud(); return Math.round((bsum(B.items, "b") + bsum(B.paid, "b")) * 100) / 100; }
+  function findB(id) {
+    var B = bud(), g = ["items", "paid"];
+    for (var i = 0; i < 2; i++) for (var j = 0; j < B[g[i]].length; j++) if (B[g[i]][j].id === id) return { x: B[g[i]][j], list: B[g[i]], idx: j };
+    return null;
+  }
+  function budRow(x, grp) {
+    var ed = bedit && bedit.id === x.id;
+    function cell(f) {
+      var v = x[f] || 0;
+      if (ed && bedit.f === f) return '<input class="bin" type="text" inputmode="decimal" enterkeyhint="done" data-bin="' + x.id + "|" + f + '" value="' + (v ? String(v).replace(".", ",") : "") + '" aria-label="Importe">';
+      return '<button type="button" class="bamt' + (f === "s" && !v ? " z" : "") + '" data-bedit="' + x.id + "|" + f + '">' + (f === "s" && !v ? "—" : eur(v)) + "</button>";
+    }
+    var name;
+    if (ed && bedit.f === "n") name = '<div><input class="bin bn" type="text" enterkeyhint="done" data-bin="' + x.id + '|n" value="' + esc(x.n) + '" placeholder="Concepto" aria-label="Concepto"><div class="pe-btns"><button type="button" class="pe-link" data-brm="' + x.id + '">Quitar</button><button type="button" class="pe-ok" data-bok>Listo</button></div></div>';
+    else name = '<button type="button" class="bnm" data-bedit="' + x.id + '|n">' + esc(x.n || "Nuevo concepto") + "</button>";
+    return '<li class="brow">' + name + cell("b") + (grp === "items" ? cell("s") : "<span></span>") + "</li>";
+  }
+  function bCommit(inp) {
+    if (!bedit) return;
+    var p = inp.getAttribute("data-bin").split("|"), f = findB(p[0]), v = inp.value.trim();
+    bedit = null;
+    if (f) {
+      if (p[1] === "n") { if (v) f.x.n = v; else if (!f.x.n) f.list.splice(f.idx, 1); }
+      else {
+        var num = parseFloat((v.indexOf(",") >= 0 ? v.replace(/\./g, "").replace(",", ".") : v).replace(/[^0-9.\-]/g, ""));
+        f.x[p[1]] = isFinite(num) ? Math.round(num * 100) / 100 : 0;
+      }
+      save();
+    }
+    renderAll(true);
+  }
+  function viewPresupuesto() {
+    var B = bud(), viaje = bsum(B.items, "b"), spent = bsum(B.items, "s"), pagado = bsum(B.paid, "b"), left = viaje - spent;
+    var pct = viaje > 0 ? Math.min(100, Math.round(spent / viaje * 100)) : 0;
+    var html = '<div class="page-head"><span class="lbl">Presupuesto</span><h1 style="font-size:clamp(32px,9vw,42px)">Cuentas del viaje</h1><span class="hand">solo para ti</span></div>';
+    html += '<div class="bsum"><div><b>' + eur(viaje) + "</b><span>Viaje</span></div><div><b>" + eur(pagado) + "</b><span>Ya pagado</span></div><div><b>" + eur(viaje + pagado) + "</b><span>Total</span></div></div>";
+    html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Gastado" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + "%" + (spent > viaje ? ";background:var(--c-ann)" : "") + '"></i></div><b>' + pct + " %</b></div>";
+    html += '<p class="figcap">Gastado ' + eur(spent) + " de " + eur(viaje) + (left >= 0 ? ". Te quedan " + eur(left) + "." : ". Te pasas en " + eur(-left) + ".") + "</p>";
+    html += '<h2 class="sec">Viaje</h2><div class="bhead"><span>Concepto</span><span>Presupuesto</span><span>Gastado</span></div><ul class="blist">' + B.items.map(function (x) { return budRow(x, "items"); }).join("") + "</ul>";
+    html += '<div class="bsub"><span>Viaje</span><span>' + eur(viaje) + "</span><span>" + eur(spent) + '</span></div><button type="button" class="pe-plus" data-badd="items" aria-label="Añadir concepto" title="Añadir">+</button>';
+    html += '<h2 class="sec">Ya pagado</h2><ul class="blist">' + B.paid.map(function (x) { return budRow(x, "paid"); }).join("") + "</ul>";
+    html += '<div class="bsub"><span>Pagado</span><span>' + eur(pagado) + '</span><span></span></div><button type="button" class="pe-plus" data-badd="paid" aria-label="Añadir pago" title="Añadir">+</button>';
+    html += '<div class="bsub big" style="margin-top:18px"><span>Total estimado</span><span>' + eur(viaje + pagado) + '</span><span></span></div>';
+    html += '<div class="bsub big real"><span>Total real</span><span>' + eur(spent + pagado) + '</span><span></span></div>';
+    html += '<p class="figcap" style="margin-top:10px">Toca un concepto o un importe para editarlo. «Viaje» es la suma de las líneas de arriba y el total le suma lo que ya está pagado (vuelo, trek y seguro). El total real suma lo gastado de verdad más lo ya pagado.</p>';
+    return html;
+  }
+
+  /* ---------- Marco ---------- */
+  var TABS = [["logistica", "Logística"], ["viaje", "Viaje"], ["presupuesto", "Presupuesto"], ["katmandu", "Katmandú"], ["trek", "Trek"], ["lugares", "Lugares"], ["diario", "Diario"]];
+  var ddOpen = false;
+  var current = "logistica";
+  var h = (location.hash || "").replace("#", "");
+  if (TABS.some(function (t) { return t[0] === h; })) current = h;
+
+  function navSub(id) {
+    if (id === "viaje") return "28 oct";
+    if (id === "katmandu") { var c = ktmCounts(); return c.done + "/" + c.total; }
+    if (id === "logistica") { var s = lStats(); return s.packed + "/" + s.total; }
+    if (id === "lugares") return "mapa";
+    if (id === "presupuesto") return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(budTotal()) + " €";
+    if (id === "diario") return S.diary.length ? S.diary.length + (S.diary.length === 1 ? " entrada" : " entradas") : "vacío";
+    return curTrek() === "manaslu" ? "Manaslu" : curTrek() === "annapurna" ? "Annapurna" : "abierto";
+  }
+  function tabsFor() { return WHO === "rose" ? TABS.filter(function (t) { return t[0] !== "viaje" && t[0] !== "presupuesto"; }) : TABS; }
+  function renderTabs() {
+    var nav = document.querySelector("nav.index"), tb = document.getElementById("tabs");
+    nav.hidden = true; tb.innerHTML = "";
+  }
+  function ddMenuHTML() {
+    var tabs = tabsFor();
+    return '<div class="gd-menu" role="menu"' + (ddOpen ? "" : " hidden") + ">" + tabs.map(function (t) {
+      return '<button type="button" role="menuitem" class="gd-it" data-tab="' + t[0] + '" aria-current="' + (t[0] === current) + '"><span>' + t[1] + "</span><small>" + navSub(t[0]) + "</small></button>";
+    }).join("") + "</div>";
+  }
+  function decorateHead() {
+    if (!WHO) return;
+    var v = document.getElementById("view"), h = v.querySelector(".page-head h1");
+    if (!h) return;
+    h.classList.add("gd-h"); h.setAttribute("role", "button"); h.tabIndex = 0; h.setAttribute("data-gd", "1");
+    h.setAttribute("aria-haspopup", "menu"); h.setAttribute("aria-expanded", ddOpen ? "true" : "false");
+    h.insertAdjacentHTML("beforeend", '<svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>');
+    var w = document.createElement("div"); w.className = "gd-wrap";
+    h.parentNode.insertBefore(w, h); w.appendChild(h); w.insertAdjacentHTML("beforeend", ddMenuHTML());
+  }
+  function ddSync() {
+    var m = document.querySelector(".gd-menu"), h = document.querySelector("[data-gd]");
+    if (m) m.hidden = !ddOpen;
+    if (h) h.setAttribute("aria-expanded", ddOpen ? "true" : "false");
+  }
+  function renderWho() {
+    var w = document.getElementById("who");
+    document.querySelector("footer.foot").hidden = !WHO;
+    if (!WHO) { w.hidden = true; return; }
+    w.hidden = false;
+    w.innerHTML = "<span>Eres</span>" + [["rose", "Rose"], ["alejandro", "Alejandro"]].map(function (p) {
+      return '<button type="button" class="pill" data-who="' + p[0] + '" aria-pressed="' + (WHO === p[0]) + '">' + p[1] + "</button>";
+    }).join("");
+  }
+  function viewChooser() {
+    return '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg><h1>Nepal 2026</h1><span class="hand">¿Quién eres?</span></div>' +
+      quoteHTML().replace('class="quote"', 'class="quote" style="margin:20px 0 12px"') + '<div class="choice">' +
+      '<button type="button" class="pick" data-who="rose"><span><strong>Rose</strong><small>Katmandú, logística y trek' + '</small></span></button>' +
+      '<button type="button" class="pick" data-who="alejandro"><span><strong>Alejandro</strong><small>Viaje, Katmandú, logística y trek' + '</small></span></button></div>' +
+      '<p class="figcap" style="margin-top:14px">Cada persona tiene su propia lista y sus propias marcas. Puedes cambiar de perfil cuando quieras.</p>' +
+      (CODE ? '' : '<p class="figcap" style="margin-top:8px">Para sincronizar, toca «conectar» arriba y escribe la palabra de la app.</p>');
+  }
+  function setWho(who) {
+    if (WHO) { if (persTimer) { clearTimeout(persTimer); enqueue("p:" + WHO, personalOf(S)); } saveLocal(); }
+    WHO = who; S = freshState();
+    if (!load(keyFor(who)) && who === "alejandro") load(OLD);
+    LOG = LOGS[who]; if (S.plan && (!S.planV || S.planV < 2)) {
+      S.plan = S.plan.filter(function (d) { return d.id !== "domingo"; });
+      S.plan.forEach(function (d) { if (d.id === "sabado") d.blocks = d.blocks.filter(function (b) { return b.name !== "Tarde" && b.name !== "Noche"; }); });
+      S.planV = 2;
+    }
+    if (S.plan && S.planV < 3) {
+      S.plan.forEach(function (d) { if (d.id === "sabado" && who === "alejandro") d.blocks.forEach(function (b) { if (b.dynamic === "satMorning" && !b.items.some(function (i) { return i.id === "s-bhak"; })) b.items.unshift(jclone(DAYS_BASE.filter(function (x) { return x.id === "sabado"; })[0].blocks[0].items[0])); }); });
+      S.planV = 3;
+    }
+    if (S.rate === 150) S.rate = 169.9;
+    if (!pulled) SH = { plan: (S.sh && S.sh.plan) || SH.plan || null, done: Object.assign({}, SH.done, (S.sh && S.sh.done) || {}), trek: S.sh && S.sh.trek !== undefined ? S.sh.trek : SH.trek };
+    applyRemote(); DAYS = mergeDays(); editingId = null; pedit = null; armed = null;
+    migrateNotes();
+    try { localStorage.setItem(WHOKEY, who); } catch (e) {}
+    if (!tabsFor().some(function (t) { return t[0] === current; })) current = tabsFor()[0][0];
+  }
+  function pickWho(who) {
+    if (who === WHO) return;
+    setWho(who); renderAll(false); window.scrollTo({ top: 0 });
+  }
+  var QUOTES = [
+    ["La felicidad solo es real cuando es compartida.", "Christopher McCandless, en Hacia rutas salvajes"],
+    ["Fui a los bosques porque quería vivir deliberadamente, enfrentar solo los hechos esenciales de la vida y ver si no podía aprender lo que ella tenía que enseñar, no sea que, cuando estuviera por morir, descubriera que no había vivido.", "Henry David Thoreau, Walden"],
+    ["El paisaje pertenece a quien lo mira.", "Ralph Waldo Emerson"],
+    ["Un país llano, por hermoso que sea, nunca lo fue a mis ojos. Necesito arroyos, rocas, pinos, bosques negros, montañas, caminos empinados de difícil ascenso y descenso, precipicios a mi alrededor que infundan mucho miedo.", "Jean-Jacques Rousseau"],
+    ["Porque está ahí.", "George Mallory, 1923, sobre por qué quería subir al Everest"],
+    ["Camina despacio: en altura, quien corre acaba parando.", "Proverbio de los sherpas (popular, sin autor)"],
+    ["Después de despedir a la gente, subió al monte a solas para orar. Al anochecer, estaba allí solo.", "Evangelio según san Mateo 14, 23"],
+    ["Las montañas me llaman y debo ir.", "John Muir, 1873"],
+    ["Caminante, no hay camino, se hace camino al andar.", "Antonio Machado"],
+    ["Sobre todas las cumbres hay calma.", "Goethe, Canción nocturna del caminante"],
+    ["Todo está listo. He podido mirar en mi interior con cierta paz.", "Iñaki Ochoa de Olza, antes de su ascenso al Annapurna"],
+    ["Ir a las montañas es volver a casa.", "John Muir"]
+  ];
+  var qorder = [], qpos = 0;
+  function newOrder(avoidFirst) {
+    var o = QUOTES.map(function (_, i) { return i; });
+    for (var i = o.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), x = o[i]; o[i] = o[j]; o[j] = x; }
+    if (avoidFirst !== undefined && o.length > 1 && o[0] === avoidFirst) { var y = o[0]; o[0] = o[1]; o[1] = y; }
+    return o;
+  }
+  var qn = 0;
+  (function () {
+    var st = null;
+    try { st = JSON.parse(localStorage.getItem("plan-ktm-q") || "null"); } catch (e) {}
+    if (st && Array.isArray(st.o) && st.o.length === QUOTES.length && typeof st.p === "number" && st.p + 1 < st.o.length) { qorder = st.o; qpos = st.p + 1; }
+    else { qorder = newOrder(st && Array.isArray(st.o) ? st.o[st.o.length - 1] : undefined); qpos = 0; }
+    qn = qorder[qpos];
+    try { localStorage.setItem("plan-ktm-q", JSON.stringify({ o: qorder, p: qpos })); } catch (e) {}
+  })();
+  var qtimer = null;
+  function shuffleQuote() {
+    qpos++;
+    if (qpos >= qorder.length) { qorder = newOrder(qorder[qorder.length - 1]); qpos = 0; }
+    qn = qorder[qpos]; var q = document.getElementById("quote"); if (q) q.outerHTML = quoteHTML();
+    clearInterval(qtimer); qtimer = setInterval(shuffleQuote, 30000);
+  }
+  function quoteHTML() {
+    var q = QUOTES[qn % QUOTES.length];
+    return '<figure class="quote" id="quote"><blockquote>«' + esc(q[0]) + '»</blockquote><figcaption>' + esc(q[1]) + "</figcaption></figure>";
+  }
+  function renderView() {
+    var v = document.getElementById("view");
+    if (!WHO) { v.innerHTML = viewChooser(); drawFlags(); return; }
+    v.innerHTML = quoteHTML() + (current === "viaje" ? viewViaje() : current === "katmandu" ? viewKtm() : current === "logistica" ? viewLog() : current === "diario" ? viewDiario() : current === "lugares" ? viewLugares() : current === "presupuesto" ? viewPresupuesto() : viewTrek());
+    if (current === "viaje") drawFlags();
+    decorateHead();
+    if (pedit) {
+      var pe1 = v.querySelector(".pe-ed");
+      v.querySelectorAll(".pe-ed textarea").forEach(autosize);
+      if (pe1) { var fi = pe1.querySelector("input, textarea"); if (fi) { fi.focus(); var ln = fi.value.length; try { fi.setSelectionRange(ln, ln); } catch (e) {} } }
+    }
+    var bi = v.querySelector(".bin"); if (bi) { bi.focus(); try { bi.select(); } catch (er) {} }
+    var ta = document.getElementById("note");
+    if (ta) ta.value = S.notes[ta.getAttribute("data-day")] || "";
+    if (editingId) {
+      var te = v.querySelector(".led textarea.n"), ni = v.querySelector(".led input.nmi");
+      if (te) autosize(te);
+      var fe = (editFocus === "name" && ni) ? ni : te;
+      if (fe) { fe.focus(); var l = fe.value.length; try { fe.setSelectionRange(l, l); } catch (er) {} }
+    }
+  }
+  function renderAll(keepScroll) {
+    if (pendingRender && !pedit) { pendingRender = false; DAYS = mergeDays(); }
+    var y = window.scrollY;
+    renderWho(); renderTabs(); renderView();
+    if (keepScroll) window.scrollTo(0, y);
+  }
+
+  function drawFlags() {
+    var svg = document.getElementById("flags");
+    if (!svg) return;
+    var NS = "http://www.w3.org/2000/svg", W = 620, n = 22;
+    var colors = ["--f-blue", "--f-white", "--f-red", "--f-green", "--f-yellow"];
+    function yAt(t) { return 6 + 56 * t * (1 - t); }
+    var str = document.createElementNS(NS, "path");
+    str.setAttribute("d", "M0,6 Q" + (W / 2) + ",34 " + W + ",6");
+    str.setAttribute("fill", "none");
+    str.style.stroke = "var(--muted)";
+    str.setAttribute("stroke-width", "1");
+    svg.appendChild(str);
+    for (var i = 0; i < n; i++) {
+      var t = 0.03 + (0.94 * i) / (n - 1);
+      var x = t * W, y = yAt(t);
+      var angle = Math.atan(56 * (1 - 2 * t) / W) * 180 / Math.PI;
+      var g = document.createElementNS(NS, "g");
+      g.setAttribute("transform", "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ") rotate(" + angle.toFixed(1) + ")");
+      var f = document.createElementNS(NS, "path");
+      f.setAttribute("d", "M-10,0 H10 V24 Q5,28 0,24 T-10,24 Z");
+      f.style.fill = "var(" + colors[i % 5] + ")";
+      f.style.stroke = "var(--line)";
+      f.setAttribute("stroke-width", "0.6");
+      g.appendChild(f);
+      svg.appendChild(g);
+    }
+  }
+
+  document.getElementById("tabs").addEventListener("click", function (e) {
+    var b = null;
+    if (!b) return;
+    ddOpen = false;
+    current = b.getAttribute("data-tab");
+    renderAll(false);
+    window.scrollTo({ top: 0 });
+  });
+
+  var view = document.getElementById("view");
+  document.addEventListener("click", function (e) {
+    var g = e.target.closest && e.target.closest("[data-gd]");
+    if (g) { ddOpen = !ddOpen; ddSync(); return; }
+    var it = e.target.closest && e.target.closest(".gd-it");
+    if (it) { ddOpen = false; current = it.getAttribute("data-tab"); renderAll(false); window.scrollTo({ top: 0 }); return; }
+    if (ddOpen && e.target.isConnected && !e.target.closest(".gd-menu")) { ddOpen = false; ddSync(); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && ddOpen) { ddOpen = false; ddSync(); return; }
+    if ((e.key === "Enter" || e.key === " ") && e.target.hasAttribute && e.target.hasAttribute("data-gd")) { e.preventDefault(); ddOpen = !ddOpen; ddSync(); }
+  });
+  view.addEventListener("change", function (e) {
+    var t = e.target;
+    var cb = t.closest("input[data-id]");
+    if (cb) {
+      var id = cb.getAttribute("data-id");
+      if (SHARED_IDS[id]) setSharedDone(id, cb.checked);
+      else { if (cb.checked) S.done[id] = true; else delete S.done[id]; save(); }
+      cb.closest(".item").classList.toggle("done", cb.checked);
+      renderTabs();
+      var pill = view.querySelector('.pill[data-day="' + S.day + '"] small');
+      if (pill) { var c = dayCounts(DAYS.filter(function (d) { return d.id === S.day; })[0]); pill.textContent = c.done + "/" + c.total; }
+      return;
+    }
+    var pk = t.closest("input[data-pack]");
+    if (pk) {
+      var pid = pk.getAttribute("data-pack");
+      if (pk.checked) S.lpack[pid] = true; else delete S.lpack[pid];
+      save(); renderAll(true); return;
+    }
+    var sel = t.closest("select[data-st]");
+    if (sel) { S.lstate[sel.getAttribute("data-st")] = sel.value; save(); renderAll(true); }
+  });
+  document.getElementById("who").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-who]");
+    if (b) pickWho(b.getAttribute("data-who"));
+  });
+  view.addEventListener("click", function (e) {
+    var t = e.target;
+    var wb = t.closest("[data-who]");
+    if (wb) { pickWho(wb.getAttribute("data-who")); return; }
+    var v = t.closest("[data-visit]");
+    if (v) {
+      var k = v.getAttribute("data-visit");
+      S.visited[k] = !S.visited[k];
+      if (!S.visited[k]) delete S.done[PLACES[k].id];
+      save(); renderAll(true); return;
+    }
+    var be = t.closest("[data-bedit]");
+    if (be) { var bq = be.getAttribute("data-bedit").split("|"); bedit = { id: bq[0], f: bq[1] }; renderAll(true); return; }
+    var ba = t.closest("[data-badd]");
+    if (ba) { var gk = ba.getAttribute("data-badd"), nb2 = { id: "b" + Date.now(), n: "", b: 0 }; if (gk === "items") nb2.s = 0; bud()[gk].push(nb2); bedit = { id: nb2.id, f: "n" }; save(); renderAll(true); return; }
+    var brm = t.closest("[data-brm]");
+    if (brm) { var bf = findB(brm.getAttribute("data-brm")); bedit = null; if (bf) { bf.list.splice(bf.idx, 1); save(); } renderAll(true); return; }
+    if (t.closest("[data-bok]")) { var bin0 = view.querySelector(".bin"); if (bin0) bCommit(bin0); return; }
+    var mr = t.closest("[data-mreg]");
+    if (mr) { mapReg = mr.getAttribute("data-mreg"); mapSel = null; renderAll(true); return; }
+    var mp = t.closest("[data-mpl]");
+    if (mp) {
+      var mid = mp.getAttribute("data-mpl");
+      if (mid === "ktm-node") { mapReg = "ktm"; mapSel = null; }
+      else mapSel = mapSel === mid ? null : mid;
+      renderAll(true);
+      if (mp.hasAttribute("data-fromlist") && mapSel) { var mb = document.getElementById("mapbox"); if (mb) mb.scrollIntoView({ behavior: "smooth", block: "start" }); }
+      return;
+    }
+    if (planClick(t, e)) return;
+    var d = t.closest("[data-day]");
+    if (d && d.classList.contains("pill")) { S.day = d.getAttribute("data-day"); pedit = null; save(); renderAll(true); return; }
+    var f = t.closest("[data-filter]");
+    if (f) { S.lfilter = f.getAttribute("data-filter"); save(); renderAll(true); return; }
+    var tr = t.closest("[data-trek]");
+    if (tr) { setTrek(tr.getAttribute("data-trek")); renderAll(true); return; }
+    var tv = t.closest("[data-tview]");
+    if (tv) { S.tview = tv.getAttribute("data-tview"); save(); renderAll(true); return; }
+    var ok = t.closest("[data-ok]");
+    if (ok) { var oed = ok.closest(".led"); if (oed) commitEdit(oed, false); return; }
+    var la = t.closest("[data-ladd]");
+    if (la) {
+      var nid = "c" + Date.now(), ni2 = { id: nid, cat: la.getAttribute("data-ladd"), name: "", qty: "", state: "comprar", note: "", custom: true };
+      S.custom.push(ni2); if (!passes(ni2)) S.lfilter = "todo";
+      editingId = nid; editFocus = "name"; save(); renderAll(true); return;
+    }
+    var nb = t.closest("[data-edit]");
+    if (nb) { editingId = nb.getAttribute("data-edit"); editFocus = nb.classList.contains("nm") ? "name" : "note"; renderAll(true); return; }
+    var del = t.closest("[data-del]");
+    if (del) { removeItem(del.getAttribute("data-del")); return; }
+    if (t.closest("[data-restore]")) { S.removed = {}; save(); renderAll(true); return; }
+    if (t.closest("#addbtn")) addItem();
+  });
+  view.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.id === "addname") { e.preventDefault(); addItem(); }
+    if ((e.key === "Enter" || e.key === " ") && e.target.getAttribute && e.target.hasAttribute("data-mpl") && e.target.namespaceURI === "http://www.w3.org/2000/svg") {
+      e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    }
+  });
+  function addItem() {
+    var nm = document.getElementById("addname"), cat = document.getElementById("addcat");
+    var name = nm.value.trim();
+    if (!name) { nm.focus(); return; }
+    S.custom.push({ id: "c" + Date.now(), cat: cat.value, name: name, qty: "", state: "comprar", note: "", custom: true });
+    save(); renderAll(true);
+  }
+  view.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.matches && t.matches(".led textarea.n")) { autosize(t); return; }
+    if (t.matches && t.matches(".pe-ed textarea, .dcomp textarea")) autosize(t);
+    if (t.id === "note") { S.notes[t.getAttribute("data-day")] = t.value; save(); }
+    else if (t.id === "eur" || t.id === "rate") {
+      var eur = parseFloat(document.getElementById("eur").value);
+      var rate = parseFloat(document.getElementById("rate").value);
+      if (isFinite(eur)) S.eur = eur;
+      if (isFinite(rate)) S.rate = rate;
+      save();
+      document.getElementById("fxout").textContent = fmt.format((isFinite(eur) ? eur : 0) * (isFinite(rate) ? rate : 0)) + " NPR";
+    }
+  });
+
+  document.getElementById("import").addEventListener("click", function () {
+    var raw = window.prompt("Pega aquí los datos copiados desde la versión anterior de la app (en Claude):", "");
+    if (!raw) return;
+    var d = null; try { d = JSON.parse(raw.trim()); } catch (e) {}
+    if (!d || d.app !== "nepal-2026" || !d.S || (d.who !== "alejandro" && d.who !== "rose")) { window.alert("Esos datos no son válidos. Copia otra vez el bloque completo."); return; }
+    if (d.who !== WHO) setWho(d.who);
+    var keep = { sh: S.sh };
+    S = freshState(); Object.keys(d.S).forEach(function (x) { if (d.S[x] !== undefined && d.S[x] !== null && x in S) S[x] = d.S[x]; });
+    S.sh = keep.sh; S.visited = Object.assign({ swayam: false, kopan: false }, S.visited);
+    if (d.sh && d.sh.plan && !ST.plan) { SH.plan = d.sh.plan; pushShared("plan", d.sh.plan); }
+    DAYS = mergeDays(); migrateNotes(); saveLocal(); enqueue("p:" + WHO, personalOf(S));
+    renderAll(false); window.alert("Datos importados para " + (WHO === "rose" ? "Rose" : "Alejandro") + ".");
+  });
+  var reset = document.getElementById("reset");
+  reset.addEventListener("click", function () {
+    if (reset.getAttribute("data-armed") !== "true") {
+      reset.setAttribute("data-armed", "true");
+      reset.textContent = "Pulsa otra vez para borrar";
+      setTimeout(function () { reset.removeAttribute("data-armed"); reset.textContent = "Borrar marcas"; }, 4000);
+      return;
+    }
+    S.done = {}; S.visited = { swayam: false, kopan: false }; S.lpack = {};
+    reset.removeAttribute("data-armed"); reset.textContent = "Borrar marcas";
+    save(); renderAll(true);
+  });
+
+  /* ---------- Deslizar para eliminar (como en iOS) ---------- */
+  var OPEN = 96, sw = null, suppress = false, toastTimer = null;
+  var toast = document.createElement("div");
+  toast.id = "toast"; toast.setAttribute("role", "status");
+  document.body.appendChild(toast);
+  function showToast(name, id) {
+    toast.innerHTML = "<span></span><button type=\"button\">Deshacer</button>";
+    toast.firstChild.textContent = "«" + name + "» eliminado";
+    toast.lastChild.onclick = function () { delete S.removed[id]; save(); hideToast(); renderAll(true); };
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, 5000);
+  }
+  function hideToast() { toast.classList.remove("show"); }
+  function openRow(wrap) {
+    wrap.classList.add("open");
+    var inner = wrap.querySelector(".lrow"), b = wrap.querySelector(".sdel");
+    inner.style.transform = "translateX(-" + OPEN + "px)"; b.style.width = ""; b.tabIndex = 0;
+  }
+  function closeRow(wrap) {
+    wrap.classList.remove("open", "dragging");
+    var inner = wrap.querySelector(".lrow"), b = wrap.querySelector(".sdel");
+    inner.classList.remove("drag"); inner.style.transform = ""; b.style.width = ""; b.tabIndex = -1;
+  }
+  function closeOthers(except) {
+    view.querySelectorAll(".lwrap.open").forEach(function (w) { if (w !== except) closeRow(w); });
+  }
+  function removeItem(id) {
+    var it = itemById(id);
+    if (!it) return;
+    var wrap = view.querySelector('.sdel[data-del="' + id + '"]');
+    wrap = wrap && wrap.parentNode;
+    function commit() { S.removed[id] = true; save(); renderAll(true); showToast(nameOf(it), id); }
+    if (wrap) {
+      wrap.querySelector(".lrow").style.transform = "translateX(-100%)";
+      wrap.querySelector(".sdel").style.width = "100%";
+      wrap.classList.add("open");
+      setTimeout(commit, 180);
+    } else commit();
+  }
+  view.addEventListener("pointerdown", function (e) {
+    var inner = e.target.closest(".lrow");
+    if (!inner || e.target.closest(".led") || (e.pointerType === "mouse" && e.button !== 0)) return;
+    var wrap = inner.parentNode;
+    closeOthers(wrap);
+    sw = { inner: inner, wrap: wrap, btn: wrap.querySelector(".sdel"), x0: e.clientX, y0: e.clientY, base: wrap.classList.contains("open") ? -OPEN : 0, W: wrap.offsetWidth, id: e.pointerId, dragging: false, x: 0 };
+  });
+  view.addEventListener("pointermove", function (e) {
+    if (!sw || e.pointerId !== sw.id) return;
+    var dx = e.clientX - sw.x0, dy = e.clientY - sw.y0;
+    if (!sw.dragging) {
+      if (Math.abs(dx) > 10 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        sw.dragging = true;
+        sw.inner.classList.add("drag"); sw.wrap.classList.add("dragging");
+        try { sw.inner.setPointerCapture(e.pointerId); } catch (err) {}
+      } else if (Math.abs(dy) > 10) { sw = null; return; }
+      else return;
+    }
+    var x = Math.min(0, Math.max(-sw.W, sw.base + dx));
+    sw.x = x;
+    sw.inner.style.transform = "translateX(" + x + "px)";
+    sw.btn.style.width = Math.max(OPEN, -x) + "px";
+    e.preventDefault();
+  });
+  function endSwipe(e) {
+    if (!sw || e.pointerId !== sw.id) return;
+    var s = sw; sw = null;
+    if (!s.dragging) return;
+    s.inner.classList.remove("drag"); s.wrap.classList.remove("dragging");
+    suppress = true; setTimeout(function () { suppress = false; }, 60);
+    var id = s.btn.getAttribute("data-del");
+    if (e.type === "pointerup" && s.x < -s.W * 0.55) removeItem(id);
+    else if (e.type === "pointerup" && s.x < -OPEN / 2) openRow(s.wrap);
+    else closeRow(s.wrap);
+  }
+  view.addEventListener("pointerup", endSwipe);
+  view.addEventListener("pointercancel", endSwipe);
+  view.addEventListener("click", function (e) {
+    if (suppress) { e.preventDefault(); e.stopPropagation(); return; }
+    var inner = e.target.closest(".lrow");
+    if (inner && inner.parentNode.classList.contains("open")) { e.preventDefault(); e.stopPropagation(); closeRow(inner.parentNode); }
+  }, true);
+  view.addEventListener("mousedown", function (e) { if (e.target.closest(".pe-btns button")) e.preventDefault(); });
+  view.addEventListener("focusout", function (e) {
+    var pe2 = e.target.closest && e.target.closest(".pe-ed");
+    if (pe2) { if (!(e.relatedTarget && pe2.contains(e.relatedTarget))) commitPed(pe2, pe2._cancel); return; }
+    var ed = e.target.closest && e.target.closest(".led");
+    if (ed && !(e.relatedTarget && ed.contains(e.relatedTarget))) commitEdit(ed, ed._cancel);
+  });
+  view.addEventListener("keydown", function (e) {
+    var dc = e.target.closest && e.target.closest(".dcomp");
+    if (dc && e.key === "Enter" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); saveEntry(dc); return; }
+    var pe3 = e.target.closest && e.target.closest(".pe-ed");
+    if (pe3) {
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey) && e.target.matches("textarea")) { e.preventDefault(); commitPed(pe3, false); }
+      else if (e.key === "Enter" && !e.shiftKey && e.target.matches("input")) { e.preventDefault(); commitPed(pe3, false); }
+      else if (e.key === "Escape") { pe3._cancel = true; commitPed(pe3, true); }
+      return;
+    }
+    var ed = e.target.closest && e.target.closest(".led");
+    if (ed) {
+      if (e.key === "Enter" && !e.shiftKey && !e.target.matches("button")) { e.preventDefault(); e.target.blur(); }
+      else if (e.key === "Escape") { ed._cancel = true; e.target.blur(); }
+      return;
+    }
+    var wrap = e.target.closest && e.target.closest(".lwrap");
+    if (!wrap) return;
+    if ((e.key === "Delete" || e.key === "Backspace") && e.target.closest(".lrow")) { e.preventDefault(); closeOthers(wrap); openRow(wrap); wrap.querySelector(".sdel").focus(); }
+    else if (e.key === "Escape") closeRow(wrap);
+  });
+
+  view.addEventListener("focusout", function (e) {
+    var bi = e.target.closest && e.target.closest(".bin");
+    if (bi && bedit) bCommit(bi);
+  });
+  view.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && e.target.classList && e.target.classList.contains("bin")) { e.preventDefault(); bCommit(e.target); }
+    else if (e.key === "Escape" && e.target.classList && e.target.classList.contains("bin")) { bedit = null; renderAll(true); }
+  });
+  var SUN = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>';
+  var MOON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+  function isDark() {
+    var a = document.documentElement.getAttribute("data-theme");
+    if (a) return a === "dark";
+    return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }
+  function paintTheme() { var b = document.getElementById("theme"); b.innerHTML = isDark() ? MOON : SUN; b.title = isDark() ? "Modo oscuro: toca para el claro" : "Modo claro: toca para el oscuro"; }
+  try { var th = localStorage.getItem("plan-ktm-theme"); if (th === "light" || th === "dark") document.documentElement.setAttribute("data-theme", th); } catch (e) {}
+  paintTheme();
+  document.getElementById("theme").addEventListener("click", function () {
+    var n = isDark() ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", n);
+    try { localStorage.setItem("plan-ktm-theme", n); } catch (e) {}
+    paintTheme();
+  });
+  var stored = null;
+  try { stored = localStorage.getItem(WHOKEY); } catch (e) {}
+  if (stored !== "alejandro" && stored !== "rose") {
+    try { stored = localStorage.getItem(KEY) ? "alejandro" : null; } catch (e) { stored = null; }
+  }
+  LAST = stored;
+  setSync("local");
+  renderAll(false);
+  initSync();
+  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+
+</body></html>
