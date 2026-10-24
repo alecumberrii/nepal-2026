@@ -1,6 +1,6 @@
 /* Nepal 2026: funciona sin conexión. La app se sirve desde la caché y se actualiza en segundo plano.
    Las teselas del mapa que se han visto se guardan aparte (hasta MAXT) para poder verlas en el trek sin red. */
-var CACHE = "nepal-2026-v3";
+var CACHE = "nepal-2026-v4";
 var TILES = "nepal-2026-teselas";
 var MAXT = 3000;
 var SHELL = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-180.png", "icon-192.png", "icon-512.png",
@@ -32,7 +32,7 @@ self.addEventListener("fetch", function (e) {
   var same = url.origin === self.location.origin;
   var fonts = /fonts\.(googleapis|gstatic)\.com$/.test(url.hostname);
   var leaf = url.hostname === "unpkg.com" && url.pathname.indexOf("/leaflet@") === 0;
-  var tile = /(^|\.)tile\.openstreetmap\.org$|(^|\.)tile\.opentopomap\.org$/.test(url.hostname);
+  var tile = /(^|\.)tile\.openstreetmap\.org$|(^|\.)tile\.opentopomap\.org$/.test(url.hostname) || (url.hostname === "server.arcgisonline.com" && url.pathname.indexOf("/tile/") > 0);
   if (tile) {
     /* teselas: primero la copia guardada; si no está, de la red y se guarda */
     e.respondWith(caches.open(TILES).then(function (c) {

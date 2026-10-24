@@ -449,7 +449,7 @@
   .gs-del { background: transparent; border: 0; color: var(--c-ann); padding-left: 0 !important; text-decoration: underline; }
   /* ---------- Mapa (Leaflet) ---------- */
   .mapbox.lmap { background: var(--tint); }
-  .lmap-el { height: min(64vh, 460px); width: 100%; background: var(--tint); font-family: var(--serif); }
+  .lmap-el { position: relative; z-index: 0; isolation: isolate; height: min(64vh, 460px); width: 100%; background: var(--tint); font-family: var(--serif); }
   #mapslot { width: 100%; }
   .lmap-el .leaflet-control-attribution { font-size: 10.5px; background: color-mix(in srgb, var(--paper) 78%, transparent); color: var(--muted); }
   .lmap-el .leaflet-control-attribution a { color: var(--accent); }
@@ -465,14 +465,15 @@
   .lm-tip.leaflet-tooltip { background: color-mix(in srgb, var(--paper) 82%, transparent); color: var(--ink); border: 0; box-shadow: none; padding: 0 4px; border-radius: 4px; font: 500 13px/1.25 var(--serif); }
   .lm-tip.leaflet-tooltip::before { display: none; }
   .lr { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-  .lr-man { stroke: var(--accent); }
-  .lr-ann { stroke: var(--c-ann); }
-  .lr-j { stroke: var(--muted); stroke-dasharray: 5 6; }
+  .lr-man { stroke: #6fb0f2; }
+  .lr-ann { stroke: #f08a84; }
+  .lr-j { stroke: #f3f6fb; stroke-dasharray: 5 6; opacity: .9; }
   .lr-x { stroke-dasharray: 2 5; }
   .map-sw { margin-top: 6px; }
   .linkbtn { border: 0; background: none; padding: 0; font: inherit; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lmap-el .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.7); } }
-  :root[data-theme="dark"] .lmap-el .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.92) contrast(.88) saturate(.7); }
+  .gd-wrap, .topbar .who { position: relative; z-index: 45; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .lmap-el .lt-sat { filter: brightness(.88); } }
+  :root[data-theme="dark"] .lmap-el .lt-sat { filter: brightness(.88); }
   @media (prefers-reduced-motion: reduce) { .gs, .gs-back { animation: none; } .fab { transition: none; } }
   @media (prefers-reduced-motion: reduce) { .bar i, .lrow, #toast { transition: none; } }
   @media (max-width: 380px) { .t-code { font-size: 28px; } }
@@ -1603,9 +1604,10 @@
   /* ---------- Mapa de verdad (Leaflet + OpenStreetMap / OpenTopoMap) ---------- */
   var LMAP = null, LEL = null, LBASE = null, LBASEK = "", LLAY = null, lFit = "", lFail = false, lLoading = false, lCbs = [], mapMode = "real", lTopoErr = 0, lTopoOk = 0;
   var LEAF = "https://unpkg.com/leaflet@1.9.4/dist/";
+  var ESRI = "https://server.arcgisonline.com/ArcGIS/rest/services/";
   var TILES = {
-    topo: { u: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", o: { subdomains: "abc", maxZoom: 17, attribution: 'Mapa: © <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA) · datos © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' } },
-    osm: { u: "https://tile.openstreetmap.org/{z}/{x}/{y}.png", o: { maxZoom: 19, attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' } }
+    sat: { u: ESRI + "World_Imagery/MapServer/tile/{z}/{y}/{x}", o: { maxZoom: 19, maxNativeZoom: 18, attribution: 'Imagen: © Esri, Maxar, Earthstar Geographics' } },
+    nombres: { u: ESRI + "Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}", o: { maxZoom: 19, maxNativeZoom: 18, pane: "overlayPane", attribution: 'Nombres: © Esri' } }
   };
   function loadLeaflet(cb) {
     if (window.L && window.L.map) { cb(); return; }
@@ -1621,20 +1623,15 @@
     s.onerror = fail;
     document.head.appendChild(css); document.head.appendChild(s);
   }
-  function setBase(k) {
-    if (LBASEK === k) return;
-    if (LBASE) LMAP.removeLayer(LBASE);
-    var T = TILES[k]; LBASEK = k;
-    LBASE = L.tileLayer(T.u, Object.assign({ crossOrigin: "anonymous", keepBuffer: 3 }, T.o)).addTo(LMAP);
-    if (k === "topo") {
-      LBASE.on("tileload", function () { lTopoOk++; });
-      LBASE.on("tileerror", function () { lTopoErr++; if (navigator.onLine && lTopoOk === 0 && lTopoErr >= 6) { TILES.topo = TILES.osm; LBASEK = ""; setBase("topo"); } });
-    }
+  function setBase() {
+    if (LBASE) return;
+    LBASE = L.tileLayer(TILES.sat.u, Object.assign({ crossOrigin: "anonymous", keepBuffer: 3, className: "lt-sat" }, TILES.sat.o)).addTo(LMAP);
+    L.tileLayer(TILES.nombres.u, Object.assign({ crossOrigin: "anonymous", keepBuffer: 3, className: "lt-nom" }, TILES.nombres.o)).addTo(LMAP);
   }
   function createMap() {
     LEL = document.createElement("div"); LEL.className = "lmap-el"; LEL.setAttribute("aria-label", "Mapa interactivo de los lugares del viaje");
-    /* En el móvil, un dedo mueve la página y dos mueven y acercan el mapa: así no atrapa el scroll */
-    LMAP = L.map(LEL, { scrollWheelZoom: false, dragging: !L.Browser.mobile, touchZoom: true, zoomSnap: 0.5, attributionControl: true, worldCopyJump: false });
+    /* El mapa se arrastra con un dedo y se acerca con dos (o con + y −) */
+    LMAP = L.map(LEL, { scrollWheelZoom: false, dragging: true, touchZoom: true, zoomSnap: 0.5, attributionControl: true, worldCopyJump: false });
     LMAP.attributionControl.setPrefix(false);
     LLAY = L.layerGroup().addTo(LMAP);
     LEL.addEventListener("click", function (e) { var b = e.target.closest && e.target.closest("[data-lmk]"); if (b) { e.stopPropagation(); } });
@@ -1657,7 +1654,7 @@
   }
   function drawMap() {
     var todo = mapReg === "todo", R = MAPREG[mapReg], b = R.b;
-    setBase(mapReg === "ktm" ? "osm" : "topo");
+    setBase();
     LLAY.clearLayers();
     function line(pts, cls) { L.polyline(pts, { className: "lr " + cls, interactive: false, weight: cls.indexOf("lr-j") >= 0 ? 2.5 : 3.5 }).addTo(LLAY); }
     if (todo) { line(ROAD_DHARA, "lr-j"); line(ROAD_MACH, "lr-j"); line(ROAD_POK, "lr-j"); }
@@ -1699,14 +1696,13 @@
     });
   }
   function mapBoxHTML() {
-    var touch = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
     if (mapMode === "esquema" || lFail) {
       return '<div class="mapbox" id="mapbox">' + mapSVG() + "</div>" +
         '<p class="figcap map-sw">' + (lFail ? "No se ha podido cargar el mapa (¿sin conexión?): este es el esquema. " : "Esquema dibujado, sin conexión. ") +
         (lFail ? '<button type="button" class="linkbtn" data-mretry>Reintentar</button>' : '<button type="button" class="linkbtn" data-mmode="real">Ver el mapa</button>') + "</p>";
     }
     return '<div class="mapbox lmap" id="mapbox"><div id="mapslot"></div></div>' +
-      '<p class="figcap map-sw">' + (touch ? "Con un dedo se mueve la página; con dos, el mapa. " : "") +
+      '<p class="figcap map-sw">' +
       (navigator.onLine ? "" : "Sin conexión: solo se ven las zonas ya vistas. ") +
       '<button type="button" class="linkbtn" data-mmode="esquema">Ver el esquema</button></p>';
   }
