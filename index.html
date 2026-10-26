@@ -1236,7 +1236,7 @@
   }
   function rowHTML(it) {
     var s = stOf(it), pkd = !!S.lpack[it.id], q = qtyOf(it), nm = esc(nameOf(it) || "Nuevo artículo");
-    return '<li class="lwrap"><div class="lrow' + (pkd ? " packed" : "") + '"><label class="pk"><input type="checkbox" data-pack="' + it.id + '"' + (pkd ? " checked" : "") + ' aria-label="En la mochila: ' + nm + '"></label>' +
+    return '<li class="lwrap"><div class="lrow' + (pkd ? " packed" : "") + '"><label class="pk"><input type="checkbox" data-pack="' + it.id + '"' + (pkd ? " checked" : "") + ' aria-label="Preparado: ' + nm + '"></label>' +
       '<button type="button" class="nm" data-edit="' + it.id + '" aria-label="Editar ' + nm + '">' + nm + (q ? '<span class="qty">×' + esc(q) + "</span>" : "") + "</button>" +
       '<select class="st" data-st="' + it.id + '" data-v="' + s + '" aria-label="Estado de ' + nm + '">' +
       STATES.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === s ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select>" +
@@ -1281,14 +1281,15 @@
     if (f === "revisar") return !!CHECK[s];
     if (f === "tengo") return s === "tengo" || s === "rose";
     if (f === "mochila") return !!S.lpack[it.id];
+    if (f === "sinpreparar") return !S.lpack[it.id];
     return true;
   }
   function viewLog() {
     var st = lStats(), pct = st.total ? Math.round(st.packed / st.total * 100) : 0;
     var html = '<div class="page-head"><h1>Logística</h1></div>';
-    html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Mochila" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + '%"></i></div><b>' + st.packed + " de " + st.total + "</b></div>";
-    html += '<div class="tally"><div><b>' + st.get + "</b><span>por conseguir</span></div><div><b>" + st.check + "</b><span>por revisar</span></div><div><b>" + st.packed + "</b><span>en la mochila</span></div></div>";
-    var F = [["todo", "Todo"], ["conseguir", "Por conseguir"], ["revisar", "Por revisar"], ["tengo", "Tengo"], ["mochila", "En la mochila"]];
+    html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Preparado" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + '%"></i></div><b>' + st.packed + " de " + st.total + "</b></div>";
+    html += '<div class="tally"><div><b>' + st.get + "</b><span>por conseguir</span></div><div><b>" + st.check + "</b><span>por revisar</span></div><div><b>" + st.packed + "</b><span>preparado</span></div></div>";
+    var F = [["todo", "Todo"], ["conseguir", "Por conseguir"], ["revisar", "Por revisar"], ["tengo", "Tengo"], ["sinpreparar", "Sin preparar"], ["mochila", "Preparado"]];
     html += '<div class="pills">' + F.map(function (f) { return '<button type="button" class="pill" data-filter="' + f[0] + '" aria-pressed="' + (S.lfilter === f[0]) + '">' + f[1] + "</button>"; }).join("") + "</div>";
     html += '<p class="figcap">Desliza una fila hacia la izquierda para eliminarla.</p>';
     if (WHO === "rose") html += '<p class="figcap">Lista de partida: la misma que la de Alejandro, sin lo de la cámara. Todo en «revisar» para que lo ajustes tú: cambia cantidades, quita y añade.</p>';
