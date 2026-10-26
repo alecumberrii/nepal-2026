@@ -229,6 +229,13 @@
   .led input.nmi { display: block; width: 100%; font-size: 18px; font-weight: 500; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0 3px; }
   .led input.q { display: block; width: 84px; margin-top: 2px; font-size: 18px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0; font-variant-numeric: lining-nums; }
   .led textarea.n { width: 100%; font-size: 16px; line-height: 1.35; font-style: italic; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0 3px; resize: none; overflow: hidden; }
+  .led .ctw { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+  .led select.ct, .led input.ctn, .newcat input { display: block; width: 100%; margin-top: 2px; font: inherit; font-size: 17px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--accent); border-radius: 0; padding: 2px 0; }
+  .led select.ct option { color: #000; }
+  .newcat { display: flex; align-items: flex-end; gap: 10px; margin-top: 18px; }
+  .newcat input { flex: 1; min-width: 0; }
+  .newcat button, .cat > h3 button { font: inherit; font-size: 15px; font-style: italic; color: var(--accent); background: transparent; border: 0; padding: 0; cursor: pointer; }
+  .cat > h3 button { letter-spacing: 0; text-transform: none; font-weight: 400; color: var(--muted); margin-left: 10px; }
   .led button.ok { font-size: 16px; color: var(--accent); background: transparent; border: 1px solid var(--accent); border-radius: 3px; padding: 1px 12px; cursor: pointer; }
   select.st { font-size: 15px; color: var(--ink); border: 1px solid var(--line2); border-radius: 999px; padding: 1px 8px; max-width: 118px; background-color: transparent; cursor: pointer; }
   select.st[data-v="tengo"], select.st[data-v="rose"] { background-color: var(--st-have); border-color: transparent; }
@@ -510,7 +517,7 @@
   var WHO = null, LAST = null;
 
   function freshState() {
-    return { done: {}, visited: { swayam: false, kopan: false }, notes: {}, eur: 100, rate: 169.9, lstate: {}, lpack: {}, custom: [], lfilter: "todo", removed: {}, lnotes: {}, lqty: {}, lnames: {}, bud: null, plan: null, planV: 0, sh: null, diary: [], trek: "", tview: "comparar", day: "jueves" };
+    return { done: {}, visited: { swayam: false, kopan: false }, notes: {}, eur: 100, rate: 169.9, lstate: {}, lpack: {}, custom: [], lfilter: "todo", removed: {}, lnotes: {}, lqty: {}, lnames: {}, lcat: {}, lcats: [], bud: null, plan: null, planV: 0, sh: null, diary: [], trek: "", tview: "comparar", day: "jueves" };
   }
   var S = freshState();
   function keyFor(who) { return who === "rose" ? KEY_ROSE : KEY; }
@@ -1227,10 +1234,35 @@
     var n = noteOf(it);
     return n ? '<button type="button" class="ln edit" data-edit="' + it.id + '" aria-label="Editar ' + esc(nameOf(it)) + '">' + esc(n) + "</button>" : "";
   }
+  function lcatOf(it) { return (S.lcat && S.lcat[it.id]) || it.cat; }
+  function lcatList() {
+    var order = [], used = {}, live = LOG.concat(S.custom).filter(function (it) { return !S.removed[it.id]; });
+    function put(k) { if (order.indexOf(k) < 0) order.push(k); }
+    live.forEach(function (it) { put(it.cat); used[lcatOf(it)] = 1; });
+    (S.lcats || []).forEach(function (k) { put(k); used[k] = 1; });
+    live.forEach(function (it) { put(lcatOf(it)); });
+    return order.filter(function (k) { return used[k]; });
+  }
+  function addLcat(name) {
+    name = (name || "").trim(); if (!name) return "";
+    var ex = lcatList().filter(function (k) { return k.toLowerCase() === name.toLowerCase(); })[0];
+    if (ex) return ex;
+    if (!S.lcats) S.lcats = [];
+    S.lcats.push(name); return name;
+  }
+  function setLcat(it, cat) {
+    if (!S.lcat) S.lcat = {};
+    if (it.custom) { it.cat = cat; delete S.lcat[it.id]; }
+    else if (cat === it.cat) delete S.lcat[it.id];
+    else S.lcat[it.id] = cat;
+  }
+  var lnewcat = false;
   function editorHTML(it) {
-    var nm = esc(nameOf(it));
+    var nm = esc(nameOf(it)), cur = lcatOf(it);
     return '<div class="led" data-ed="' + it.id + '"><input class="nmi" type="text" enterkeyhint="done" value="' + nm + '" placeholder="Nombre del artículo" aria-label="Nombre del artículo">' +
       '<div class="led-top"><label>Uds.<input class="q" type="text" maxlength="12" enterkeyhint="done" value="' + esc(qtyOf(it)) + '" aria-label="Unidades de ' + nm + '"></label>' +
+      '<label class="ctw">Categoría<select class="ct" aria-label="Categoría de ' + nm + '">' + lcatList().map(function (k) { return '<option value="' + esc(k) + '"' + (k === cur ? " selected" : "") + ">" + esc(k) + "</option>"; }).join("") + '<option value="__new">Nueva categoría…</option></select>' +
+      '<input class="ctn" type="text" enterkeyhint="done" placeholder="Nombre de la categoría" aria-label="Nombre de la nueva categoría" hidden></label>' +
       '<button type="button" class="ok" data-ok="1">Listo</button></div>' +
       '<textarea class="n" rows="1" enterkeyhint="done" placeholder="Nota" aria-label="Nota de ' + nm + '">' + esc(noteOf(it)) + "</textarea></div>";
   }
@@ -1247,13 +1279,18 @@
   function commitEdit(ed, cancel) {
     if (ed._done) return;
     ed._done = true;
-    var id = ed.getAttribute("data-ed"), it = itemById(id), gone = false;
+    var id = ed.getAttribute("data-ed"), it = itemById(id), gone = false, moved = false;
     if (it) {
       if (!cancel) {
         var nn = ed.querySelector("input.nmi").value.trim(), qv = ed.querySelector("input.q").value.trim(), nv = ed.querySelector("textarea.n").value.trim();
         if (nn && nn !== (it.name || "")) S.lnames[id] = nn; else if (nn) delete S.lnames[id];
         if (qv === (it.qty || "")) delete S.lqty[id]; else S.lqty[id] = qv;
         if (nv === (it.note || "")) delete S.lnotes[id]; else S.lnotes[id] = nv;
+        var cs = ed.querySelector("select.ct"), cn = ed.querySelector("input.ctn");
+        if (cs) {
+          var nc = cs.value === "__new" ? addLcat(cn ? cn.value : "") : cs.value;
+          if (nc && nc !== lcatOf(it)) { setLcat(it, nc); moved = true; }
+        }
       }
       if (!nameOf(it)) gone = true;
       if (gone && it.custom) { S.custom = S.custom.filter(function (x) { return x.id !== id; }); delete S.lnames[id]; delete S.lqty[id]; delete S.lnotes[id]; }
@@ -1261,7 +1298,7 @@
     }
     editingId = null;
     if (!it) return;
-    if (gone) { renderAll(true); return; }
+    if (gone || moved) { renderAll(true); return; }
     var wrap = ed.closest(".lwrap"), h = document.createElement("ul");
     h.innerHTML = rowHTML(it);
     wrap.replaceWith(h.firstChild);
@@ -1292,20 +1329,22 @@
     html += '<div class="pills">' + F.map(function (f) { return '<button type="button" class="pill" data-filter="' + f[0] + '" aria-pressed="' + (S.lfilter === f[0]) + '">' + f[1] + "</button>"; }).join("") + "</div>";
     html += '<p class="figcap">Deslizar una fila hacia la izquierda para eliminarla.</p>';
     if (WHO === "rose") html += '<p class="figcap">Lista de partida: la misma que la de Alejandro, sin lo de la cámara. Todo en «revisar» para ajustarla a mi gusto: cambiar cantidades, quitar y añadir.</p>';
-    var cats = [];
-    allItems().forEach(function (it) { if (cats.indexOf(it.cat) < 0) cats.push(it.cat); });
+    var cats = lcatList();
     var shown = 0;
     cats.forEach(function (cat) {
-      var rows = allItems().filter(function (it) { return it.cat === cat; });
+      var rows = allItems().filter(function (it) { return lcatOf(it) === cat; });
       var vis = rows.filter(passes);
-      if (!vis.length) return;
-      shown += vis.length;
+      var emptyCat = !rows.length;
+      if (!vis.length && !(emptyCat && S.lfilter === "todo")) return;
+      shown += vis.length || 1;
       var pk = rows.filter(function (it) { return S.lpack[it.id]; }).length;
-      html += '<section class="cat"><h3>' + esc(cat) + "<small>" + pk + "/" + rows.length + "</small></h3><ul>";
+      html += '<section class="cat"><h3>' + esc(cat) + "<small>" + pk + "/" + rows.length + "</small>" + (emptyCat ? '<button type="button" data-lcatdel="' + esc(cat) + '">Quitar</button>' : "") + "</h3><ul>";
       vis.forEach(function (it) { html += rowHTML(it); });
       html += '</ul><button type="button" class="pe-plus" data-ladd="' + esc(cat) + '" aria-label="Añadir a ' + esc(cat) + '" title="Añadir">+</button></section>';
     });
     if (!shown) html += '<p class="empty">Nada en este filtro.</p>';
+    html += lnewcat ? '<div class="newcat"><input id="lnewcat" type="text" enterkeyhint="done" placeholder="Nombre de la categoría" aria-label="Nombre de la nueva categoría"><button type="button" data-lnewcat-ok>Añadir</button><button type="button" data-lnewcat-x>Cancelar</button></div>'
+      : '<p style="margin-top:18px"><button type="button" class="pe-link" data-lnewcat>+ Añadir categoría</button></p>';
     var nrem = Object.keys(S.removed).filter(function (k) { return itemById(k); }).length;
     if (nrem) html += '<p style="margin-top:14px"><button type="button" class="reset" data-restore="1">Restaurar eliminados (' + nrem + ")</button></p>";
     return html;
@@ -2257,6 +2296,12 @@
   });
   view.addEventListener("change", function (e) {
     var t = e.target;
+    if (t.matches && t.matches(".led select.ct")) {
+      var ced = t.closest(".led"), ctn = ced.querySelector("input.ctn");
+      if (t.value === "__new") { ctn.hidden = false; ctn.focus(); }
+      else { ctn.hidden = true; commitEdit(ced, false); }
+      return;
+    }
     var cb = t.closest("input[data-id]");
     if (cb) {
       var id = cb.getAttribute("data-id");
@@ -2338,6 +2383,11 @@
     if (tv) { S.tview = tv.getAttribute("data-tview"); save(); renderAll(true); return; }
     var ok = t.closest("[data-ok]");
     if (ok) { var oed = ok.closest(".led"); if (oed) commitEdit(oed, false); return; }
+    if (t.closest("[data-lnewcat]")) { lnewcat = true; renderAll(true); var ln = document.getElementById("lnewcat"); if (ln) ln.focus(); return; }
+    if (t.closest("[data-lnewcat-x]")) { lnewcat = false; renderAll(true); return; }
+    if (t.closest("[data-lnewcat-ok]")) { lnewcatSave(); return; }
+    var lcd = t.closest("[data-lcatdel]");
+    if (lcd) { var dn = lcd.getAttribute("data-lcatdel"); S.lcats = (S.lcats || []).filter(function (k) { return k !== dn; }); save(); renderAll(true); return; }
     var la = t.closest("[data-ladd]");
     if (la) {
       var nid = "c" + Date.now(), ni2 = { id: nid, cat: la.getAttribute("data-ladd"), name: "", qty: "", state: "comprar", note: "", custom: true };
@@ -2353,10 +2403,16 @@
   });
   view.addEventListener("keydown", function (e) {
     if (e.key === "Enter" && e.target.id === "addname") { e.preventDefault(); addItem(); }
+    if (e.target.id === "lnewcat") { if (e.key === "Enter") { e.preventDefault(); lnewcatSave(); } else if (e.key === "Escape") { lnewcat = false; renderAll(true); } }
     if ((e.key === "Enter" || e.key === " ") && e.target.getAttribute && e.target.hasAttribute("data-mpl") && e.target.namespaceURI === "http://www.w3.org/2000/svg") {
       e.preventDefault(); e.target.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     }
   });
+  function lnewcatSave() {
+    var ln = document.getElementById("lnewcat"), v = ln ? ln.value.trim() : "";
+    if (!v) { if (ln) ln.focus(); return; }
+    addLcat(v); lnewcat = false; if (S.lfilter !== "todo") S.lfilter = "todo"; save(); renderAll(true);
+  }
   function addItem() {
     var nm = document.getElementById("addname"), cat = document.getElementById("addcat");
     var name = nm.value.trim();
