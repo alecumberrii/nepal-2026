@@ -218,7 +218,6 @@
   .lrow .qty { font-style: italic; font-weight: 400; color: var(--accent); margin-left: 6px; font-size: 16px; }
   .lrow.packed .nm { text-decoration: line-through; text-decoration-thickness: 1px; color: var(--muted); }
   .lrow .ln { grid-column: 2 / -1; font-size: 16.5px; color: var(--muted); font-style: italic; text-wrap: pretty; }
-  .lrow .ln.x { color: var(--warm); }
   .lrow button.ln { background: none; border: 0; padding: 0; margin: 0; text-align: left; font: inherit; cursor: pointer; }
   .lrow button.ln.edit { font-size: 16.5px; font-style: italic; color: var(--muted); white-space: pre-wrap; overflow-wrap: anywhere; }
   .lrow .pk { display: block; width: calc(100% + 10px); padding: 9px 0; margin: -9px 0; cursor: pointer; }
@@ -499,10 +498,11 @@
 <script>
 (function () {
   var KEY = "plan-ktm-v2", KEY_ROSE = "plan-ktm-v2-rose", OLD = "plan-ktm-v1", WHOKEY = "plan-ktm-who";
-  var LOG_A = [{"id": "l5", "cat": "Documentación y dinero", "name": "Pasaporte", "qty": "1", "state": "tengo", "note": ""}, {"id": "l6", "cat": "Documentación y dinero", "name": "Visado de Nepal", "qty": "1", "state": "revisar", "note": "Mirar cómo se consigue en el aeropuerto", "extra": "Tu estancia es de 17 días: visado de 30 días (50 USD). Detalle en Viaje."}, {"id": "l7", "cat": "Documentación y dinero", "name": "Seguro de viaje", "qty": "1", "state": "tengo", "note": "Que cubra rescate en helicóptero y accidentes.", "extra": "Las agencias piden que cubra rescate en helicóptero y accidentes."}, {"id": "l8", "cat": "Documentación y dinero", "name": "Copia impresa pasaporte", "qty": "1", "state": "preparar", "note": ""}, {"id": "l9", "cat": "Documentación y dinero", "name": "Copias digitales de documentos", "qty": "1", "state": "preparar", "note": "Pasaporte, seguro y billetes en el móvil y la nube"}, {"id": "l10", "cat": "Documentación y dinero", "name": "Efectivo", "qty": "1", "state": "preparar", "note": "Decidir exactamente cuánto dinero llevo Las ofertas no incluyen bebidas, duchas calientes, carga de baterías ni wifi.", "extra": "Las ofertas no incluyen propinas, bebidas, duchas ni carga de baterías."}, {"id": "l90", "cat": "Documentación y dinero", "name": "Propinas para guía y porteador", "qty": "", "state": "preparar", "note": "No están incluidas en la oferta."}, {"id": "l14", "cat": "Electrónica y cámara", "name": "Cámara de fotos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l15", "cat": "Electrónica y cámara", "name": "Baterías de cámara", "qty": "3", "state": "tengo", "note": "Llevar las tres cargadas"}, {"id": "l16", "cat": "Electrónica y cámara", "name": "Cargador baterías cámara", "qty": "1", "state": "tengo", "note": ""}, {"id": "l17", "cat": "Electrónica y cámara", "name": "Batería portátil (power bank)", "qty": "1", "state": "tengo", "note": ""}, {"id": "l18", "cat": "Electrónica y cámara", "name": "Adaptador de enchufe tipo C/D", "qty": "1", "state": "comprar", "note": "Nepal usa 230 V y 50 Hz; el de EE. UU. parece que no sirve"}, {"id": "l19", "cat": "Electrónica y cámara", "name": "Funda para cámara (pequeña)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l20", "cat": "Electrónica y cámara", "name": "Click para cámara en mochila", "qty": "1", "state": "comprar", "note": "Llevar la cámara a mano en la mochila (en la correa)"}, {"id": "l21", "cat": "Electrónica y cámara", "name": "Cargador del móvil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l22", "cat": "Electrónica y cámara", "name": "Tarjetas de memoria", "qty": "2", "state": "comprar", "note": ""}, {"id": "l23", "cat": "Electrónica y cámara", "name": "Adaptador tarjeta memoria a USB-C", "qty": "1", "state": "tengo", "note": ""}, {"id": "l24", "cat": "Electrónica y cámara", "name": "Pilas de repuesto", "qty": "2", "state": "comprar", "note": ""}, {"id": "l25", "cat": "Electrónica y cámara", "name": "Bolsa estanca (Decathlon)", "qty": "2?", "state": "comprar", "note": "Proteger cámara, electrónica y documentos de la lluvia"}, {"id": "l26", "cat": "Electrónica y cámara", "name": "SIM", "qty": "1", "state": "comprar", "note": "Me dice Rose NTC en Katmandú"}, {"id": "l28", "cat": "Ropa y accesorios", "name": "Camisetas lana merino", "qty": "4", "state": "tengo", "note": ""}, {"id": "l29", "cat": "Ropa y accesorios", "name": "Camisetas deporte", "qty": "?", "state": "tengo", "note": ""}, {"id": "l30", "cat": "Ropa y accesorios", "name": "Capa base manga larga merino", "qty": "3", "state": "tengo", "note": ""}, {"id": "l31", "cat": "Ropa y accesorios", "name": "Capa base manga larga deporte", "qty": "2", "state": "tengo", "note": ""}, {"id": "l32", "cat": "Ropa y accesorios", "name": "Forro polar", "qty": "1-2?", "state": "tengo", "note": ""}, {"id": "l33", "cat": "Ropa y accesorios", "name": "Abrigo de plumas", "qty": "1", "state": "alquilar", "note": "No sé si es mejor alquilar o llevar"}, {"id": "l34", "cat": "Ropa y accesorios", "name": "Gore Tex", "qty": "1?", "state": "tengo", "note": ""}, {"id": "l35", "cat": "Ropa y accesorios", "name": "Ropa interior", "qty": "15", "state": "comprar", "note": ""}, {"id": "l36", "cat": "Ropa y accesorios", "name": "Calcetines monte", "qty": "15?", "state": "comprar", "note": ""}, {"id": "l37", "cat": "Ropa y accesorios", "name": "Saco de dormir", "qty": "1", "state": "alquilar", "note": "Confirmar temperatura mínima. Tengo de confort 0ºC", "extra": "La agencia del Manaslu pide uno de −15 °C y dice que se alquila o compra fácil en Katmandú."}, {"id": "l38", "cat": "Ropa y accesorios", "name": "Bastones de trekking", "qty": "1", "state": "alquilar", "note": ""}, {"id": "l39", "cat": "Ropa y accesorios", "name": "Pantalones de monte", "qty": "2?", "state": "comprar", "note": ""}, {"id": "l40", "cat": "Ropa y accesorios", "name": "Sobrepantalón impermeable", "qty": "1", "state": "comprar", "note": ""}, {"id": "l41", "cat": "Ropa y accesorios", "name": "Tevas?", "qty": "1", "state": "tengo", "note": "Para descansar, no sé si llevar Tevas o unas deportivas"}, {"id": "l42", "cat": "Ropa y accesorios", "name": "Pantaloneta descansar?", "qty": "2", "state": "tengo", "note": ""}, {"id": "l43", "cat": "Ropa y accesorios", "name": "Pijama?", "qty": "1", "state": "tengo", "note": ""}, {"id": "l44", "cat": "Ropa y accesorios", "name": "Botas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l45", "cat": "Ropa y accesorios", "name": "Gorro de explorador", "qty": "1", "state": "tengo", "note": ""}, {"id": "l46", "cat": "Ropa y accesorios", "name": "Gorro de lana merino", "qty": "1", "state": "tengo", "note": ""}, {"id": "l47", "cat": "Ropa y accesorios", "name": "Guantes", "qty": "1", "state": "comprar", "note": ""}, {"id": "l48", "cat": "Ropa y accesorios", "name": "Buff", "qty": "1", "state": "tengo", "note": ""}, {"id": "l50", "cat": "Equipo", "name": "Hornillo camping gas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l51", "cat": "Equipo", "name": "Frontal", "qty": "1", "state": "tengo", "note": ""}, {"id": "l52", "cat": "Equipo", "name": "Gafas de sol", "qty": "1", "state": "tengo", "note": "Recomendado CAT 4. Las mías son de óptica graduadas, no sé qué CAT son. Llamar a óptica y preguntar."}, {"id": "l53", "cat": "Equipo", "name": "¿Envolvente protección lateral gafas?", "qty": "1", "state": "comprar", "note": "¿Merece la pena?"}, {"id": "l54", "cat": "Equipo", "name": "¿Sobregafas CAT 4?", "qty": "", "state": "comprar", "note": "Puedo ponerla en mis gafas de ver, con la envolvente lateral."}, {"id": "l55", "cat": "Equipo", "name": "Bolsa de agua para mochila", "qty": "1", "state": "tengo", "note": ""}, {"id": "l57", "cat": "Neceser", "name": "Crema solar (SPF 50)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l58", "cat": "Neceser", "name": "Protector labial", "qty": "1", "state": "tengo", "note": ""}, {"id": "l59", "cat": "Neceser", "name": "Cepillo y pasta de dientes", "qty": "1", "state": "tengo", "note": ""}, {"id": "l60", "cat": "Neceser", "name": "Pastilla de jabón", "qty": "1", "state": "comprar", "note": ""}, {"id": "l61", "cat": "Neceser", "name": "Tapones para los oídos", "qty": "1", "state": "comprar", "note": ""}, {"id": "l62", "cat": "Neceser", "name": "Toalla microfibra decathlon", "qty": "1", "state": "tengo", "note": ""}, {"id": "l63", "cat": "Neceser", "name": "Cortaúñas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l65", "cat": "Botiquín", "name": "Rodilleras", "qty": "2", "state": "tengo", "note": "¿Comprar buenas?"}, {"id": "l66", "cat": "Botiquín", "name": "Repelente de insectos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l67", "cat": "Botiquín", "name": "Pastillero", "qty": "1", "state": "comprar", "note": ""}, {"id": "l68", "cat": "Botiquín", "name": "Ventolín/Terbasmín", "qty": "1", "state": "comprar", "note": "Por si acaso nos enfriamos y se cierran bronquios"}, {"id": "l69", "cat": "Botiquín", "name": "Minoxidil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l70", "cat": "Botiquín", "name": "Malaria", "qty": "1", "state": "tengo", "note": "Hasta que termine tratamiento de Camerún"}, {"id": "l71", "cat": "Botiquín", "name": "Paracetamol (1g)", "qty": "1", "state": "casa", "note": ""}, {"id": "l72", "cat": "Botiquín", "name": "Ibuprofeno", "qty": "1", "state": "casa", "note": ""}, {"id": "l73", "cat": "Botiquín", "name": "¿Aspirina?", "qty": "", "state": "comprar", "note": "Para tomar por las noches"}, {"id": "l74", "cat": "Botiquín", "name": "Crema analgésica/antiinflamatoria", "qty": "1", "state": "casa", "note": ""}, {"id": "l75", "cat": "Botiquín", "name": "Compeed para ampollas", "qty": "", "state": "casa", "note": ""}, {"id": "l76", "cat": "Botiquín", "name": "Vaselina", "qty": "1", "state": "comprar", "note": ""}, {"id": "l77", "cat": "Botiquín", "name": "Tiritas", "qty": "", "state": "casa", "note": ""}, {"id": "l91", "cat": "Botiquín", "name": "Vendas", "qty": "", "state": "comprar", "note": "La agencia las pide."}, {"id": "l78", "cat": "Botiquín", "name": "Antidiarréico", "qty": "", "state": "comprar", "note": "¿Merece la pena? ¿Receta?"}, {"id": "l92", "cat": "Botiquín", "name": "Medicina para el dolor de estómago", "qty": "", "state": "comprar", "note": "La agencia la pide, aparte del antidiarréico."}, {"id": "l79", "cat": "Botiquín", "name": "Sales de hidratación", "qty": "¿cuántas?", "state": "comprar", "note": "¿Isotónicas de deporte sirven?"}, {"id": "l80", "cat": "Botiquín", "name": "Pastillas potabilizadoras", "qty": "", "state": "comprar", "note": ""}, {"id": "l81", "cat": "Botiquín", "name": "Gasas", "qty": "", "state": "casa", "note": ""}, {"id": "l82", "cat": "Botiquín", "name": "Esparadrapo", "qty": "", "state": "casa", "note": ""}, {"id": "l83", "cat": "Botiquín", "name": "Betadine? Desinfectante antiséptico?", "qty": "", "state": "casa", "note": ""}, {"id": "l84", "cat": "Botiquín", "name": "Pastillas mal de altura (Diamox, acetazolamida)", "qty": "", "state": "rose", "note": "La lleva Rose para los dos. Necesitan receta."}, {"id": "l85", "cat": "Botiquín", "name": "¿Parches de calor?", "qty": "", "state": "comprar", "note": ""}, {"id": "l87", "cat": "Comida/bebida", "name": "Snacks energéticos?", "qty": "", "state": "comprar", "note": "¿Comprar en Pamplona o en Kathmandú?"}, {"id": "l88", "cat": "Comida/bebida", "name": "Pastillas isotónicas", "qty": "", "state": "papa", "note": ""}];
+  var LOG_A = [{"id": "l5", "cat": "Documentación y dinero", "name": "Pasaporte", "qty": "1", "state": "tengo", "note": ""}, {"id": "l6", "cat": "Documentación y dinero", "name": "Visado de Nepal", "qty": "1", "state": "revisar", "note": "Mirar cómo se consigue en el aeropuerto. Mi estancia es de 17 días: visado de 30 días (50 USD). Detalle en Viaje."}, {"id": "l7", "cat": "Documentación y dinero", "name": "Seguro de viaje", "qty": "1", "state": "tengo", "note": "Que cubra rescate en helicóptero y accidentes: lo piden las agencias."}, {"id": "l8", "cat": "Documentación y dinero", "name": "Copia impresa pasaporte", "qty": "1", "state": "preparar", "note": ""}, {"id": "l9", "cat": "Documentación y dinero", "name": "Copias digitales de documentos", "qty": "1", "state": "preparar", "note": "Pasaporte, seguro y billetes en el móvil y la nube"}, {"id": "l10", "cat": "Documentación y dinero", "name": "Efectivo", "qty": "1", "state": "preparar", "note": "Decidir exactamente cuánto dinero llevo. Las ofertas no incluyen propinas, bebidas, duchas calientes, carga de baterías ni wifi."}, {"id": "l90", "cat": "Documentación y dinero", "name": "Propinas para guía y porteador", "qty": "", "state": "preparar", "note": "No están incluidas en la oferta."}, {"id": "l14", "cat": "Electrónica y cámara", "name": "Cámara de fotos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l15", "cat": "Electrónica y cámara", "name": "Baterías de cámara", "qty": "3", "state": "tengo", "note": "Llevar las tres cargadas"}, {"id": "l16", "cat": "Electrónica y cámara", "name": "Cargador baterías cámara", "qty": "1", "state": "tengo", "note": ""}, {"id": "l17", "cat": "Electrónica y cámara", "name": "Batería portátil (power bank)", "qty": "1", "state": "tengo", "note": ""}, {"id": "l18", "cat": "Electrónica y cámara", "name": "Adaptador de enchufe tipo C/D", "qty": "1", "state": "comprar", "note": "Nepal usa 230 V y 50 Hz; el de EE. UU. parece que no sirve"}, {"id": "l19", "cat": "Electrónica y cámara", "name": "Funda para cámara (pequeña)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l20", "cat": "Electrónica y cámara", "name": "Click para cámara en mochila", "qty": "1", "state": "comprar", "note": "Llevar la cámara a mano en la mochila (en la correa)"}, {"id": "l21", "cat": "Electrónica y cámara", "name": "Cargador del móvil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l22", "cat": "Electrónica y cámara", "name": "Tarjetas de memoria", "qty": "2", "state": "comprar", "note": ""}, {"id": "l23", "cat": "Electrónica y cámara", "name": "Adaptador tarjeta memoria a USB-C", "qty": "1", "state": "tengo", "note": ""}, {"id": "l24", "cat": "Electrónica y cámara", "name": "Pilas de repuesto", "qty": "2", "state": "comprar", "note": ""}, {"id": "l25", "cat": "Electrónica y cámara", "name": "Bolsa estanca (Decathlon)", "qty": "2?", "state": "comprar", "note": "Proteger cámara, electrónica y documentos de la lluvia"}, {"id": "l26", "cat": "Electrónica y cámara", "name": "SIM", "qty": "1", "state": "comprar", "note": "Me dice Rose NTC en Katmandú"}, {"id": "l28", "cat": "Ropa y accesorios", "name": "Camisetas lana merino", "qty": "4", "state": "tengo", "note": ""}, {"id": "l29", "cat": "Ropa y accesorios", "name": "Camisetas deporte", "qty": "?", "state": "tengo", "note": ""}, {"id": "l30", "cat": "Ropa y accesorios", "name": "Capa base manga larga merino", "qty": "3", "state": "tengo", "note": ""}, {"id": "l31", "cat": "Ropa y accesorios", "name": "Capa base manga larga deporte", "qty": "2", "state": "tengo", "note": ""}, {"id": "l32", "cat": "Ropa y accesorios", "name": "Forro polar", "qty": "1-2?", "state": "tengo", "note": ""}, {"id": "l33", "cat": "Ropa y accesorios", "name": "Abrigo de plumas", "qty": "1", "state": "alquilar", "note": "No sé si es mejor alquilar o llevar"}, {"id": "l34", "cat": "Ropa y accesorios", "name": "Gore Tex", "qty": "1?", "state": "tengo", "note": ""}, {"id": "l35", "cat": "Ropa y accesorios", "name": "Ropa interior", "qty": "15", "state": "comprar", "note": ""}, {"id": "l36", "cat": "Ropa y accesorios", "name": "Calcetines monte", "qty": "15?", "state": "comprar", "note": ""}, {"id": "l37", "cat": "Ropa y accesorios", "name": "Saco de dormir", "qty": "1", "state": "alquilar", "note": "Confirmar temperatura mínima. Tengo de confort 0 ºC. La agencia del Manaslu pide uno de −15 °C y dice que se alquila o compra fácil en Katmandú."}, {"id": "l38", "cat": "Ropa y accesorios", "name": "Bastones de trekking", "qty": "1", "state": "alquilar", "note": ""}, {"id": "l39", "cat": "Ropa y accesorios", "name": "Pantalones de monte", "qty": "2?", "state": "comprar", "note": ""}, {"id": "l40", "cat": "Ropa y accesorios", "name": "Sobrepantalón impermeable", "qty": "1", "state": "comprar", "note": ""}, {"id": "l41", "cat": "Ropa y accesorios", "name": "Tevas?", "qty": "1", "state": "tengo", "note": "Para descansar, no sé si llevar Tevas o unas deportivas"}, {"id": "l42", "cat": "Ropa y accesorios", "name": "Pantaloneta descansar?", "qty": "2", "state": "tengo", "note": ""}, {"id": "l43", "cat": "Ropa y accesorios", "name": "Pijama?", "qty": "1", "state": "tengo", "note": ""}, {"id": "l44", "cat": "Ropa y accesorios", "name": "Botas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l45", "cat": "Ropa y accesorios", "name": "Gorro de explorador", "qty": "1", "state": "tengo", "note": ""}, {"id": "l46", "cat": "Ropa y accesorios", "name": "Gorro de lana merino", "qty": "1", "state": "tengo", "note": ""}, {"id": "l47", "cat": "Ropa y accesorios", "name": "Guantes", "qty": "1", "state": "comprar", "note": ""}, {"id": "l48", "cat": "Ropa y accesorios", "name": "Buff", "qty": "1", "state": "tengo", "note": ""}, {"id": "l50", "cat": "Equipo", "name": "Hornillo camping gas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l51", "cat": "Equipo", "name": "Frontal", "qty": "1", "state": "tengo", "note": ""}, {"id": "l52", "cat": "Equipo", "name": "Gafas de sol", "qty": "1", "state": "tengo", "note": "Recomendado CAT 4. Las mías son de óptica graduadas, no sé qué CAT son. Llamar a óptica y preguntar."}, {"id": "l53", "cat": "Equipo", "name": "¿Envolvente protección lateral gafas?", "qty": "1", "state": "comprar", "note": "¿Merece la pena?"}, {"id": "l54", "cat": "Equipo", "name": "¿Sobregafas CAT 4?", "qty": "", "state": "comprar", "note": "Puedo ponerla en mis gafas de ver, con la envolvente lateral."}, {"id": "l55", "cat": "Equipo", "name": "Bolsa de agua para mochila", "qty": "1", "state": "tengo", "note": ""}, {"id": "l57", "cat": "Neceser", "name": "Crema solar (SPF 50)", "qty": "1", "state": "comprar", "note": ""}, {"id": "l58", "cat": "Neceser", "name": "Protector labial", "qty": "1", "state": "tengo", "note": ""}, {"id": "l59", "cat": "Neceser", "name": "Cepillo y pasta de dientes", "qty": "1", "state": "tengo", "note": ""}, {"id": "l60", "cat": "Neceser", "name": "Pastilla de jabón", "qty": "1", "state": "comprar", "note": ""}, {"id": "l61", "cat": "Neceser", "name": "Tapones para los oídos", "qty": "1", "state": "comprar", "note": ""}, {"id": "l62", "cat": "Neceser", "name": "Toalla microfibra decathlon", "qty": "1", "state": "tengo", "note": ""}, {"id": "l63", "cat": "Neceser", "name": "Cortaúñas", "qty": "1", "state": "tengo", "note": ""}, {"id": "l65", "cat": "Botiquín", "name": "Rodilleras", "qty": "2", "state": "tengo", "note": "¿Comprar buenas?"}, {"id": "l66", "cat": "Botiquín", "name": "Repelente de insectos", "qty": "1", "state": "tengo", "note": ""}, {"id": "l67", "cat": "Botiquín", "name": "Pastillero", "qty": "1", "state": "comprar", "note": ""}, {"id": "l68", "cat": "Botiquín", "name": "Ventolín/Terbasmín", "qty": "1", "state": "comprar", "note": "Por si acaso nos enfriamos y se cierran bronquios"}, {"id": "l69", "cat": "Botiquín", "name": "Minoxidil", "qty": "1", "state": "tengo", "note": ""}, {"id": "l70", "cat": "Botiquín", "name": "Malaria", "qty": "1", "state": "tengo", "note": "Hasta que termine tratamiento de Camerún"}, {"id": "l71", "cat": "Botiquín", "name": "Paracetamol (1g)", "qty": "1", "state": "casa", "note": ""}, {"id": "l72", "cat": "Botiquín", "name": "Ibuprofeno", "qty": "1", "state": "casa", "note": ""}, {"id": "l73", "cat": "Botiquín", "name": "¿Aspirina?", "qty": "", "state": "comprar", "note": "Para tomar por las noches"}, {"id": "l74", "cat": "Botiquín", "name": "Crema analgésica/antiinflamatoria", "qty": "1", "state": "casa", "note": ""}, {"id": "l75", "cat": "Botiquín", "name": "Compeed para ampollas", "qty": "", "state": "casa", "note": ""}, {"id": "l76", "cat": "Botiquín", "name": "Vaselina", "qty": "1", "state": "comprar", "note": ""}, {"id": "l77", "cat": "Botiquín", "name": "Tiritas", "qty": "", "state": "casa", "note": ""}, {"id": "l91", "cat": "Botiquín", "name": "Vendas", "qty": "", "state": "comprar", "note": "La agencia las pide."}, {"id": "l78", "cat": "Botiquín", "name": "Antidiarréico", "qty": "", "state": "comprar", "note": "¿Merece la pena? ¿Receta?"}, {"id": "l92", "cat": "Botiquín", "name": "Medicina para el dolor de estómago", "qty": "", "state": "comprar", "note": "La agencia la pide, aparte del antidiarréico."}, {"id": "l79", "cat": "Botiquín", "name": "Sales de hidratación", "qty": "¿cuántas?", "state": "comprar", "note": "¿Isotónicas de deporte sirven?"}, {"id": "l80", "cat": "Botiquín", "name": "Pastillas potabilizadoras", "qty": "", "state": "comprar", "note": ""}, {"id": "l81", "cat": "Botiquín", "name": "Gasas", "qty": "", "state": "casa", "note": ""}, {"id": "l82", "cat": "Botiquín", "name": "Esparadrapo", "qty": "", "state": "casa", "note": ""}, {"id": "l83", "cat": "Botiquín", "name": "Betadine? Desinfectante antiséptico?", "qty": "", "state": "casa", "note": ""}, {"id": "l84", "cat": "Botiquín", "name": "Pastillas mal de altura (Diamox, acetazolamida)", "qty": "", "state": "rose", "note": "La lleva Rose para los dos. Necesitan receta."}, {"id": "l85", "cat": "Botiquín", "name": "¿Parches de calor?", "qty": "", "state": "comprar", "note": ""}, {"id": "l87", "cat": "Comida/bebida", "name": "Snacks energéticos?", "qty": "", "state": "comprar", "note": "¿Comprar en Pamplona o en Kathmandú?"}, {"id": "l88", "cat": "Comida/bebida", "name": "Pastillas isotónicas", "qty": "", "state": "papa", "note": ""}];
   var ROSE_OUT = { l14: 1, l15: 1, l16: 1, l19: 1, l20: 1, l22: 1, l23: 1, l69: 1 };
   var LOG_R = LOG_A.filter(function (i) { return !ROSE_OUT[i.id]; }).map(function (i) {
-    if (i.id === "l84") return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "comprar", note: "La llevas tú para los dos. Necesita receta." };
+    if (i.id === "l84") return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "comprar", note: "La llevo yo para los dos. Necesita receta." };
+    if (i.id === "l37") return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "revisar", note: "La agencia del Manaslu pide uno de −15 °C y dice que se alquila o compra fácil en Katmandú." };
     return { id: i.id, cat: i.cat, name: i.name, qty: i.qty, state: "revisar", note: i.note && /agencia|helicóptero|incluyen|incluida/.test(i.note) ? i.note : "" };
   });
   var LOGS = { alejandro: LOG_A, rose: LOG_R };
@@ -536,8 +536,8 @@
   };
   var DAYS_BASE = [
     { id: "jueves", label: "Jue", date: "29 oct", full: "Jueves 29 de octubre", title: "Llegada y barrio de la stupa", blocks: [
-      { name: "Llegada", time: "aterrizas a las 11:20", items: [
-        { id: "j-visa", text: "Sacar el visado en el aeropuerto", tip: "Tu estancia es de 17 días, así que te toca el de 30 días. Más detalle en la pestaña Viaje." },
+      { name: "Llegada", time: "aterrizo a las 11:20", items: [
+        { id: "j-visa", text: "Sacar el visado en el aeropuerto", tip: "Mi estancia es de 17 días, así que me toca el de 30 días. Más detalle en la pestaña Viaje." },
         { id: "j-hotel", text: "Ir del aeropuerto al hotel", tip: "Hotel Bhrikuti Tara, 3.500 rupias la noche. Las ofertas del trek no incluyen la recogida en el aeropuerto ni el alojamiento en Katmandú." }
       ]},
       { name: "Tarde", time: "descanso", items: [
@@ -545,24 +545,24 @@
         { id: "j-walk", text: "Pasear por el barrio" }
       ]},
       { name: "Gestiones", time: "pasaporte y foto del DNI", items: [
-        { id: "j-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias en la avenida que cruza hacia la stupa. Lleva el pasaporte y una foto del DNI; da igual que no esté actualizada. Rose recomienda NTC." },
+        { id: "j-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias en la avenida que cruza hacia la stupa. Llevar el pasaporte y una foto del DNI; da igual que no esté actualizada. Rose recomienda NTC." },
         { id: "j-cash", text: "Cambiar euros a rupias en un comercio de al lado", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" }
       ]},
       { name: "Atardecer", time: "", items: [
         { id: "j-kora", text: "Dar un par de vueltas a la stupa", tip: "Con calma, para ver el ambiente." }
       ]},
       { name: "Noche", time: "rooftop", items: [
-        { id: "j-dinner", text: "Cenar en un rooftop con vistas a la stupa", tip: "No pidas dal bhat: será lo único que haya en el trek, salvo que quieras. Los momos son buenísimos." }
+        { id: "j-dinner", text: "Cenar en un rooftop con vistas a la stupa", tip: "No pedir dal bhat: será lo único que haya en el trek, salvo que me apetezca. Los momos son buenísimos." }
       ]}
     ]},
     { id: "viernes", label: "Vie", date: "30 oct", full: "Viernes 30 de octubre", title: "Colina por la mañana, río al caer la tarde", blocks: [
       { name: "Mañana", time: "", items: [
         { id: "f-break", text: "Desayunar en un café cerca de la stupa", tip: "Utpala mola." }
       ], extra: "picks", after: [
-        { id: "f-lunch", text: "Comer por la zona de la visita", tip: "Come por ahí, donde acabes tras el templo o el monasterio." }
+        { id: "f-lunch", text: "Comer por la zona de la visita", tip: "Comer por ahí, donde acabe tras el templo o el monasterio." }
       ]},
       { name: "Tarde", time: "sobre las 18:00", items: [
-        { id: "f-pashu", text: "Ir al templo de Pashupatinath", tip: "Ve sobre las 18:00. Los muertos son cremados junto al río y sus cenizas van al agua: el ciclo continúa. El sol se pone alrededor de las 17:20; sé discreto con la cámara." }
+        { id: "f-pashu", text: "Ir al templo de Pashupatinath", tip: "Ir sobre las 18:00. Los muertos son cremados junto al río y sus cenizas van al agua: el ciclo continúa. El sol se pone alrededor de las 17:20; ser discreto con la cámara." }
       ]}
     ]},
     { id: "sabado", label: "Sáb", date: "31 oct", full: "Sábado 31 de octubre", title: "Bhaktapur por la mañana, y Rose por la tarde", blocks: [
@@ -587,12 +587,12 @@
       { name: "Tarde en la agencia", time: "el trek sale el 2", items: [
         { id: "d-confirm", text: "Confirmar con la agencia qué trek sale", tip: "Manaslu si se puede; si no, Annapurna. Los dos salen el 2 de noviembre y vuelven a Katmandú el 11." },
         { id: "d-pay", text: "Acordar cuándo se paga el saldo", tip: "Adelanto de 200 USD. Saldo para dos: 1.780 USD (Manaslu con jeep privado) o 1.440 USD (Annapurna)." },
-        { id: "d-talk", text: "Que nos expliquen el trekking en la agencia", tip: "Aprovecha para preguntar por el recorrido, la hora de recogida, el seguro y lo que llevar." },
+        { id: "d-talk", text: "Que nos expliquen el trekking en la agencia", tip: "Aprovechar para preguntar por el recorrido, la hora de recogida, el seguro y lo que llevar." },
         { id: "d-gear", text: "Comprar o alquilar lo que falte en la zona de compras", tip: "La agencia pide un saco de −15 °C y dice que se alquila o compra fácil en Katmandú. La zona de compras está donde está la agencia." }
       ]},
       { name: "Noche", time: "", items: [
         { id: "d-bag", text: "Dejar la maleta en el Hotel Bhrikuti Tara", tip: "Se queda guardada allí durante el trek. Al trek solo va la mochila. Se vuelve a ese hotel después, del 11 al 14 de noviembre." },
-        { id: "d-pack", text: "Dejar la mochila lista", tip: "En el programa del Manaslu el guía te recoge en el hotel el 2 de noviembre; confirma la hora." }
+        { id: "d-pack", text: "Dejar la mochila lista", tip: "En el programa del Manaslu el guía nos recoge en el hotel el 2 de noviembre; confirmar la hora." }
       ]}
     ]}
   ];
@@ -603,7 +603,7 @@
   var RETURN_DAYS = [
     { id: "mie11", label: "Mié", date: "11 nov", full: "Miércoles 11 de noviembre", title: "Vuelta del trek", blocks: [
       { name: "Llegada", time: "", items: [
-        { id: "v-hotel", text: "Volver al Hotel Bhrikuti Tara", tip: "Aquí está la maleta que dejasteis antes del trek." },
+        { id: "v-hotel", text: "Volver al Hotel Bhrikuti Tara", tip: "Aquí está la maleta que dejamos antes del trek." },
         { id: "v-maleta", text: "Recoger la maleta y ducharse" },
         { id: "v-laundry", text: "Dar la ropa del trek a lavar" }
       ]},
@@ -614,19 +614,19 @@
     { id: "jue12", label: "Jue", date: "12 nov", full: "Jueves 12 de noviembre", title: "Katmandú sin prisa", blocks: [
       { name: "Día libre", time: "", items: [
         { id: "v-descanso", text: "Descansar las piernas" },
-        { id: "v-pend", text: "Visitar lo que se quedó pendiente", tip: "Por ejemplo Patan, Boudhanath o Pashupatinath. Ajústalo a lo que os apetezca." }
+        { id: "v-pend", text: "Visitar lo que se quedó pendiente", tip: "Por ejemplo Patan, Boudhanath o Pashupatinath. Según lo que nos apetezca." }
       ]}
     ]},
     { id: "vie13", label: "Vie", date: "13 nov", full: "Viernes 13 de noviembre", title: "Compras y maleta", blocks: [
       { name: "Día libre", time: "", items: [
         { id: "v-regalos", text: "Comprar regalos y recuerdos" },
-        { id: "v-rupias", text: "Gastar o cambiar las rupias que sobren", tip: "Normalmente se cambian mejor antes de volar; guarda lo justo para el taxi al aeropuerto." },
+        { id: "v-rupias", text: "Gastar o cambiar las rupias que sobren", tip: "Normalmente se cambian mejor antes de volar; guardar lo justo para el taxi al aeropuerto." },
         { id: "v-maleta2", text: "Hacer la maleta" }
       ]}
     ]},
     { id: "sab14", label: "Sáb", date: "14 nov", full: "Sábado 14 de noviembre", title: "Vuelo de vuelta", blocks: [
       { name: "Salida", time: "vuelo 3U 3902 de Alejandro, hora por confirmar", items: [
-        { id: "v-out", text: "Dejar el hotel e ir al aeropuerto", tip: "Llega con margen; el aeropuerto de Katmandú es lento en facturación y control." }
+        { id: "v-out", text: "Dejar el hotel e ir al aeropuerto", tip: "Llegar con margen; el aeropuerto de Katmandú es lento en facturación y control." }
       ]}
     ]}
   ];
@@ -640,12 +640,12 @@
     if (who !== "rose") return d;
     return [{
       id: "sabado", label: "Sáb", date: "31 oct", full: "Sábado 31 de octubre", title: "Llegada y encuentro con Alejandro", blocks: [
-        { name: "Llegada", time: "tu hora de aterrizaje, por confirmar", items: [
-          { id: "r-visa", text: "Sacar el visado en el aeropuerto", tip: "Depende de cuántos días te quedes: hasta 15 días son 30 USD y hasta 30 días son 50 USD. Confirma tu fecha de salida y ten el pasaporte a mano." },
+        { name: "Llegada", time: "mi hora de aterrizaje, por confirmar", items: [
+          { id: "r-visa", text: "Sacar el visado en el aeropuerto", tip: "Depende de cuántos días me quede: hasta 15 días son 30 USD y hasta 30 días son 50 USD. Confirmar mi fecha de salida y tener el pasaporte a mano." },
           { id: "r-hotel", text: "Ir del aeropuerto al hotel", tip: "Hotel Bhrikuti Tara, 3.500 rupias la noche. Las ofertas del trek no incluyen la recogida en el aeropuerto ni el alojamiento en Katmandú." }
         ]},
         { name: "Gestiones", time: "pasaporte y foto del DNI", items: [
-          { id: "r-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias cerca de la stupa. Lleva el pasaporte y una foto del DNI. Una opción es NTC." },
+          { id: "r-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias cerca de la stupa. Llevar el pasaporte y una foto del DNI. Una opción es NTC." },
           { id: "r-cash", text: "Cambiar euros a rupias en un comercio", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" }
         ]}
       ]
@@ -774,8 +774,8 @@
     var m = {
       live: ["sincronizado", "Guardado en Google Sheets: se ve igual en el móvil, el ordenador y en el de Rose"],
       offline: ["sin conexión", "Los cambios se guardan aquí y se suben solos cuando vuelva la conexión"],
-      code: ["palabra incorrecta", "Toca para escribir otra vez la palabra de la app"],
-      nocode: ["conectar", "Toca para escribir la palabra de la app y sincronizar"],
+      code: ["palabra incorrecta", "Tocar para escribir otra vez la palabra de la app"],
+      nocode: ["conectar", "Tocar para escribir la palabra de la app y sincronizar"],
       local: ["…", "Conectando"]
     }[st] || ["", ""];
     el.textContent = m[0]; el.title = m[1]; el.className = "sync " + st;
@@ -783,7 +783,7 @@
     el.tabIndex = st === "code" || st === "nocode" ? 0 : -1;
   }
   function askCode() {
-    var w = window.prompt("Palabra de la app (la misma para Rose y para ti):", "");
+    var w = window.prompt("Palabra de la app (la misma para los dos):", "");
     if (w === null) return;
     w = w.trim(); if (!w) return;
     CODE = w; try { localStorage.setItem(CODEKEY, w); } catch (e) {}
@@ -827,13 +827,13 @@
   function blockEditorHTML(day, bi) {
     var b = day.blocks[bi];
     return '<div class="pe-ed pe-eb" data-ped="blk" data-d="' + day.id + '" data-b="' + bi + '"><div class="pe-row"><input class="pe pe-name" data-f="name" value="' + attr(b.name) + '" placeholder="Sección (Mañana, Tarde…)" enterkeyhint="done"><input class="pe pe-time" data-f="time" value="' + attr(b.time) + '" placeholder="hora o nota" enterkeyhint="done"></div>' +
-      '<div class="pe-btns">' + (day.id === "sabado" && !b.dynamic ? '<button type="button" class="pe-link" data-pshare="' + day.id + "|" + bi + '">' + (b.shared ? "Hacer solo mío" : "Hacer común") + "</button>" : "") + '<button type="button" class="pe-link' + (isArmed("b" + day.id + bi) ? " armed" : "") + '" data-prm>' + (isArmed("b" + day.id + bi) ? "¿Seguro? Toca otra vez" : "Quitar sección") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
+      '<div class="pe-btns">' + (day.id === "sabado" && !b.dynamic ? '<button type="button" class="pe-link" data-pshare="' + day.id + "|" + bi + '">' + (b.shared ? "Hacer solo mío" : "Hacer común") + "</button>" : "") + '<button type="button" class="pe-link' + (isArmed("b" + day.id + bi) ? " armed" : "") + '" data-prm>' + (isArmed("b" + day.id + bi) ? "¿Seguro? Tocar otra vez" : "Quitar sección") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
   }
   function dayEditorHTML(day) {
     return '<div class="pe-ed pe-day" data-ped="day" data-d="' + day.id + '"><label>Día completo<input class="pe" data-f="full" value="' + attr(day.full) + '" enterkeyhint="done"></label>' +
       '<label>Título<input class="pe" data-f="title" value="' + attr(day.title) + '" enterkeyhint="done"></label>' +
       '<label>Pestaña<input class="pe" data-f="label" value="' + attr(day.label) + '" maxlength="12" enterkeyhint="done"></label><label>Fecha<input class="pe" data-f="date" value="' + attr(day.date) + '" maxlength="12" enterkeyhint="done"></label>' +
-      '<div class="pe-btns"><button type="button" class="pe-link' + (isArmed("d" + day.id) ? " armed" : "") + '" data-prm' + (DAYS.length < 2 ? " hidden" : "") + ">" + (isArmed("d" + day.id) ? "¿Seguro? Toca otra vez" : "Quitar día") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
+      '<div class="pe-btns"><button type="button" class="pe-link' + (isArmed("d" + day.id) ? " armed" : "") + '" data-prm' + (DAYS.length < 2 ? " hidden" : "") + ">" + (isArmed("d" + day.id) ? "¿Seguro? Tocar otra vez" : "Quitar día") + '</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div>';
   }
   function commitPed(ed, cancel) {
     if (!ed || ed._done) return;
@@ -941,7 +941,7 @@
   function entryHTML(en) {
     var d = new Date(en.ts), hm = p2(d.getHours()) + ":" + p2(d.getMinutes());
     if (pedit && pedit.k === "diary" && pedit.id === en.id) {
-      return '<article class="dent"><div class="pe-ed" data-ped="diary" data-id="' + en.id + '"><textarea class="pe dta" rows="3" data-f="text" placeholder="Escribe…">' + esc(en.text) + '</textarea>' +
+      return '<article class="dent"><div class="pe-ed" data-ped="diary" data-id="' + en.id + '"><textarea class="pe dta" rows="3" data-f="text" placeholder="Escribir…">' + esc(en.text) + '</textarea>' +
         '<div class="pe-btns"><button type="button" class="pe-link" data-prm>Quitar</button><button type="button" class="pe-ok" data-pok>Listo</button></div></div></article>';
     }
     return '<article class="dent"><span class="dtime">' + hm + '</span><div class="dtxt" data-dedit="' + en.id + '">' + esc(en.text) + "</div></article>";
@@ -969,7 +969,7 @@
     var list = S.diary.filter(function (en) { return en.day === day.id || (key && !en.day && dkey(en.ts) === key); }).sort(function (a, b) { return a.ts - b.ts; });
     html += '<section class="blk"><div class="eyebrow"><h3>Diario</h3><span>' + (list.length ? list.length + (list.length === 1 ? " entrada" : " entradas") : "") + "</span></div>";
     html += list.map(entryHTML).join("");
-    return html + composerHTML("Apunta algo de este día…", day.id) + "</section>";
+    return html + composerHTML("Apuntar algo de este día…", day.id) + "</section>";
   }
   function saveEntry(comp) {
     var ta = comp.querySelector("textarea"), txt = ta.value.trim();
@@ -1012,7 +1012,7 @@
       '<span' + (findItem(it.id) ? ' class="txt" data-eid="' + it.id + '"' : "") + '><span class="t">' + esc(it.text) + '</span>' + (it.tip ? '<span class="tip">' + esc(it.tip) + "</span>" : "") + "</span></label></li>";
   }
   function fxHTML() {
-    return '<div class="scrap tape g" style="--r:-.7deg"><h3>Euros a rupias</h3><p class="muted">Tasa oficial de compra del Nepal Rastra Bank del 20 de octubre de 2026. Los comercios de cambio suelen dar algo menos: pon la del cartel del día. Es el mismo tipo que usa el presupuesto al apuntar gastos en rupias.</p>' +
+    return '<div class="scrap tape g" style="--r:-.7deg"><h3>Euros a rupias</h3><p class="muted">Tasa oficial de compra del Nepal Rastra Bank del 20 de octubre de 2026. Los comercios de cambio suelen dar algo menos: poner la del cartel del día. Es el mismo tipo que usa el presupuesto al apuntar gastos en rupias.</p>' +
       '<div class="fx"><div><label for="eur">Euros</label><input id="eur" type="number" inputmode="decimal" min="0" step="any" value="' + S.eur + '"></div>' +
       '<div><label for="rate">Rupias por €</label><input id="rate" type="number" inputmode="decimal" min="0" step="any" value="' + S.rate + '"></div>' +
       '<div class="fx-out"><span class="hand">recibirías</span><b id="fxout">' + fmt.format(S.eur * S.rate) + ' NPR</b></div></div></div>';
@@ -1022,7 +1022,7 @@
       var p = PLACES[k], on = S.visited[k];
       return '<button type="button" class="pick tape ' + (k === "kopan" ? "b" : "") + '" style="--r:' + r + '" data-visit="' + k + '" aria-pressed="' + on + '"><span><strong>' + esc(p.name) + "</strong><small>" + esc(p.tip) + '</small></span><span class="st">' + (on ? "hoy" : "sábado") + "</span></button>";
     }
-    return '<div class="picks"><p class="muted">A dónde vas en moto. Lo que dejes sin marcar pasa a la mañana del sábado.</p>' + btn("swayam", "-.8deg") + btn("kopan", ".7deg") + "</div>";
+    return '<div class="picks"><p class="muted">A dónde voy en moto. Lo que deje sin marcar pasa a la mañana del sábado.</p>' + btn("swayam", "-.8deg") + btn("kopan", ".7deg") + "</div>";
   }
 
   /* ---------- Tiempo (Open-Meteo) ---------- */
@@ -1144,7 +1144,7 @@
       html += '<button type="button" class="pill" data-day="' + d.id + '" aria-pressed="' + (d.id === day.id) + '">' + d.label + " " + d.date.split(" ")[0] + "<small>" + c.done + "/" + c.total + "</small></button>";
     });
     html += '<button type="button" class="pill pe-plusday" data-paddday aria-label="Añadir día" title="Añadir día">+</button>';
-    html += "</div>" + (WHO === "rose" && !S.plan ? '<p class="figcap" style="margin-top:8px">Plan provisional: toca un título para editarlo y usa «+» para añadir.</p>' : "") + "</div>";
+    html += "</div>" + (WHO === "rose" && !S.plan ? '<p class="figcap" style="margin-top:8px">Plan provisional: tocar un título para editarlo y «+» para añadir.</p>' : "") + "</div>";
     if (pedit && pedit.k === "day" && pedit.d === day.id) html += dayEditorHTML(day);
     else html += '<div class="dayhead tap" data-pday="' + day.id + '"><p class="hand">' + esc(day.full) + "</p><h2>" + esc(day.title) + "</h2></div>";
     wxEnsure(); html += wxHTML(day);
@@ -1155,7 +1155,7 @@
       var items = b.items;
       if (b.dynamic === "satMorning") {
         items = b.items.concat(satItems());
-        if (items.length === 0) html += '<p class="free">Ya hiciste las dos visitas el viernes. La mañana queda libre.</p>';
+        if (items.length === 0) html += '<p class="free">Ya hice las dos visitas el viernes. La mañana queda libre.</p>';
       }
       if (items.length) {
         html += '<ul class="items">';
@@ -1170,7 +1170,7 @@
       html += '<button type="button" class="pe-plus" data-padd="' + day.id + "|" + bi + '" aria-label="Añadir a esta sección" title="Añadir">+</button>';
       html += "</section>";
     });
-    html += '<div class="pe-foot"><button type="button" class="pe-link" data-paddblk>+ Añadir sección</button>' + (S.plan ? '<button type="button" class="pe-link' + (isArmed("restore") ? " armed" : "") + '" data-prestore>' + (isArmed("restore") ? "¿Seguro? Toca otra vez" : "Volver al plan original") + "</button>" : "") + "</div>";
+    html += '<div class="pe-foot"><button type="button" class="pe-link" data-paddblk>+ Añadir sección</button>' + (S.plan ? '<button type="button" class="pe-link' + (isArmed("restore") ? " armed" : "") + '" data-prestore>' + (isArmed("restore") ? "¿Seguro? Tocar otra vez" : "Volver al plan original") + "</button>" : "") + "</div>";
     html += diaryDayHTML(day);
     return html;
   }
@@ -1182,8 +1182,8 @@
 
     '<h2 class="sec">Antes de volar</h2>' +
     '<div class="scrap tape" style="--r:-.6deg"><ul class="plain">' +
-      '<li><b>24 oct</b><span>Vuelves de Camerún a España y llegas a Pamplona por la noche.</span></li>' +
-      '<li><b>27 oct</b><span>Sales de Pamplona por la tarde.</span></li>' +
+      '<li><b>24 oct</b><span>Vuelvo de Camerún a España y llego a Pamplona por la noche.</span></li>' +
+      '<li><b>27 oct</b><span>Salgo de Pamplona por la tarde.</span></li>' +
       '<li><b>28 oct</b><span>Vuelo a Katmandú con escala en Chengdu.</span></li>' +
     '</ul></div>' +
 
@@ -1192,21 +1192,21 @@
     '<p class="hand t-note">11 h 40 min de vuelo. Hora de Chengdu a la llegada.</p>' +
     '<p class="hand t-between">Escala en Chengdu: 3 h 20 min</p>' +
     ticket("29 OCT", "jue", "3U 3901", "TFU", "Chengdu Tianfu", "09:05", "KTM", "Katmandú", "11:20", "", ".6deg") +
-    '<p class="hand t-note">4 h 30 min de vuelo. Aterrizas el jueves a mediodía.</p>' +
+    '<p class="hand t-note">4 h 30 min de vuelo. Aterrizo el jueves a mediodía.</p>' +
     '<div style="height:18px"></div>' +
     ticket("14 NOV", "sáb", "3U 3902", "KTM", "Katmandú", "12:20", "TFU", "Chengdu Tianfu", "18:15", "", "-.4deg") +
     '<p class="hand t-note">3 h 40 min de vuelo.</p>' +
     '<p class="hand t-between">Escala en Chengdu</p>' +
     ticket("15 NOV", "dom", "3U 3803", "TFU", "Chengdu Tianfu", "por confirmar", "MAD", "Madrid", "07:15", "", ".5deg") +
-    '<p class="hand t-note">Llegas a Madrid hacia las 7:15 (hora de Madrid, según tu calendario). La hora de salida de Chengdu no se ve en la captura: mírala en el billete.</p>' +
-    '<div class="scrap tape b" style="--r:.5deg;margin-top:20px"><h3>Tren a Pamplona</h3><p>Domingo 15 de noviembre, a media mañana. Revisa la hora exacta en el billete.</p></div>' +
+    '<p class="hand t-note">Llego a Madrid hacia las 7:15 (hora de Madrid, según mi calendario). La hora de salida de Chengdu no se ve en la captura: mirarla en el billete.</p>' +
+    '<div class="scrap tape b" style="--r:.5deg;margin-top:20px"><h3>Tren a Pamplona</h3><p>Domingo 15 de noviembre, a media mañana. Revisar la hora exacta en el billete.</p></div>' +
 
     '<h2 class="sec">Para tener a mano</h2>' +
     '<div class="scrap tape g" style="--r:-.5deg"><h3>Hora</h3><p>Nepal va 4 h 45 min por delante de España (UTC+5:45 frente a UTC+1). Chengdu va 7 h por delante.</p></div>' +
     '<div class="scrap tape c" style="--r:.6deg"><h3>Visado</h3>' +
-      '<p>Entras el 29 de octubre y sales el 14 de noviembre: 17 días. El visado de 15 días (30 USD, el que cita la oferta del Annapurna) se queda corto. Te toca el de 30 días, 50 USD.</p>' +
-      '<p>Lleva el pasaporte con al menos 6 meses de validez, una foto tipo carnet y dólares. Los datos se meten en las máquinas del aeropuerto o con el formulario online, que ha dado problemas.</p>' +
-      '<p class="muted">Tarifas según <a href="https://thelongestwayhome.com/travel-guides/nepal/nepal-visa-information.html">The Longest Way Home</a> (actualizada en enero de 2026). Confírmalas en la web del Departamento de Inmigración de Nepal antes de viajar.</p></div>';
+      '<p>Entro el 29 de octubre y salgo el 14 de noviembre: 17 días. El visado de 15 días (30 USD, el que cita la oferta del Annapurna) se queda corto. Me toca el de 30 días, 50 USD.</p>' +
+      '<p>Llevar el pasaporte con al menos 6 meses de validez, una foto tipo carnet y el dinero en efectivo (aceptan euros). Los datos se meten en las máquinas del aeropuerto o con el formulario online, que ha dado problemas.</p>' +
+      '<p class="muted">Tarifas según <a href="https://thelongestwayhome.com/travel-guides/nepal/nepal-visa-information.html">The Longest Way Home</a> (actualizada en enero de 2026). Confirmarlas en la web del Departamento de Inmigración de Nepal antes de viajar.</p></div>';
   }
   function ticket(dn, wd, flight, c1, city1, t1, c2, city2, t2, plus, r) {
     return '<div class="ticket" style="--r:' + r + '"><div class="t-main"><span class="lbl">Billete</span><div class="t-route">' +
@@ -1241,7 +1241,6 @@
       '<select class="st" data-st="' + it.id + '" data-v="' + s + '" aria-label="Estado de ' + nm + '">' +
       STATES.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === s ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select>" +
       (editingId === it.id ? editorHTML(it) : noteHTML(it)) +
-      (it.extra ? '<span class="ln x">' + esc(it.extra) + "</span>" : "") +
       '</div><button type="button" class="sdel" data-del="' + it.id + '" tabindex="-1" aria-label="Eliminar ' + nm + '">Eliminar</button></li>';
   }
   function autosize(ta) { ta.style.height = "auto"; ta.style.height = ta.scrollHeight + "px"; }
@@ -1291,8 +1290,8 @@
     html += '<div class="tally"><div><b>' + st.get + "</b><span>por conseguir</span></div><div><b>" + st.check + "</b><span>por revisar</span></div><div><b>" + st.packed + "</b><span>preparado</span></div></div>";
     var F = [["todo", "Todo"], ["conseguir", "Por conseguir"], ["revisar", "Por revisar"], ["tengo", "Tengo"], ["sinpreparar", "Sin preparar"], ["mochila", "Preparado"]];
     html += '<div class="pills">' + F.map(function (f) { return '<button type="button" class="pill" data-filter="' + f[0] + '" aria-pressed="' + (S.lfilter === f[0]) + '">' + f[1] + "</button>"; }).join("") + "</div>";
-    html += '<p class="figcap">Desliza una fila hacia la izquierda para eliminarla.</p>';
-    if (WHO === "rose") html += '<p class="figcap">Lista de partida: la misma que la de Alejandro, sin lo de la cámara. Todo en «revisar» para que lo ajustes tú: cambia cantidades, quita y añade.</p>';
+    html += '<p class="figcap">Deslizar una fila hacia la izquierda para eliminarla.</p>';
+    if (WHO === "rose") html += '<p class="figcap">Lista de partida: la misma que la de Alejandro, sin lo de la cámara. Todo en «revisar» para ajustarla a mi gusto: cambiar cantidades, quitar y añadir.</p>';
     var cats = [];
     allItems().forEach(function (it) { if (cats.indexOf(it.cat) < 0) cats.push(it.cat); });
     var shown = 0;
@@ -1333,7 +1332,7 @@
     ["6", "Aclimatación en Manang", "Paseo opcional hacia Ice Lake · 4–9 h · 8–12 km · 3.540 m", ""],
     ["7", "Manang → Yak Kharka", "3–4 h · 9–10 km · 4.020 m", ""],
     ["8", "Yak Kharka → Thorong Phedi", "4–5 h · 7–9 km · 4.450 m", ""],
-    ["9", "Thorong Phedi → paso Thorong La (5.416 m) → Muktinath", "8–10+ h · 15–16 km · duermes a 3.760 m", "peak"],
+    ["9", "Thorong Phedi → paso Thorong La (5.416 m) → Muktinath", "8–10+ h · 15–16 km · dormimos a 3.760 m", "peak"],
     ["10", "Muktinath → Pokhara por Tatopani", "Jeep privado · 7–10 h · 180–200 km · hotel Splendid View o similar", ""],
     ["11", "Pokhara → Katmandú", "Bus turístico · 6–8+ h · 200–210 km · día del Tihar (Bhai Tika)", ""]
   ];
@@ -1428,7 +1427,7 @@
       if (sl) {
         var a = sl[i + 1][1], dl = a - sl[i][1];
         var up = dl > 500 && a > 3000;
-        alt = '<p class="alt' + (up ? " up" : "") + '">Duermes a ' + fmtm(a) + " m · " + (dl === 0 ? "mismo nivel" : (dl > 0 ? "+" : "−") + fmtm(Math.abs(dl)) + " m") + (up ? " · subida fuerte" : "") + "</p>";
+        alt = '<p class="alt' + (up ? " up" : "") + '">Dormimos a ' + fmtm(a) + " m · " + (dl === 0 ? "mismo nivel" : (dl > 0 ? "+" : "−") + fmtm(Math.abs(dl)) + " m") + (up ? " · subida fuerte" : "") + "</p>";
       }
       return '<li class="day' + (d[3] ? " peak" : "") + '"><div class="dt"><b>' + d[0] + "</b><span>nov</span></div><div><h4>" + esc(d[1]) + (d[3] ? '<span class="flag">el día grande</span>' : "") + "</h4><p>" + esc(d[2]) + "</p>" + alt + "</div></li>";
     }).join("") + "</ul>";
@@ -1441,7 +1440,7 @@
 
   function viewTrek() {
     var html = '<div class="page-head"><h1>Trek</h1></div>';
-    html += '<div class="scrap tape" style="--r:-.5deg"><p>Si se puede ir al Manaslu, vais al Manaslu. Si las inundaciones lo impiden, el plan B es el Annapurna. Los dos salen de Katmandú el 2 de noviembre y vuelven el 11.</p></div>';
+    html += '<div class="scrap tape" style="--r:-.5deg"><p>Si se puede ir al Manaslu, vamos al Manaslu. Si las inundaciones lo impiden, el plan B es el Annapurna. Los dos salen de Katmandú el 2 de noviembre y vuelven el 11.</p></div>';
     html += '<div class="choice"><span class="lbl">Cuál va ganando</span>';
     [["", "Sin decidir", "Esperando a ver cómo está la zona del Manaslu."], ["manaslu", "Manaslu Circuit", "Plan A. Paso Larkya La, 5.106 m."], ["annapurna", "Annapurna Circuit", "Plan B. Paso Thorong La, 5.416 m."]].forEach(function (o, i) {
       html += '<button type="button" class="pick" style="--r:' + (i === 1 ? "-.5deg" : i === 2 ? ".5deg" : "0deg") + '" data-trek="' + o[0] + '" aria-pressed="' + (curTrek() === o[0]) + '"><span><strong>' + o[1] + "</strong><small>" + o[2] + '</small></span><span class="st">' + (curTrek() === o[0] ? "elegido" : "") + "</span></button>";
@@ -1465,9 +1464,9 @@
         row("Permisos", "ACAP, Manaslu, especial, Chumnubri, TIMS", "ACAP y TIMS") +
         row("Extra", "Se puede alargar a 11 días por 60 USD por persona", "1 noche de hotel en Pokhara incluida; se puede alargar una más") +
         "</tbody></table></div>";
-      html += '<div class="scrap tape c" style="--r:.5deg"><h3>Dos cosas a confirmar</h3><p>El presupuesto del Manaslu da el jeep privado como incluido y también como mejora de 200 USD por tramo. El total de 1.980 USD suma esos 400. Pregunta cuál es el precio real.</p><p>El 11 de noviembre es el Bhai Tika del Tihar y puede complicar el bus de Pokhara a Katmandú en el Annapurna.</p></div>';
-      html += '<div class="scrap tape" style="--r:.4deg"><h3>Ritmo de subida</h3><p>Una pauta habitual en montaña: por encima de 3.000 m, no subir más de unos 500 m de altitud de dormida al día y descansar un día cada 3 o 4. En el Manaslu hay dos días con +870 y +950 m (Sama Gaon y Dharmasala), justo antes del paso. En el Annapurna la mayor es +630 m. Los dos tienen un día de aclimatación (Sama Gaon y Manang).</p><p>No es consejo médico. Si pides la receta de Diamox, coméntalo con tu médico.</p></div>';
-      html += '<div class="scrap tape g" style="--r:-.4deg"><h3>Gastos aparte</h3><p>Ninguna de las dos ofertas incluye propinas, bebidas, duchas calientes, lavandería ni carga de baterías. Cuéntalo cuando decidas cuánto efectivo llevar.</p></div>';
+      html += '<div class="scrap tape c" style="--r:.5deg"><h3>Dos cosas a confirmar</h3><p>El presupuesto del Manaslu da el jeep privado como incluido y también como mejora de 200 USD por tramo. El total de 1.980 USD suma esos 400. Preguntar cuál es el precio real.</p><p>El 11 de noviembre es el Bhai Tika del Tihar y puede complicar el bus de Pokhara a Katmandú en el Annapurna.</p></div>';
+      html += '<div class="scrap tape" style="--r:.4deg"><h3>Ritmo de subida</h3><p>Una pauta habitual en montaña: por encima de 3.000 m, no subir más de unos 500 m de altitud de dormida al día y descansar un día cada 3 o 4. En el Manaslu hay dos días con +870 y +950 m (Sama Gaon y Dharmasala), justo antes del paso. En el Annapurna la mayor es +630 m. Los dos tienen un día de aclimatación (Sama Gaon y Manang).</p><p>No es consejo médico. Si pido la receta de Diamox, comentarlo con mi médico.</p></div>';
+      html += '<div class="scrap tape g" style="--r:-.4deg"><h3>Gastos aparte</h3><p>Ninguna de las dos ofertas incluye propinas, bebidas, duchas calientes, lavandería ni carga de baterías. Contarlo al decidir cuánto efectivo llevo.</p></div>';
     } else {
       var man = curTrek() === "manaslu";
       html += '<div class="scrap tape c" style="--r:-.3deg"><h3>Hotel en Katmandú</h3><p>Hotel Bhrikuti Tara, 3.500 rupias la noche. Es el mismo antes y después del trek. La maleta se queda allí y al trek se va solo con la mochila.</p></div>';
@@ -1496,8 +1495,8 @@
     { id: "k-hotel", n: "Hotel Bhrikuti Tara", s: "Hotel", ll: [27.73, 85.371], a: "r", d: "29 oct – 14 nov", t: "3.500 rupias la noche. La maleta se queda aquí del 2 al 11 de noviembre, y se vuelve a este hotel después. Posición orientativa: la ficha del hotel lo sitúa junto a Boudhanath." },
     { id: "k-boudha", n: "La stupa (Boudhanath)", s: "Stupa", ll: [27.7215, 85.362], a: "l", d: "29 y 30 oct", t: "Vueltas a la stupa al atardecer del 29 y cena en un rooftop con vistas. El 30, desayuno en un café cercano (Utpala)." },
     { id: "k-swayam", n: "Templo de los monos (Swayambhunath)", s: "Swayambhunath", ll: [27.7149, 85.2906], a: "r", d: "vie 30 oct", t: "Stupa en lo alto de una colina, con vistas al valle. Se va en moto el viernes por la mañana; si no, pasa al sábado." },
-    { id: "k-kopan", n: "Monasterio de Kopan", s: "Kopan", ll: [27.7396, 85.3627], a: "r", d: "vie 30 oct", t: "Monasterio en una colina, al norte de la stupa. Se va en moto; lo que dejes sin marcar el viernes pasa a la mañana del sábado." },
-    { id: "k-pashu", n: "Pashupatinath", s: "Pashupatinath", ll: [27.7109, 85.3488], a: "b", d: "vie 30 oct, sobre las 18:00", t: "Las cremaciones se hacen junto al río y el ciclo continúa. El sol se pone alrededor de las 17:20; sé discreto con la cámara." },
+    { id: "k-kopan", n: "Monasterio de Kopan", s: "Kopan", ll: [27.7396, 85.3627], a: "r", d: "vie 30 oct", t: "Monasterio en una colina, al norte de la stupa. Se va en moto; lo que deje sin marcar el viernes pasa a la mañana del sábado." },
+    { id: "k-pashu", n: "Pashupatinath", s: "Pashupatinath", ll: [27.7109, 85.3488], a: "b", d: "vie 30 oct, sobre las 18:00", t: "Las cremaciones se hacen junto al río y el ciclo continúa. El sol se pone alrededor de las 17:20; ser discreto con la cámara." },
     { id: "k-bhak", n: "Bhaktapur", s: "Bhaktapur", ll: [27.6721, 85.4298], a: "l", d: "sáb 31 oct", t: "Una de las tres ciudades del valle de Katmandú, la más antigua y bonita, para ver calles tradicionales. Basta con volver para las 18:00." },
     { id: "k-patan", n: "Patan", s: "Patan", ll: [27.6727, 85.325], a: "r", d: "12 nov, opcional", t: "Sugerido para el día libre del 12 de noviembre, junto con Boudhanath y Pashupatinath." }
   ];
@@ -1510,7 +1509,7 @@
     { id: "m-base", n: "Campo base del Manaslu", s: "Campo base", ll: [28.55, 84.78], a: "b", k: "exc", d: "7 nov, excursión", alt: 4800, t: "Ida y vuelta desde Sama Gaon: 7–9 h, ~16–18 km. Es el paseo de aclimatación del día 7." },
     { id: "m-dharm", n: "Dharmasala", ll: [28.6, 84.75], a: "t", la: "l", lab: "8", d: "8 nov", alt: altOf("manaslu", 8), t: "4–5 h, ~11 km desde Sama Gaon. Es la noche previa al paso." },
     { id: "m-larkya", n: "Paso Larkya La", s: "Larkya La", ll: [28.56, 84.7], a: "l", k: "pass", d: "9 nov", alt: 5106, t: "El día grande: 8–9 h y ~24 km, del paso a Bimthang." },
-    { id: "m-bim", n: "Bimthang", ll: [28.5, 84.62], a: "l", lab: "9", d: "9 nov", alt: altOf("manaslu", 9), t: "Duermes aquí tras cruzar el Larkya La." },
+    { id: "m-bim", n: "Bimthang", ll: [28.5, 84.62], a: "l", lab: "9", d: "9 nov", alt: altOf("manaslu", 9), t: "Dormimos aquí tras cruzar el Larkya La." },
     { id: "m-dhara", n: "Dharapani", ll: [28.5008, 84.35], a: "r", la: "b", lab: "10", d: "10 nov", alt: altOf("manaslu", 10), skipTodo: true, t: "7–8 h, ~25 km desde Bimthang. El 11 de noviembre, jeep privado a Katmandú (9–11 h, ~210 km). También es el punto de partida del Annapurna." }
   ];
   var PL_ANN = [
@@ -1521,7 +1520,7 @@
     { id: "a-yak", n: "Yak Kharka", ll: [28.71, 83.965], a: "l", lab: "7", d: "7 nov", alt: altOf("annapurna", 7), t: "3–4 h, 9–10 km desde Manang." },
     { id: "a-phedi", n: "Thorong Phedi", ll: [28.775, 83.955], a: "l", lab: "8", d: "8 nov", alt: altOf("annapurna", 8), t: "4–5 h, 7–9 km desde Yak Kharka. Es la noche previa al paso." },
     { id: "a-thorong", n: "Paso Thorong La", s: "Thorong La", ll: [28.795, 83.935], a: "u", k: "pass", d: "9 nov", alt: 5416, t: "El día grande: 8–10+ h y 15–16 km desde Thorong Phedi hasta Muktinath." },
-    { id: "a-mukti", n: "Muktinath", ll: [28.8167, 83.8714], a: "l", at: "l", lab: "9", d: "9 nov", alt: altOf("annapurna", 9), t: "Duermes aquí tras cruzar el Thorong La." },
+    { id: "a-mukti", n: "Muktinath", ll: [28.8167, 83.8714], a: "l", at: "l", lab: "9", d: "9 nov", alt: altOf("annapurna", 9), t: "Dormimos aquí tras cruzar el Thorong La." },
     { id: "a-tato", n: "Tatopani", ll: [28.4936, 83.6469], a: "r", k: "via", d: "10 nov, de paso", t: "El jeep privado de Muktinath a Pokhara pasa por aquí (7–10 h, 180–200 km)." },
     { id: "a-pokhara", n: "Pokhara", ll: [28.2096, 83.9856], a: "r", at: "r", lab: "10", d: "10 nov", alt: altOf("annapurna", 10), t: "Noche en el hotel Splendid View o similar. El 11, bus turístico a Katmandú (6–8+ h, 200–210 km), día del Tihar (Bhai Tika)." }
   ];
@@ -1723,13 +1722,13 @@
     if (sel) {
       html += '<div class="scrap mp-card"><h3>' + esc(sel.n) + '</h3><p class="hand" style="margin-top:0">' + esc(sel.d) + (sel.alt ? " · " + fmtm(sel.alt) + " m" : "") + '</p><p class="muted" style="margin-top:2px">' + sel.ll[0].toFixed(4).replace(".", ",") + " °N, " + sel.ll[1].toFixed(4).replace(".", ",") + " °E</p><p style=\"margin-top:6px\">" + esc(sel.t) + "</p></div>";
     } else {
-      html += '<p class="figcap" style="margin-top:8px">Toca un punto del mapa o un lugar de la lista para ver los detalles.</p>';
+      html += '<p class="figcap" style="margin-top:8px">Tocar un punto del mapa o un lugar de la lista para ver los detalles.</p>';
     }
     html += '<div class="legend" style="margin-top:6px">' +
       (mapReg === "todo" || mapReg === "manaslu" ? '<span class="o-man"><i></i>Manaslu</span>' : "") +
       (mapReg === "todo" || mapReg === "annapurna" ? '<span class="o-ann"><i></i>Annapurna</span>' : "") +
       (mapReg === "todo" || mapReg === "annapurna" ? '<span style="color:var(--muted)"><i style="border-top-style:dashed"></i>jeep o bus</span>' : "") + "</div>";
-    html += '<p class="figcap">Posiciones aproximadas, para orientarse y no para navegar. Para tenerlo en el trek sin conexión, míralo antes con red (también acercándote a la zona): lo que ves se guarda. ' + (mapReg === "ktm" ? "Los números siguen el orden de la lista." : mapReg === "todo" ? "Las líneas discontinuas entre ciudades son carreteras trazadas a ojo." : "El número de cada punto es la noche de noviembre en que duermes allí.") + "</p>";
+    html += '<p class="figcap">Posiciones aproximadas, para orientarse y no para navegar. Para tenerlo en el trek sin conexión, mirarlo antes con red (también acercándome a la zona): lo que veo se guarda. ' + (mapReg === "ktm" ? "Los números siguen el orden de la lista." : mapReg === "todo" ? "Las líneas discontinuas entre ciudades son carreteras trazadas a ojo." : "El número de cada punto es la noche de noviembre en que dormimos allí.") + "</p>";
     var groups = mapReg === "todo" ? [["Katmandú", PL_KTM], ["Manaslu", PL_MAN], ["Annapurna", PL_ANN]] : [[MAPREG[mapReg].label, mapPlaces(mapReg)]];
     groups.forEach(function (g) {
       html += '<h2 class="sec">' + g[0] + "</h2><ul class=\"mp-list\">" + g[1].map(function (p) {
@@ -1910,14 +1909,14 @@
     if (bview === "gastos") return html + viewGastos();
     html += '<div class="bsum"><div><b>' + eur(viaje) + "</b><span>Viaje</span></div><div><b>" + eur(pagado) + "</b><span>Ya pagado</span></div><div><b>" + eur(viaje + pagado) + "</b><span>Total</span></div></div>";
     html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Gastado" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + "%" + (real > total + 0.004 ? ";background:var(--c-ann)" : "") + '"></i></div><b>' + pct + " %</b></div>";
-    html += '<p class="figcap">Gastado ' + eur(real) + " de " + eur(total) + ", contando lo ya pagado" + (left >= 0 ? ". Quedan " + eur(left) + "." : ". Te pasas en " + eur(-left) + ".") + "</p>";
+    html += '<p class="figcap">Gastado ' + eur(real) + " de " + eur(total) + ", contando lo ya pagado" + (left >= 0 ? ". Quedan " + eur(left) + "." : ". Me paso en " + eur(-left) + ".") + "</p>";
     html += '<h2 class="sec">Viaje</h2><div class="bhead"><span>Categoría</span><span>Presupuesto</span><span>Gastado</span></div><ul class="blist">' + C.map(function (c) { return catRow(c, B, sp); }).join("") + "</ul>";
     html += '<div class="bsub"><span>Viaje</span><span>' + eur(viaje) + "</span><span>" + eur(spent) + '</span></div><button type="button" class="pe-plus" data-badd="cat" aria-label="Añadir categoría" title="Añadir categoría">+</button>';
     html += '<h2 class="sec">Ya pagado</h2><ul class="blist">' + B.paid.map(paidRow).join("") + "</ul>";
     html += '<div class="bsub"><span>Pagado</span><span>' + eur(pagado) + '</span><span></span></div><button type="button" class="pe-plus" data-badd="paid" aria-label="Añadir pago" title="Añadir">+</button>';
     html += '<div class="bsub big" style="margin-top:18px"><span>Total estimado</span><span>' + eur(viaje + pagado) + '</span><span></span></div>';
     html += '<div class="bsub big real"><span>Total real</span><span>' + eur(spent + pagado) + '</span><span></span></div>';
-    html += '<p class="figcap" style="margin-top:10px">Apunta cada gasto con el botón +; se suma solo a su categoría. Toca un importe del presupuesto para cambiarlo: es solo tuyo. Las categorías son comunes con ' + (WHO === "rose" ? "Alejandro" : "Rose") + ': si añades, cambias el nombre o quitas una, cambia para los dos. Toca lo gastado de una categoría para ver sus gastos.</p>';
+    html += '<p class="figcap" style="margin-top:10px">Apuntar cada gasto con el botón +; se suma solo a su categoría. Tocar un importe del presupuesto para cambiarlo: es solo mío. Las categorías son comunes con ' + (WHO === "rose" ? "Alejandro" : "Rose") + ': si añado, cambio el nombre o quito una, cambia para los dos. Tocar lo gastado de una categoría para ver sus gastos.</p>';
     return html;
   }
   function dayKey(ts) { var d = new Date(ts); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
@@ -1934,8 +1933,8 @@
     var all = myG(), list = gfilter ? all.filter(function (g) { return catOf(g) === gfilter; }) : all, html = "";
     var tot = list.reduce(function (a, g) { return a + (+g.eur || 0); }, 0);
     if (gfilter) html += '<div class="gfil"><span>' + esc(catName(gfilter)) + '</span><button type="button" data-gfclear aria-label="Quitar el filtro">Ver todos ✕</button></div>';
-    if (!list.length) return html + '<p class="free" style="margin-top:16px">' + (gfilter ? "Todavía no hay gastos en esta categoría." : "Todavía no hay gastos. Pulsa + para apuntar el primero.") + "</p>";
-    html += '<p class="figcap" style="margin-top:12px">' + list.length + (list.length === 1 ? " gasto" : " gastos") + " · " + eur(tot) + ". Toca uno para cambiarlo o borrarlo.</p>";
+    if (!list.length) return html + '<p class="free" style="margin-top:16px">' + (gfilter ? "Todavía no hay gastos en esta categoría." : "Todavía no hay gastos. Pulsar + para apuntar el primero.") + "</p>";
+    html += '<p class="figcap" style="margin-top:12px">' + list.length + (list.length === 1 ? " gasto" : " gastos") + " · " + eur(tot) + ". Tocar uno para cambiarlo o borrarlo.</p>";
     var days = [], by = {};
     list.forEach(function (g) { var k = dayKey(g.ts); if (!by[k]) { by[k] = []; days.push(k); } by[k].push(g); });
     days.forEach(function (k) {
@@ -2104,12 +2103,12 @@
       }).join("") + "</div>";
   }
   function viewChooser() {
-    return '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg><h1>Nepal 2026</h1><span class="hand">¿Quién eres?</span></div>' +
+    return '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg><h1>Nepal 2026</h1><span class="hand">¿Quién soy?</span></div>' +
       quoteHTML().replace('class="quote"', 'class="quote" style="margin:20px 0 12px"') + '<div class="choice">' +
       '<button type="button" class="pick" data-who="rose"><span><strong>Rose</strong><small>Katmandú, logística, presupuesto y trek' + '</small></span></button>' +
       '<button type="button" class="pick" data-who="alejandro"><span><strong>Alejandro</strong><small>Viaje, Katmandú, logística, presupuesto y trek' + '</small></span></button></div>' +
-      '<p class="figcap" style="margin-top:14px">Cada persona tiene su propia lista y sus propias marcas. Puedes cambiar de perfil cuando quieras.</p>' +
-      (CODE ? '' : '<p class="figcap" style="margin-top:8px">Para sincronizar, toca «conectar» arriba y escribe la palabra de la app.</p>');
+      '<p class="figcap" style="margin-top:14px">Cada persona tiene su propia lista y sus propias marcas. Se puede cambiar de perfil en cualquier momento.</p>' +
+      (CODE ? '' : '<p class="figcap" style="margin-top:8px">Para sincronizar, tocar «conectar» arriba y escribir la palabra de la app.</p>');
   }
   function setWho(who) {
     if (WHO) { if (persTimer) { clearTimeout(persTimer); enqueue("p:" + WHO, personalOf(S)); } saveLocal(); }
@@ -2381,10 +2380,10 @@
   });
 
   document.getElementById("import").addEventListener("click", function () {
-    var raw = window.prompt("Pega aquí los datos copiados desde la versión anterior de la app (en Claude):", "");
+    var raw = window.prompt("Pegar aquí los datos copiados desde la versión anterior de la app (en Claude):", "");
     if (!raw) return;
     var d = null; try { d = JSON.parse(raw.trim()); } catch (e) {}
-    if (!d || d.app !== "nepal-2026" || !d.S || (d.who !== "alejandro" && d.who !== "rose")) { window.alert("Esos datos no son válidos. Copia otra vez el bloque completo."); return; }
+    if (!d || d.app !== "nepal-2026" || !d.S || (d.who !== "alejandro" && d.who !== "rose")) { window.alert("Esos datos no son válidos. Copiar otra vez el bloque completo."); return; }
     if (d.who !== WHO) setWho(d.who);
     var keep = { sh: S.sh };
     S = freshState(); Object.keys(d.S).forEach(function (x) { if (d.S[x] !== undefined && d.S[x] !== null && x in S) S[x] = d.S[x]; });
@@ -2397,7 +2396,7 @@
   reset.addEventListener("click", function () {
     if (reset.getAttribute("data-armed") !== "true") {
       reset.setAttribute("data-armed", "true");
-      reset.textContent = "Pulsa otra vez para borrar";
+      reset.textContent = "Pulsar otra vez para borrar";
       setTimeout(function () { reset.removeAttribute("data-armed"); reset.textContent = "Borrar marcas"; }, 4000);
       return;
     }
@@ -2539,7 +2538,7 @@
     if (a) return a === "dark";
     return !!(window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
   }
-  function paintTheme() { var b = document.getElementById("theme"); b.innerHTML = isDark() ? MOON : SUN; b.title = isDark() ? "Modo oscuro: toca para el claro" : "Modo claro: toca para el oscuro"; }
+  function paintTheme() { var b = document.getElementById("theme"); b.innerHTML = isDark() ? MOON : SUN; b.title = isDark() ? "Modo oscuro: tocar para el claro" : "Modo claro: tocar para el oscuro"; }
   try { var th = localStorage.getItem("plan-ktm-theme"); if (th === "light" || th === "dark") document.documentElement.setAttribute("data-theme", th); } catch (e) {}
   paintTheme();
   document.getElementById("theme").addEventListener("click", function () {
