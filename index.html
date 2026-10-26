@@ -64,7 +64,10 @@
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) { nav.index { background: var(--paper); } .gd-menu, .gd-btn { background: var(--paper) !important; } }
   .gd { position: relative; display: flex; justify-content: flex-start; }
   .gd-btn { display: inline-flex; align-items: baseline; gap: 10px; cursor: pointer; color: var(--ink); font-size: 19px; font-weight: 500; line-height: 1.1; padding: 7px 14px 7px 18px; border-radius: 999px; background: var(--glass2); border: 1px solid var(--glass-b); -webkit-backdrop-filter: blur(16px) saturate(1.6); backdrop-filter: blur(16px) saturate(1.6); box-shadow: inset 0 1px 0 var(--glass-hi), 0 2px 10px rgba(30, 45, 80, .08); }
-  .gd-wrap { position: relative; }
+  .gd-wrap { position: relative; display: inline-block; }
+  .nsel { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; font-size: 16px; border: 0; }
+  .nsel-box { position: relative; display: inline-block; max-width: 100%; }
+  .nsel:focus-visible + .gd-btn, .gd-wrap:focus-within .gd-h { outline: 1.5px solid var(--accent); outline-offset: 2px; }
   .gd-h { font-size: clamp(31px, 9vw, 38px) !important; display: inline-flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; -webkit-user-select: none; }
   .gd-h .gd-chev { width: 14px; height: 14px; margin-top: 4px; }
   .gd-h[aria-expanded="true"] .gd-chev { transform: rotate(180deg); }
@@ -1999,10 +2002,9 @@
       '<div class="seg" role="group" aria-label="Moneda"><button type="button" data-gcur="NPR">Rupias</button><button type="button" data-gcur="EUR">Euros</button></div></div>' +
       '<p class="gs-conv"><span id="gsconv"></span> · <button type="button" class="gs-rate" id="gsrate" aria-label="Cambiar el tipo de cambio"></button></p>' +
       '<div class="gs-rbox" id="gsrbox" hidden><label for="gsratein">Rupias por €</label><input id="gsratein" type="text" inputmode="decimal" value="' + String(GS.rate).replace(".", ",") + '"></div>' +
-      '<div class="gs-lbl" id="gscatl">Categoría</div><div class="gs-dd"><button type="button" class="gd-btn gs-ddb" id="gsddb" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="gscatl gsddl"><span id="gsddl"></span><svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button>' +
-      '<div class="gd-menu gs-menu" role="listbox" aria-labelledby="gscatl" hidden>' + sortedCats().concat([SIN]).map(function (c) {
-        return '<button type="button" role="option" class="gd-it" data-gcatp="' + c.id + '"><span>' + esc(c.n) + "</span></button>";
-      }).join("") + "</div></div>" +
+      '<div class="gs-lbl" id="gscatl">Categoría</div><div class="gs-dd"><span class="nsel-box"><select class="nsel" id="gscatsel" aria-labelledby="gscatl">' + sortedCats().concat([SIN]).map(function (c) {
+        return '<option value="' + c.id + '">' + esc(c.n) + "</option>";
+      }).join("") + '</select><span class="gd-btn gs-ddb" aria-hidden="true"><span id="gsddl"></span><svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></span></div>' +
       '<label class="gs-f"><span>Nombre <i>(opcional)</i></span><input id="gsname" type="text" enterkeyhint="done" autocomplete="off" value="' + esc(edit ? (g.n || "") : "") + '"></label>' +
       '<label class="gs-f"><span>Fecha y hora</span><input id="gsts" type="datetime-local" value="' + localDT(edit ? g.ts : Date.now()) + '"></label>' +
       '<div class="gs-btns">' + (edit ? '<button type="button" class="gs-del" data-gdel>Borrar</button>' : "") + '<span></span><button type="button" class="gs-cancel" data-gclose>Cancelar</button><button type="submit" class="gs-save">Guardar</button></div></form>';
@@ -2013,18 +2015,12 @@
   function sheetPaint() {
     if (!GS || !sheetEl) return;
     sheetEl.querySelectorAll("[data-gcur]").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-gcur") === GS.cur); });
-    sheetEl.querySelectorAll("[data-gcatp]").forEach(function (b) { var on = b.getAttribute("data-gcatp") === GS.cat; b.setAttribute("aria-current", on); b.setAttribute("aria-selected", on); });
+    var gsel = document.getElementById("gscatsel"); if (gsel) gsel.value = GS.cat;
     document.getElementById("gsddl").textContent = catName(GS.cat);
     var v = parseNum(document.getElementById("gsamt").value);
     document.getElementById("gsconv").textContent = "≈ " + (GS.cur === "EUR" ? npr(v * GS.rate) : eur(v / GS.rate));
     document.getElementById("gsrate").textContent = "1 € = " + num(GS.rate, 2) + " NPR";
     document.getElementById("gsname").placeholder = catName(GS.cat);
-  }
-  function ddCat(open) {
-    var m = sheetEl && sheetEl.querySelector(".gs-menu"), b = document.getElementById("gsddb");
-    if (!m) return;
-    m.hidden = !open; b.setAttribute("aria-expanded", open ? "true" : "false");
-    if (open) { var cur = m.querySelector('[aria-current="true"]'); if (cur) { cur.scrollIntoView({ block: "nearest" }); cur.focus(); } }
   }
   function closeSheet() { GS = null; document.body.classList.remove("gs-open"); if (sheetEl) sheetEl.innerHTML = ""; }
   function saveSheet() {
@@ -2060,9 +2056,6 @@
     var t = e.target;
     if (t.closest("[data-gclose]")) { closeSheet(); return; }
     var c = t.closest("[data-gcur]"); if (c) { GS.cur = c.getAttribute("data-gcur"); sheetPaint(); document.getElementById("gsamt").focus(); return; }
-    var p = t.closest("[data-gcatp]"); if (p) { GS.cat = p.getAttribute("data-gcatp"); ddCat(false); sheetPaint(); document.getElementById("gsddb").focus(); return; }
-    if (t.closest("#gsddb")) { ddCat(sheetEl.querySelector(".gs-menu").hidden); return; }
-    if (!t.closest(".gs-menu")) ddCat(false);
     if (t.closest("#gsrate")) { var rb = document.getElementById("gsrbox"); rb.hidden = !rb.hidden; if (!rb.hidden) document.getElementById("gsratein").focus(); return; }
     if (t.closest("[data-gdel]")) { deleteSheet(); return; }
   });
@@ -2072,17 +2065,13 @@
     sheetPaint();
   });
   document.addEventListener("change", function (e) {
+    if (GS && e.target.id === "gscatsel") { GS.cat = e.target.value; sheetPaint(); return; }
     if (GS && e.target.id === "gsratein") { var r = parseNum(e.target.value); if (r > 0) { S.rate = r; save(); } }
   });
   document.addEventListener("submit", function (e) { if (GS && sheetEl && sheetEl.contains(e.target)) { e.preventDefault(); saveSheet(); } });
   document.addEventListener("keydown", function (e) {
     if (!GS) return;
-    var mm = sheetEl.querySelector(".gs-menu");
-    if (e.key === "Escape") { e.preventDefault(); if (mm && !mm.hidden) { ddCat(false); document.getElementById("gsddb").focus(); } else closeSheet(); }
-    else if ((e.key === "ArrowDown" || e.key === "ArrowUp") && mm && !mm.hidden) {
-      e.preventDefault(); var its = [].slice.call(mm.querySelectorAll(".gd-it")), i = its.indexOf(document.activeElement);
-      its[Math.max(0, Math.min(its.length - 1, i + (e.key === "ArrowDown" ? 1 : -1)))].focus();
-    }
+    if (e.key === "Escape") { e.preventDefault(); closeSheet(); }
     else if (e.key === "Enter" && e.target.tagName === "INPUT" && sheetEl.contains(e.target)) { e.preventDefault(); saveSheet(); }
   });
 
@@ -2108,37 +2097,28 @@
     nav.hidden = true; tb.innerHTML = "";
   }
   function ddMenuHTML() {
-    var tabs = tabsFor();
-    return '<div class="gd-menu" role="menu"' + (ddOpen ? "" : " hidden") + ">" + tabs.map(function (t) {
-      return '<button type="button" role="menuitem" class="gd-it" data-tab="' + t[0] + '" aria-current="' + (t[0] === current) + '"><span>' + t[1] + "</span><small>" + navSub(t[0]) + "</small></button>";
-    }).join("") + "</div>";
+    return '<select class="nsel" data-tabsel aria-label="Sección">' + tabsFor().map(function (t) {
+      return '<option value="' + t[0] + '"' + (t[0] === current ? " selected" : "") + ">" + t[1] + " · " + esc(navSub(t[0])) + "</option>";
+    }).join("") + "</select>";
   }
   function decorateHead() {
     if (!WHO) return;
     var v = document.getElementById("view"), h = v.querySelector(".page-head h1");
     if (!h) return;
-    h.classList.add("gd-h"); h.setAttribute("role", "button"); h.tabIndex = 0; h.setAttribute("data-gd", "1");
-    h.setAttribute("aria-haspopup", "menu"); h.setAttribute("aria-expanded", ddOpen ? "true" : "false");
+    h.classList.add("gd-h");
     h.insertAdjacentHTML("beforeend", '<svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>');
     var w = document.createElement("div"); w.className = "gd-wrap";
     h.parentNode.insertBefore(w, h); w.appendChild(h); w.insertAdjacentHTML("beforeend", ddMenuHTML());
   }
-  function ddSync() {
-    var m = document.querySelector(".gd-wrap .gd-menu"), h = document.querySelector("[data-gd]");
-    if (m) m.hidden = !ddOpen;
-    if (h) h.setAttribute("aria-expanded", ddOpen ? "true" : "false");
-  }
-  var whoOpen = false;
   function renderWho() {
     var w = document.getElementById("who");
     document.querySelector("footer.foot").hidden = !WHO;
     if (!WHO) { w.hidden = true; return; }
     w.hidden = false;
-    w.innerHTML = '<button type="button" class="gd-btn who-btn" data-whodd aria-haspopup="menu" aria-expanded="' + whoOpen + '" aria-label="Perfil: ' + (WHO === "rose" ? "Rose" : "Alejandro") + '. Cambiar de perfil">' + (WHO === "rose" ? "Rose" : "Alejandro") +
-      '<svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></button><div class="gd-menu who-menu" role="menu"' + (whoOpen ? "" : " hidden") + ">" +
-      [["rose", "Rose"], ["alejandro", "Alejandro"]].map(function (p) {
-        return '<button type="button" role="menuitemradio" class="gd-it" data-who="' + p[0] + '" aria-checked="' + (WHO === p[0]) + '" aria-current="' + (WHO === p[0]) + '"><span>' + p[1] + "</span></button>";
-      }).join("") + "</div>";
+    w.innerHTML = '<span class="nsel-box"><select class="nsel" data-whosel aria-label="Perfil">' +
+      [["rose", "Rose"], ["alejandro", "Alejandro"]].map(function (p) { return '<option value="' + p[0] + '"' + (WHO === p[0] ? " selected" : "") + ">" + p[1] + "</option>"; }).join("") +
+      '</select><span class="gd-btn who-btn" aria-hidden="true">' + (WHO === "rose" ? "Rose" : "Alejandro") +
+      '<svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></span></span>';
   }
   function viewChooser() {
     return '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg><h1>Nepal 2026</h1><span class="hand">¿Quién soy?</span></div>' +
@@ -2282,16 +2262,10 @@
   });
 
   var view = document.getElementById("view");
-  document.addEventListener("click", function (e) {
-    var g = e.target.closest && e.target.closest("[data-gd]");
-    if (g) { ddOpen = !ddOpen; ddSync(); return; }
-    var it = e.target.closest && e.target.closest(".gd-it[data-tab]");
-    if (it) { ddOpen = false; current = it.getAttribute("data-tab"); renderAll(false); window.scrollTo({ top: 0 }); return; }
-    if (ddOpen && e.target.isConnected && !e.target.closest(".gd-menu")) { ddOpen = false; ddSync(); }
-  });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && ddOpen) { ddOpen = false; ddSync(); return; }
-    if ((e.key === "Enter" || e.key === " ") && e.target.hasAttribute && e.target.hasAttribute("data-gd")) { e.preventDefault(); ddOpen = !ddOpen; ddSync(); }
+  document.addEventListener("change", function (e) {
+    var t = e.target;
+    if (t.matches && t.matches("select[data-tabsel]")) { current = t.value; renderAll(false); window.scrollTo({ top: 0 }); return; }
+    if (t.matches && t.matches("select[data-whosel]")) { if (t.value !== WHO) pickWho(t.value); return; }
   });
   view.addEventListener("change", function (e) {
     var t = e.target;
@@ -2321,13 +2295,6 @@
     var sel = t.closest("select[data-st]");
     if (sel) { S.lstate[sel.getAttribute("data-st")] = sel.value; save(); renderAll(true); }
   });
-  document.getElementById("who").addEventListener("click", function (e) {
-    if (e.target.closest("[data-whodd]")) { whoOpen = !whoOpen; renderWho(); if (whoOpen) { var c = document.querySelector('.who-menu [aria-current="true"]'); if (c) c.focus(); } return; }
-    var b = e.target.closest("[data-who]");
-    if (b) { whoOpen = false; var nw = b.getAttribute("data-who"); if (nw === WHO) renderWho(); else pickWho(nw); }
-  });
-  document.addEventListener("click", function (e) { if (whoOpen && e.target.isConnected && !e.target.closest("#who")) { whoOpen = false; renderWho(); } });
-  document.addEventListener("keydown", function (e) { if (whoOpen && e.key === "Escape") { whoOpen = false; renderWho(); var b = document.querySelector("[data-whodd]"); if (b) b.focus(); } });
   view.addEventListener("click", function (e) {
     var t = e.target;
     var wb = t.closest("[data-who]");
