@@ -1946,9 +1946,8 @@
     var html = '<div class="page-head"><h1>Presupuesto</h1></div>';
     html += segHTML();
     if (bview === "gastos") return html + viewGastos();
-    html += '<div class="bsum"><div><b>' + eur(viaje) + "</b><span>Viaje</span></div><div><b>" + eur(pagado) + "</b><span>Ya pagado</span></div><div><b>" + eur(viaje + pagado) + "</b><span>Total</span></div></div>";
+    html += '<div class="bsum"><div><b>' + eur(Math.abs(left)) + "</b><span>" + (left >= 0 ? "Restante" : "Me paso") + "</span></div><div><b>" + eur(pagado) + "</b><span>Ya pagado</span></div><div><b>" + eur(viaje + pagado) + "</b><span>Total</span></div></div>";
     html += '<div class="meter"><div class="bar" role="progressbar" aria-label="Gastado" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + "%" + (real > total + 0.004 ? ";background:var(--c-ann)" : "") + '"></i></div><b>' + pct + " %</b></div>";
-    html += '<p class="figcap">Gastado ' + eur(real) + " de " + eur(total) + ", contando lo ya pagado" + (left >= 0 ? ". Quedan " + eur(left) + "." : ". Me paso en " + eur(-left) + ".") + "</p>";
     html += '<h2 class="sec">Viaje</h2><div class="bhead"><span>Categoría</span><span>Presupuesto</span><span>Gastado</span></div><ul class="blist">' + C.map(function (c) { return catRow(c, B, sp); }).join("") + "</ul>";
     html += '<div class="bsub"><span>Viaje</span><span>' + eur(viaje) + "</span><span>" + eur(spent) + '</span></div><button type="button" class="pe-plus" data-badd="cat" aria-label="Añadir categoría" title="Añadir categoría">+</button>';
     html += '<h2 class="sec">Ya pagado</h2><ul class="blist">' + B.paid.map(paidRow).join("") + "</ul>";
