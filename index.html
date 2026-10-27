@@ -556,21 +556,24 @@
     kopan:  { id: "s-kopan",  name: "Monasterio de Kopan", tip: "Monasterio en una colina, al norte de la stupa." }
   };
   var DAYS_BASE = [
-    { id: "jueves", label: "Jue", date: "29 oct", full: "Jueves 29 de octubre", title: "Llegada y barrio de la stupa", blocks: [
+    { id: "jueves", label: "Jue", date: "29 oct", full: "Jueves 29 de octubre", title: "Llegada y entrevista con la Fundación Vicente Ferrer", blocks: [
       { name: "Llegada", time: "aterrizo a las 11:20", items: [
         { id: "j-visa", text: "Sacar el visado en el aeropuerto", tip: "Mi estancia es de 17 días, así que me toca el de 30 días. Más detalle en la pestaña Viaje." },
         { id: "j-hotel", text: "Ir del aeropuerto al hotel", tip: "Hotel Bhrikuti Tara, 3.500 rupias la noche. Las ofertas del trek no incluyen la recogida en el aeropuerto ni el alojamiento en Katmandú." }
       ]},
-      { name: "Tarde", time: "descanso", items: [
-        { id: "j-rest", text: "Descansar en el hotel" },
+      { name: "Gestiones", time: "antes de la entrevista", items: [
+        { id: "j-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias en la avenida que cruza hacia la stupa. Llevar el pasaporte y una foto del DNI; da igual que no esté actualizada. Rose recomienda NTC. Así tengo datos de reserva si falla el wifi del hotel." },
+        { id: "j-cash", text: "Cambiar euros a rupias en un comercio de al lado", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" },
+        { id: "j-lunch", text: "Comer algo ligero cerca del hotel" }
+      ]},
+      { name: "Entrevista", time: "15:45 (11:00 en España) · Teams", items: [
+        { id: "j-prep", text: "Preparar la entrevista y descansar un rato", tip: "Ducharme y repasar mis notas. Tener a mano el enlace de Teams del correo de Daniel." },
+        { id: "j-test", text: "Probar Teams, la cámara y el wifi del hotel", tip: "Hacia las 15:15. Buscar un rincón tranquilo y con luz; tener el cargador, los auriculares y los datos de la eSIM por si falla el wifi." },
+        { id: "j-fvf", text: "Entrevista con la Fundación Vicente Ferrer", tip: "A las 15:45 hora de Nepal (11:00 en España), por Teams." }
+      ]},
+      { name: "Atardecer", time: "después de la entrevista", items: [
+        { id: "j-kora", text: "Dar un par de vueltas a la stupa", tip: "Con calma, para ver el ambiente. El sol se pone hacia las 17:20." },
         { id: "j-walk", text: "Pasear por el barrio" }
-      ]},
-      { name: "Gestiones", time: "pasaporte y foto del DNI", items: [
-        { id: "j-esim", text: "Sacar una eSIM en una tienda local", tip: "Hay varias en la avenida que cruza hacia la stupa. Llevar el pasaporte y una foto del DNI; da igual que no esté actualizada. Rose recomienda NTC." },
-        { id: "j-cash", text: "Cambiar euros a rupias en un comercio de al lado", tip: "Son los que tienen carteles con el cambio de rupias a monedas internacionales.", extra: "fx" }
-      ]},
-      { name: "Atardecer", time: "", items: [
-        { id: "j-kora", text: "Dar un par de vueltas a la stupa", tip: "Con calma, para ver el ambiente." }
       ]},
       { name: "Noche", time: "rooftop", items: [
         { id: "j-dinner", text: "Cenar en un rooftop con vistas a la stupa", tip: "No pedir dal bhat: será lo único que haya en el trek, salvo que me apetezca. Los momos son buenísimos." }
@@ -1036,7 +1039,7 @@
     return '<div class="scrap tape g" style="--r:-.7deg"><h3>Euros a rupias</h3><p class="muted">Tasa oficial de compra del Nepal Rastra Bank del 20 de octubre de 2026. Los comercios de cambio suelen dar algo menos: poner la del cartel del día. Es el mismo tipo que usa el presupuesto al apuntar gastos en rupias.</p>' +
       '<div class="fx"><div><label for="eur">Euros</label><input id="eur" type="number" inputmode="decimal" min="0" step="any" value="' + S.eur + '"></div>' +
       '<div><label for="rate">Rupias por €</label><input id="rate" type="number" inputmode="decimal" min="0" step="any" value="' + S.rate + '"></div>' +
-      '<div class="fx-out"><span class="hand">recibirías</span><b id="fxout">' + fmt.format(S.eur * S.rate) + ' NPR</b></div></div></div>';
+      '<div class="fx-out"><span class="hand">recibiría</span><b id="fxout">' + fmt.format(S.eur * S.rate) + ' NPR</b></div></div></div>';
   }
   function picksHTML() {
     function btn(k, r) {
