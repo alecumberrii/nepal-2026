@@ -2095,6 +2095,7 @@
   document.addEventListener("input", function (e) {
     if (!GS || !sheetEl || !sheetEl.contains(e.target)) return;
     if (e.target.id === "gsratein") { var r = parseNum(e.target.value); if (r > 0) GS.rate = r; }
+    if (e.target.id === "gscatsel") GS.cat = e.target.value;
     sheetPaint();
   });
   document.addEventListener("change", function (e) {

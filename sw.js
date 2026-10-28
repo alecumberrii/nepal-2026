@@ -1,6 +1,6 @@
 /* Nepal 2026: funciona sin conexión. La app se sirve desde la caché y se actualiza en segundo plano.
    Las teselas del mapa que se han visto se guardan aparte (hasta MAXT) para poder verlas en el trek sin red. */
-var CACHE = "nepal-2026-v14";
+var CACHE = "nepal-2026-v15";
 var TILES = "nepal-2026-teselas";
 var MAXT = 3000;
 var SHELL = ["./", "index.html", "manifest.webmanifest", "icon.svg", "icon-180.png", "icon-192.png", "icon-512.png",
