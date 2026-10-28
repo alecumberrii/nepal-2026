@@ -631,7 +631,7 @@
         { id: "d-gear", text: "Comprar o alquilar lo que falte en la zona de compras", tip: "La agencia pide un saco de −15 °C y dice que se alquila o compra fácil en Katmandú. La zona de compras está donde está la agencia." }
       ]},
       { name: "Noche", time: "", items: [
-        { id: "d-bag", text: "Dejar la maleta en el Hotel Bhrikuti Tara", tip: "Se queda guardada allí durante el trek. Al trek solo va la mochila. Se vuelve a ese hotel después, del 11 al 14 de noviembre." },
+        { id: "d-bag", text: "Dejar la maleta en el Hotel Bhrikuti Tara", tip: "Se queda guardada allí durante el trek. Al trek solo va la mochila. Se vuelve a ese hotel después, del 12 al 14 de noviembre." },
         { id: "d-pack", text: "Dejar la mochila lista", tip: "En el programa del Manaslu el guía nos recoge en el hotel el 2 de noviembre; confirmar la hora." }
       ]}
     ]}
@@ -641,24 +641,40 @@
   function jclone(o) { return JSON.parse(JSON.stringify(o)); }
   function clean(o) { return JSON.parse(JSON.stringify(o, function (k, v) { return k === "shared" ? undefined : v; })); }
   var RETURN_DAYS = [
-    { id: "mie11", label: "Mié", date: "11 nov", full: "Miércoles 11 de noviembre", title: "Vuelta del trek", blocks: [
-      { name: "Llegada", time: "", items: [
-        { id: "v-hotel", text: "Volver al Hotel Bhrikuti Tara", tip: "Aquí está la maleta que dejamos antes del trek." },
-        { id: "v-maleta", text: "Recoger la maleta y ducharse" },
-        { id: "v-laundry", text: "Dar la ropa del trek a lavar" }
+    { id: "mie11", label: "Mié", date: "11 nov", full: "Miércoles 11 de noviembre", title: "Descanso en Pokhara", blocks: [
+      { name: "Mañana", time: "sin prisa", items: [
+        { id: "p-dormir", text: "Dormir sin despertador" },
+        { id: "p-desayuno", text: "Desayunar junto al lago Phewa" }
+      ]},
+      { name: "Gestiones", time: "", items: [
+        { id: "p-hotel", text: "Reservar la segunda noche de hotel en Pokhara", tip: "La oferta solo incluye la del 10 (Splendid View o similar). Preguntar si podemos quedarnos en el mismo." },
+        { id: "p-vuelo", text: "Comprar el vuelo Pokhara–Katmandú del 12 por la tarde", tip: "Unos 25 minutos de vuelo (Buddha Air o Yeti Airlines). Avisar a la agencia de que no usamos el bus del 11." },
+        { id: "v-laundry", text: "Dar la ropa del trek a lavar", tip: "Hay lavanderías por todo Lakeside; suelen tenerla en el día." }
+      ]},
+      { name: "Tarde", time: "", items: [
+        { id: "p-lago", text: "Pasear por Lakeside o alquilar una barca en el lago" }
       ]},
       { name: "Noche", time: "", items: [
-        { id: "v-cena", text: "Cenar juntos para celebrar el trek" }
+        { id: "v-cena", text: "Cenar juntos para celebrar el trek", tip: "Es el Bhai Tika del Tihar: habrá ambiente de fiesta." }
       ]}
     ]},
-    { id: "jue12", label: "Jue", date: "12 nov", full: "Jueves 12 de noviembre", title: "Katmandú sin prisa", blocks: [
-      { name: "Día libre", time: "", items: [
-        { id: "v-descanso", text: "Descansar las piernas" },
-        { id: "v-pend", text: "Visitar lo que se quedó pendiente", tip: "Por ejemplo Patan, Boudhanath o Pashupatinath. Según lo que nos apetezca." }
+    { id: "jue12", label: "Jue", date: "12 nov", full: "Jueves 12 de noviembre", title: "Pokhara por la mañana, Katmandú por la tarde", blocks: [
+      { name: "Mañana", time: "en Pokhara", items: [
+        { id: "p-libre", text: "Mañana libre en Pokhara", tip: "Si apetece, subir a la Pagoda de la Paz o ver amanecer en Sarangkot. Si no, descansar." },
+        { id: "p-checkout", text: "Dejar el hotel de Pokhara" }
+      ]},
+      { name: "Tarde", time: "vuelo a Katmandú", items: [
+        { id: "p-fly", text: "Volar de Pokhara a Katmandú", tip: "Llegar al aeropuerto de Pokhara con una hora de margen." },
+        { id: "v-hotel", text: "Volver al Hotel Bhrikuti Tara", tip: "Aquí está la maleta que dejamos antes del trek." },
+        { id: "v-maleta", text: "Recoger la maleta y ducharse" }
+      ]},
+      { name: "Noche", time: "", items: [
+        { id: "p-cena", text: "Cenar cerca del hotel" }
       ]}
     ]},
-    { id: "vie13", label: "Vie", date: "13 nov", full: "Viernes 13 de noviembre", title: "Compras y maleta", blocks: [
+    { id: "vie13", label: "Vie", date: "13 nov", full: "Viernes 13 de noviembre", title: "Último día en Katmandú", blocks: [
       { name: "Día libre", time: "", items: [
+        { id: "v-pend", text: "Visitar lo que se quedó pendiente", tip: "Por ejemplo Patan, Boudhanath o Pashupatinath. Según lo que nos apetezca." },
         { id: "v-regalos", text: "Comprar regalos y recuerdos" },
         { id: "v-rupias", text: "Gastar o cambiar las rupias que sobren", tip: "Normalmente se cambian mejor antes de volar; guardar lo justo para el taxi al aeropuerto." },
         { id: "v-maleta2", text: "Hacer la maleta" }
@@ -1029,7 +1045,7 @@
     S.diary.slice().sort(function (a, b) { return b.ts - a.ts; }).forEach(function (en) {
       var k = dkey(en.ts); if (!groups[k]) { groups[k] = []; keys.push(k); } groups[k].push(en);
     });
-    if (!keys.length) html += '<p class="figcap" style="margin-top:18px">Aún no hay entradas. Lo que escriba aparecerá aquí y también en el día correspondiente de la pestaña Katmandú.</p>';
+    if (!keys.length) html += '<p class="figcap" style="margin-top:18px">Aún no hay entradas. Lo que escriba aparecerá aquí y también en el día correspondiente de la pestaña Fuera del trek.</p>';
     keys.forEach(function (k) {
       html += '<section class="blk"><div class="eyebrow"><h3>' + esc(dayLabel(k)) + "</h3><span>" + groups[k].length + (groups[k].length === 1 ? " entrada" : " entradas") + "</span></div>";
       html += groups[k].slice().reverse().map(entryHTML).join("") + "</section>";
@@ -1210,7 +1226,7 @@
   }
   function viewKtm() {
     var day = DAYS.filter(function (d) { return d.id === S.day; })[0] || DAYS[0];
-    var html = '<div class="page-head"><h1>Katmandú</h1><div class="pills" id="pills" style="margin-top:10px">';
+    var html = '<div class="page-head"><h1>Fuera del trek</h1><div class="pills" id="pills" style="margin-top:10px">';
     DAYS.forEach(function (d) {
       var c = dayCounts(d);
       html += '<button type="button" class="pill" data-day="' + d.id + '" aria-pressed="' + (d.id === day.id) + '">' + d.label + " " + d.date.split(" ")[0] + "<small>" + c.done + "/" + c.total + "</small></button>";
@@ -1446,7 +1462,7 @@
     ["8", "Yak Kharka → Thorong Phedi", "4–5 h · 7–9 km · 4.450 m", ""],
     ["9", "Thorong Phedi → paso Thorong La (5.416 m) → Muktinath", "8–10+ h · 15–16 km · dormimos a 3.760 m", "peak"],
     ["10", "Muktinath → Pokhara por Tatopani", "Jeep privado · 7–10 h · 180–200 km · hotel Splendid View o similar", ""],
-    ["11", "Pokhara → Katmandú", "Bus turístico · 6–8+ h · 200–210 km · día del Tihar (Bhai Tika)", ""]
+    ["11", "Descanso en Pokhara", "Segunda noche en Pokhara · día del Tihar (Bhai Tika) · el 12 por la tarde, avión a Katmandú", ""]
   ];
 
   /* Altitud de cada noche (m). x = una etapa por tramo. Annapurna: del documento de la agencia. Manaslu: guías públicas (la agencia no las da); varían 100–200 m según la fuente. */
@@ -1457,7 +1473,7 @@
       exc: [[5, 3530], [5.5, 4800], [6, 3530]], excLabel: "Campo base 4.800"
     },
     annapurna: {
-      label: "Annapurna", pts: [[0, 1400, "s", "KTM"], [1, 1860, "s", "2"], [2, 2670, "s", "3"], [3, 3300, "s", "4"], [4, 3540, "s", "5"], [5, 3540, "s", "6"], [6, 4020, "s", "7"], [7, 4450, "s", "8"], [7.5, 5416, "p", "Thorong La 5.416"], [8, 3760, "s", "9"], [9, 822, "s", "10"], [10, 1400, "s", "11"]],
+      label: "Annapurna", pts: [[0, 1400, "s", "KTM"], [1, 1860, "s", "2"], [2, 2670, "s", "3"], [3, 3300, "s", "4"], [4, 3540, "s", "5"], [5, 3540, "s", "6"], [6, 4020, "s", "7"], [7, 4450, "s", "8"], [7.5, 5416, "p", "Thorong La 5.416"], [8, 3760, "s", "9"], [9, 822, "s", "10"], [10, 822, "s", "11"]],
       exc: null
     }
   };
@@ -1562,7 +1578,7 @@
       html += '<h2 class="sec">Perfil de altitud</h2>' + overlayBlock() + PROF_CAP.replace("La línea discontinua marca 3.000 m.", "La línea discontinua azul claro marca 3.000 m; la discontinua del Manaslu es la excursión al campo base.") + PROF_SRC;
       html += '<div class="tablewrap"><table class="cmp"><thead><tr><th></th><th>Manaslu</th><th>Annapurna</th></tr></thead><tbody>' +
         row("Salida", "Katmandú, 2 nov", "Katmandú, 2 nov") +
-        row("Vuelta a Katmandú", "11 nov, jeep desde Dharapani", "11 nov, bus desde Pokhara") +
+        row("Vuelta a Katmandú", "11 nov, jeep desde Dharapani", "12 nov por la tarde, avión desde Pokhara") +
         row("Punto de partida", "Maccha Khola, jeep de 8–10 h", "Dharapani, jeep de 8,5 h") +
         row("Paso más alto", "Larkya La, 5.106 m (9 nov)", "Thorong La, 5.416 m (9 nov)") +
         row("Noche más alta", "Dharmasala, 4.480 m (8 nov)", "Thorong Phedi, 4.450 m (8 nov)") +
@@ -1576,14 +1592,14 @@
         row("Permisos", "ACAP, Manaslu, especial, Chumnubri, TIMS", "ACAP y TIMS") +
         row("Extra", "Se puede alargar a 11 días por 60 USD por persona", "1 noche de hotel en Pokhara incluida; se puede alargar una más") +
         "</tbody></table></div>";
-      html += '<div class="scrap tape c" style="--r:.5deg"><h3>Dos cosas a confirmar</h3><p>El presupuesto del Manaslu da el jeep privado como incluido y también como mejora de 200 USD por tramo. El total de 1.980 USD suma esos 400. Preguntar cuál es el precio real.</p><p>El 11 de noviembre es el Bhai Tika del Tihar y puede complicar el bus de Pokhara a Katmandú en el Annapurna.</p></div>';
+      html += '<div class="scrap tape c" style="--r:.5deg"><h3>Dos cosas a confirmar</h3><p>El presupuesto del Manaslu da el jeep privado como incluido y también como mejora de 200 USD por tramo. El total de 1.980 USD suma esos 400. Preguntar cuál es el precio real.</p><p>El 11 de noviembre es el Bhai Tika del Tihar: en el Annapurna lo pasamos en Pokhara, sin viajar.</p></div>';
       html += '<div class="scrap tape" style="--r:.4deg"><h3>Ritmo de subida</h3><p>Una pauta habitual en montaña: por encima de 3.000 m, no subir más de unos 500 m de altitud de dormida al día y descansar un día cada 3 o 4. En el Manaslu hay dos días con +870 y +950 m (Sama Gaon y Dharmasala), justo antes del paso. En el Annapurna la mayor es +630 m. Los dos tienen un día de aclimatación (Sama Gaon y Manang).</p><p>No es consejo médico. Si pido la receta de Diamox, comentarlo con mi médico.</p></div>';
       html += '<div class="scrap tape g" style="--r:-.4deg"><h3>Gastos aparte</h3><p>Ninguna de las dos ofertas incluye propinas, bebidas, duchas calientes, lavandería ni carga de baterías. Contarlo al decidir cuánto efectivo llevo.</p></div>';
     } else {
       var man = curTrek() === "manaslu";
       html += '<div class="scrap tape c" style="--r:-.3deg"><h3>Hotel en Katmandú</h3><p>Hotel Bhrikuti Tara, 3.500 rupias la noche. Es el mismo antes y después del trek. La maleta se queda allí y al trek se va solo con la mochila.</p></div>';
       html += '<h2 class="sec">' + (man ? "Manaslu Circuit, 10 días" : "Annapurna Circuit, 10 días") + "</h2>" + profBlock(man ? "manaslu" : "annapurna", false) + PROF_CAP + daysHTML(man ? MAN : ANN, man ? "manaslu" : "annapurna") + PROF_SRC;
-      if (!man) html += '<div class="scrap tape c" style="--r:.4deg"><h3>Pokhara al final</h3><p>La oferta incluye 1 noche en un hotel de Pokhara, la del día en que se baja en jeep desde Muktinath. Hay dos opciones: quedarse otra noche en Pokhara o volver a Katmandú al día siguiente, como marca el programa. El vuelo de vuelta sale de Katmandú el 14 de noviembre, así que hay margen para las dos.</p></div>';
+      if (!man) html += '<div class="scrap tape c" style="--r:.4deg"><h3>Pokhara al final</h3><p>La oferta incluye 1 noche en un hotel de Pokhara, la del 10, al bajar en jeep desde Muktinath. Nos quedamos también el 11 para descansar (esa segunda noche va aparte) y el 12 por la tarde volamos a Katmandú, en lugar del bus del programa. Avisar a la agencia de que no usamos el bus del 11.</p></div>';
       if (man) html += '<div class="scrap tape" style="--r:-.5deg"><p>Es un itinerario ajustado y pide buen ritmo. Si hace falta, se puede alargar a 11 días por 60 USD por persona.</p></div>';
       html += '<details><summary>Qué incluye</summary>' + listHTML(man ? MAN_IN : ANN_IN) + "</details>";
       html += '<details><summary>Qué no incluye</summary>' + listHTML(man ? MAN_OUT : ANN_OUT) + "</details>";
@@ -1604,13 +1620,13 @@
   function altOf(key, day) { var sl = sleeps(key); return sl[day - 1] ? sl[day - 1][1] : null; }
   var PL_KTM = [
     { id: "k-air", n: "Aeropuerto de Katmandú", s: "Aeropuerto", ll: [27.6966, 85.3591], a: "r", d: "29 oct · 31 oct · 14 nov", t: "Alejandro aterriza el 29 de octubre a las 11:20; Rose llega el 31. El vuelo de vuelta sale el 14 de noviembre." },
-    { id: "k-hotel", n: "Hotel Bhrikuti Tara", s: "Hotel", ll: [27.73, 85.371], a: "r", d: "29 oct – 14 nov", t: "3.500 rupias la noche. La maleta se queda aquí del 2 al 11 de noviembre, y se vuelve a este hotel después. Posición orientativa: la ficha del hotel lo sitúa junto a Boudhanath." },
+    { id: "k-hotel", n: "Hotel Bhrikuti Tara", s: "Hotel", ll: [27.73, 85.371], a: "r", d: "29 oct – 14 nov", t: "3.500 rupias la noche. La maleta se queda aquí del 2 al 12 de noviembre, y se vuelve a este hotel después. Posición orientativa: la ficha del hotel lo sitúa junto a Boudhanath." },
     { id: "k-boudha", n: "La stupa (Boudhanath)", s: "Stupa", ll: [27.7215, 85.362], a: "l", d: "29 y 30 oct", t: "Vueltas a la stupa al atardecer del 29 y cena en un rooftop con vistas. El 30, desayuno en un café cercano (Utpala)." },
     { id: "k-swayam", n: "Templo de los monos (Swayambhunath)", s: "Swayambhunath", ll: [27.7149, 85.2906], a: "r", d: "vie 30 oct", t: "Stupa en lo alto de una colina, con vistas al valle. Se va en moto el viernes por la mañana; si no, pasa al sábado." },
     { id: "k-kopan", n: "Monasterio de Kopan", s: "Kopan", ll: [27.7396, 85.3627], a: "r", d: "vie 30 oct", t: "Monasterio en una colina, al norte de la stupa. Se va en moto; lo que deje sin marcar el viernes pasa a la mañana del sábado." },
     { id: "k-pashu", n: "Pashupatinath", s: "Pashupatinath", ll: [27.7109, 85.3488], a: "b", d: "vie 30 oct, sobre las 18:00", t: "Las cremaciones se hacen junto al río y el ciclo continúa. El sol se pone alrededor de las 17:20; ser discreto con la cámara." },
     { id: "k-bhak", n: "Bhaktapur", s: "Bhaktapur", ll: [27.6721, 85.4298], a: "l", d: "sáb 31 oct", t: "Una de las tres ciudades del valle de Katmandú, la más antigua y bonita, para ver calles tradicionales. Basta con volver para las 18:00." },
-    { id: "k-patan", n: "Patan", s: "Patan", ll: [27.6727, 85.325], a: "r", d: "12 nov, opcional", t: "Sugerido para el día libre del 12 de noviembre, junto con Boudhanath y Pashupatinath." }
+    { id: "k-patan", n: "Patan", s: "Patan", ll: [27.6727, 85.325], a: "r", d: "13 nov, opcional", t: "Sugerido para el día libre del 13 de noviembre, junto con Boudhanath y Pashupatinath." }
   ];
   var PL_MAN = [
     { id: "m-mach", n: "Maccha Khola", ll: [28.2056, 84.8806], a: "l", at: "r", lab: "2", d: "2 nov", alt: altOf("manaslu", 2), t: "Llegada en jeep privado desde Katmandú (8–10 h, ~160 km). Primera noche del trek." },
@@ -1634,7 +1650,7 @@
     { id: "a-thorong", n: "Paso Thorong La", s: "Thorong La", ll: [28.795, 83.935], a: "u", k: "pass", d: "9 nov", alt: 5416, t: "El día grande: 8–10+ h y 15–16 km desde Thorong Phedi hasta Muktinath." },
     { id: "a-mukti", n: "Muktinath", ll: [28.8167, 83.8714], a: "l", at: "l", lab: "9", d: "9 nov", alt: altOf("annapurna", 9), t: "Dormimos aquí tras cruzar el Thorong La." },
     { id: "a-tato", n: "Tatopani", ll: [28.4936, 83.6469], a: "r", k: "via", d: "10 nov, de paso", t: "El jeep privado de Muktinath a Pokhara pasa por aquí (7–10 h, 180–200 km)." },
-    { id: "a-pokhara", n: "Pokhara", ll: [28.2096, 83.9856], a: "r", at: "r", lab: "10", d: "10 nov", alt: altOf("annapurna", 10), t: "Noche en el hotel Splendid View o similar. El 11, bus turístico a Katmandú (6–8+ h, 200–210 km), día del Tihar (Bhai Tika)." }
+    { id: "a-pokhara", n: "Pokhara", ll: [28.2096, 83.9856], a: "r", at: "r", lab: "10–11", d: "10 y 11 nov", alt: altOf("annapurna", 10), t: "Noches del 10 y el 11. La del 10 (hotel Splendid View o similar) la incluye la oferta; la del 11 va aparte. El 11 es el Bhai Tika del Tihar. El 12 por la tarde, avión a Katmandú." }
   ];
   [[PL_KTM, "ktm"], [PL_MAN, "manaslu"], [PL_ANN, "annapurna"]].forEach(function (g) { g[0].forEach(function (p, i) { p.tr = g[1]; if (g[1] === "ktm") p.lab = String(i + 1); }); });
   var MAP_PEAKS = [
@@ -2166,7 +2182,7 @@
   });
 
   /* ---------- Marco ---------- */
-  var TABS = [["logistica", "Logística"], ["viaje", "Viaje"], ["presupuesto", "Presupuesto"], ["katmandu", "Katmandú"], ["trek", "Trek"], ["lugares", "Lugares"], ["diario", "Diario"], ["feedback", "Feedback"]];
+  var TABS = [["logistica", "Logística"], ["viaje", "Viaje"], ["presupuesto", "Presupuesto"], ["katmandu", "Fuera del trek"], ["trek", "Trek"], ["lugares", "Lugares"], ["diario", "Diario"], ["feedback", "Feedback"]];
   var ddOpen = false;
   var current = "inicio";
   var h = (location.hash || "").replace("#", "");
@@ -2230,8 +2246,8 @@
   function viewChooser() {
     return '<div class="page-head"><svg class="flags" id="flags" viewBox="0 0 620 56" aria-hidden="true" focusable="false"></svg><h1>Nepal 2026</h1><span class="hand">¿Quién soy?</span></div>' +
       quoteHTML().replace('class="quote"', 'class="quote" style="margin:20px 0 12px"') + '<div class="choice">' +
-      '<button type="button" class="pick" data-who="rose"><span><strong>Rose</strong><small>Katmandú, logística, presupuesto y trek' + '</small></span></button>' +
-      '<button type="button" class="pick" data-who="alejandro"><span><strong>Alejandro</strong><small>Viaje, Katmandú, logística, presupuesto y trek' + '</small></span></button></div>' +
+      '<button type="button" class="pick" data-who="rose"><span><strong>Rose</strong><small>Fuera del trek, logística, presupuesto y trek' + '</small></span></button>' +
+      '<button type="button" class="pick" data-who="alejandro"><span><strong>Alejandro</strong><small>Viaje, fuera del trek, logística, presupuesto y trek' + '</small></span></button></div>' +
       '<p class="figcap" style="margin-top:14px">Cada persona tiene su propia lista y sus propias marcas. Se puede cambiar de perfil en cualquier momento.</p>' +
       (CODE ? '' : '<p class="figcap" style="margin-top:8px">Para sincronizar, tocar «conectar» arriba y escribir la palabra de la app.</p>');
   }
