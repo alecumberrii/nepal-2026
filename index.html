@@ -2078,7 +2078,7 @@
       fab.addEventListener("click", function () { openSheet(null); });
       document.body.appendChild(fab);
     }
-    var on = !!WHO && current === "presupuesto";
+    var on = !!WHO;
     fab.hidden = !on; document.body.classList.toggle("has-fab", on);
   }
   document.addEventListener("click", function (e) {
