@@ -2195,7 +2195,7 @@
     if (id === "katmandu") { var c = ktmCounts(); return c.done + "/" + c.total; }
     if (id === "logistica") { var s = lStats(); return s.packed + "/" + s.total; }
     if (id === "lugares") return "mapa";
-    if (id === "presupuesto") return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(budTotal()) + " €";
+    if (id === "presupuesto") { var sp0 = spentBy(), sp1 = 0; Object.keys(sp0).forEach(function (k) { sp1 += sp0[k]; }); var lf = viajeTotal() - sp1, nf = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(Math.abs(lf)) + " €"; return lf >= 0 ? nf + " disponibles" : "me paso " + nf; }
     if (id === "feedback") { var np = fbList().filter(function (f) { return f.st !== "aplicado"; }).length; return np ? np + (np === 1 ? " pendiente" : " pendientes") : "sin notas"; }
     if (id === "diario") return S.diary.length ? S.diary.length + (S.diary.length === 1 ? " entrada" : " entradas") : "vacío";
     return curTrek() === "manaslu" ? "Manaslu" : curTrek() === "annapurna" ? "Annapurna" : "abierto";
