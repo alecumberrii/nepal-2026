@@ -339,6 +339,22 @@
   .pe-plus:hover, .pe-plusday:hover { color: var(--accent); border-color: var(--accent); }
   .pe-plusday { border: 1px solid var(--line2); border-radius: 999px; padding: 2px 11px; font-size: 18px; line-height: 1.3; }
   .dcomp { margin: 16px 0 6px; }
+  .fbform { display: grid; gap: 10px; margin: 16px 0 8px; }
+  .fbform label { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .fbform select { display: block; width: 100%; margin-top: 3px; font: inherit; font-size: 17px; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line2); border-radius: 0; padding: 4px 0; }
+  .fbform textarea { width: 100%; min-height: 96px; resize: vertical; font: inherit; font-size: 18px; line-height: 1.4; color: var(--ink); background: transparent; border: 1px solid var(--line2); border-radius: 3px; padding: 8px 10px; }
+  .fbform textarea:focus { border-color: var(--accent); outline: none; }
+  .fbform .fbbtns { display: flex; justify-content: flex-end; }
+  .fbform button, .fbit button { font: inherit; cursor: pointer; }
+  .fbform .fbsave { font-size: 17px; color: var(--accent-fg); background: var(--accent); border: 0; border-radius: 999px; padding: 6px 18px; }
+  .fbit { padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .fbit .fbmeta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: 14px; color: var(--muted); font-style: italic; }
+  .fbit .fbtxt { margin-top: 4px; white-space: pre-wrap; overflow-wrap: anywhere; text-wrap: pretty; }
+  .fbit .fbst { font-style: normal; font-size: 13px; border: 1px solid var(--line2); border-radius: 999px; padding: 0 9px; background: transparent; color: var(--muted); }
+  .fbit .fbst.pend { border-color: var(--accent); color: var(--accent); }
+  .fbit .fbdel { margin-left: auto; background: none; border: 0; padding: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+  .fbit .fbdel.armed { color: var(--danger); }
+  .fbit.done .fbtxt { color: var(--muted); }
   .dcomp .dta, .dent .dta { border: 1px solid var(--line2); padding: 8px 10px; border-radius: 3px; font-size: 18px; line-height: 1.4; font-style: normal; color: var(--ink); min-height: 64px; }
   .dcomp .dta:focus, .dent .dta:focus { border-color: var(--accent); }
   .dent { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
@@ -435,7 +451,7 @@
   #toast.show ~ .fab { transform: translateY(-62px); }
   body.gs-open .fab { visibility: hidden; }
   #gsheet { position: relative; z-index: 50; }
-  .gs-back { position: fixed; inset: 0; background: rgba(10, 15, 25, .28); animation: gsfade .2s ease; }
+  .gs-back { display: none; }
   .gs { position: fixed; left: 0; right: 0; bottom: 0; margin: 0 auto; max-width: 640px; max-height: 88dvh; overflow-y: auto; overscroll-behavior: contain; border-radius: 22px 22px 0 0; border-bottom: 0; padding: 8px 18px calc(16px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--paper) 78%, transparent); animation: gsup .24s cubic-bezier(.2, .8, .3, 1); }
   @keyframes gsup { from { transform: translateY(100%); } }
   @keyframes gsfade { from { opacity: 0; } }
@@ -752,6 +768,7 @@
     if (k === "trek") { SH.trek = v === null ? undefined : v; return true; }
     if (k.indexOf("done:") === 0) { SH.done[k.slice(5)] = !!v; return true; }
     if (k === "bcats") { BCATS = Array.isArray(v) ? v : null; saveBC(); return true; }
+    if (k.indexOf("fb:") === 0) { if (v && typeof v === "object") { FB[k.slice(3)] = v; saveFB(); } return true; }
     if (k.indexOf("g:") === 0) { if (v && typeof v === "object") { GX[k.slice(2)] = v; saveGX(); } return true; }
     if (k.indexOf("p:") === 0 && v && typeof v === "object") {
       var who = k.slice(2); if (who !== "alejandro" && who !== "rose") return false;
@@ -974,6 +991,37 @@
     var key = dayId && DAY_DATES[dayId], lab = key ? dayLabel(key) : dayLabel(dkey(Date.now()));
     return '<div class="dcomp"' + (dayId ? ' data-day="' + dayId + '"' : "") + '><textarea class="pe dta" rows="2" placeholder="' + esc(ph) + '"></textarea><div class="pe-btns"><span class="muted">' + esc(lab) + '</span><button type="button" class="pe-ok" data-dsave>Guardar</button></div></div>';
   }
+  var fbFrom = null, fbArmed = null;
+  function fbList() { return Object.keys(FB).map(function (k) { return FB[k]; }).filter(function (f) { return f && !f.del && f.text; }); }
+  function tabName(id) { var t = TABS.filter(function (x) { return x[0] === id; })[0]; return t ? t[1] : "General"; }
+  function viewFeedback() {
+    var html = '<div class="page-head"><h1>Feedback</h1></div>';
+    html += '<p class="figcap" style="margin-top:12px">Notas para Claude: fallos, cosas que cambiar o ideas. Cuando pida «aplica el feedback», Claude lee las pendientes, hace los cambios y las marca como aplicadas.</p>';
+    var opts = [["general", "General"]].concat(TABS.filter(function (t) { return t[0] !== "feedback"; }));
+    var sel = fbFrom && fbFrom !== "feedback" ? fbFrom : "general";
+    html += '<div class="fbform"><label>Pantalla<select id="fbtab">' + opts.map(function (o) { return '<option value="' + o[0] + '"' + (o[0] === sel ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + "</select></label>" +
+      '<textarea id="fbtext" placeholder="Qué falla o qué quiero cambiar…" aria-label="Nota de feedback"></textarea>' +
+      '<div class="fbbtns"><button type="button" class="fbsave" data-fbsave>Guardar</button></div></div>';
+    var l = fbList().sort(function (a, b) { return (a.st === "aplicado") - (b.st === "aplicado") || b.ts - a.ts; });
+    if (!l.length) html += '<p class="figcap" style="margin-top:14px">Todavía no hay notas.</p>';
+    var pend = l.filter(function (f) { return f.st !== "aplicado"; }), done = l.filter(function (f) { return f.st === "aplicado"; });
+    function item(f) {
+      var d = new Date(f.ts), when = d.toLocaleDateString("es-ES", { day: "numeric", month: "short" }) + " · " + d.toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" });
+      var ap = f.st === "aplicado";
+      return '<div class="fbit' + (ap ? " done" : "") + '"><div class="fbmeta"><button type="button" class="fbst' + (ap ? "" : " pend") + '" data-fbst="' + f.id + '" title="Cambiar estado">' + (ap ? "aplicado" : "pendiente") + "</button><span>" + esc(when) + "</span><span>" + esc(tabName(f.tab)) + "</span><span>" + (f.who === "rose" ? "Rose" : "Alejandro") + "</span>" +
+        '<button type="button" class="fbdel' + (fbArmed === f.id ? " armed" : "") + '" data-fbdel="' + f.id + '">' + (fbArmed === f.id ? "¿Seguro? Tocar otra vez" : "Borrar") + "</button></div>" +
+        '<div class="fbtxt">' + esc(f.text) + "</div>" + (ap && f.resp ? '<div class="fbmeta" style="margin-top:4px">' + esc(f.resp) + "</div>" : "") + "</div>";
+    }
+    if (pend.length) html += '<section class="blk"><div class="eyebrow"><h3>Pendientes</h3><span>' + pend.length + "</span></div>" + pend.map(item).join("") + "</section>";
+    if (done.length) html += '<section class="blk"><div class="eyebrow"><h3>Aplicadas</h3><span>' + done.length + "</span></div>" + done.map(item).join("") + "</section>";
+    return html;
+  }
+  function fbPut(f) { FB[f.id] = f; saveFB(); enqueue("fb:" + f.id, f); }
+  function viewHome() {
+    return '<div class="page-head"><h1>Nepal 2026</h1></div><div class="choice" style="margin-top:18px">' + tabsFor().map(function (t) {
+      return '<button type="button" class="pick" data-gotab="' + t[0] + '"><span><strong>' + t[1] + "</strong><small>" + esc(navSub(t[0])) + '</small></span></button>';
+    }).join("") + "</div>";
+  }
   function viewDiario() {
     var html = '<div class="page-head"><h1>Diario</h1></div>';
     html += composerHTML("¿Qué ha pasado hoy?");
@@ -981,7 +1029,7 @@
     S.diary.slice().sort(function (a, b) { return b.ts - a.ts; }).forEach(function (en) {
       var k = dkey(en.ts); if (!groups[k]) { groups[k] = []; keys.push(k); } groups[k].push(en);
     });
-    if (!keys.length) html += '<p class="figcap" style="margin-top:18px">Aún no hay entradas. Lo que escribas aparecerá aquí y también en el día correspondiente de la pestaña Katmandú.</p>';
+    if (!keys.length) html += '<p class="figcap" style="margin-top:18px">Aún no hay entradas. Lo que escriba aparecerá aquí y también en el día correspondiente de la pestaña Katmandú.</p>';
     keys.forEach(function (k) {
       html += '<section class="blk"><div class="eyebrow"><h3>' + esc(dayLabel(k)) + "</h3><span>" + groups[k].length + (groups[k].length === 1 ? " entrada" : " entradas") + "</span></div>";
       html += groups[k].slice().reverse().map(entryHTML).join("") + "</section>";
@@ -1833,6 +1881,9 @@
   try { BCATS = JSON.parse(localStorage.getItem(BCK) || "null"); GX = JSON.parse(localStorage.getItem(GXK) || "{}") || {}; } catch (e) {}
   function saveBC() { try { localStorage.setItem(BCK, JSON.stringify(BCATS)); } catch (e) {} }
   function saveGX() { try { localStorage.setItem(GXK, JSON.stringify(GX)); } catch (e) {} }
+  var FBK = "nepal-feedback", FB = {};
+  try { FB = JSON.parse(localStorage.getItem(FBK) || "{}") || {}; } catch (e) {}
+  function saveFB() { try { localStorage.setItem(FBK, JSON.stringify(FB)); } catch (e) {} }
   function baseCats() {
     var l = BCATS && BCATS.length ? BCATS : DEF_CATS.map(function (a) { return { id: a[0], n: a[1] }; });
     return l.filter(function (c) { return c && c.id && c.id !== "sin"; }).map(function (c) { return { id: c.id, n: c.n }; });
@@ -2115,18 +2166,21 @@
   });
 
   /* ---------- Marco ---------- */
-  var TABS = [["logistica", "Logística"], ["viaje", "Viaje"], ["presupuesto", "Presupuesto"], ["katmandu", "Katmandú"], ["trek", "Trek"], ["lugares", "Lugares"], ["diario", "Diario"]];
+  var TABS = [["logistica", "Logística"], ["viaje", "Viaje"], ["presupuesto", "Presupuesto"], ["katmandu", "Katmandú"], ["trek", "Trek"], ["lugares", "Lugares"], ["diario", "Diario"], ["feedback", "Feedback"]];
   var ddOpen = false;
-  var current = "logistica";
+  var current = "inicio";
   var h = (location.hash || "").replace("#", "");
   if (TABS.some(function (t) { return t[0] === h; })) current = h;
+  function menuTabs() { return [["inicio", "Inicio"]].concat(tabsFor()); }
 
   function navSub(id) {
+    if (id === "inicio") return "menú";
     if (id === "viaje") return "28 oct";
     if (id === "katmandu") { var c = ktmCounts(); return c.done + "/" + c.total; }
     if (id === "logistica") { var s = lStats(); return s.packed + "/" + s.total; }
     if (id === "lugares") return "mapa";
     if (id === "presupuesto") return new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(budTotal()) + " €";
+    if (id === "feedback") { var np = fbList().filter(function (f) { return f.st !== "aplicado"; }).length; return np ? np + (np === 1 ? " pendiente" : " pendientes") : "sin notas"; }
     if (id === "diario") return S.diary.length ? S.diary.length + (S.diary.length === 1 ? " entrada" : " entradas") : "vacío";
     return curTrek() === "manaslu" ? "Manaslu" : curTrek() === "annapurna" ? "Annapurna" : "abierto";
   }
@@ -2136,7 +2190,7 @@
     nav.hidden = true; tb.innerHTML = "";
   }
   function ddMenuHTML() {
-    var tabs = tabsFor();
+    var tabs = menuTabs();
     return '<div class="gd-menu" role="menu"' + (ddOpen ? "" : " hidden") + ">" + tabs.map(function (t) {
       return '<button type="button" role="menuitem" class="gd-it" data-tab="' + t[0] + '" aria-current="' + (t[0] === current) + '"><span>' + t[1] + "</span><small>" + navSub(t[0]) + "</small></button>";
     }).join("") + "</div>";
@@ -2150,7 +2204,7 @@
     h.insertAdjacentHTML("beforeend", '<svg class="gd-chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>');
     var w = document.createElement("div"); w.className = "gd-wrap";
     h.parentNode.insertBefore(w, h); w.appendChild(h); w.insertAdjacentHTML("beforeend", ddMenuHTML());
-    w.insertAdjacentHTML("afterbegin", '<select class="nsel" data-tabsel aria-label="Sección">' + tabsFor().map(function (t) {
+    w.insertAdjacentHTML("afterbegin", '<select class="nsel" data-tabsel aria-label="Sección">' + menuTabs().map(function (t) {
       return '<option value="' + t[0] + '"' + (t[0] === current ? " selected" : "") + ">" + t[1] + " · " + esc(navSub(t[0])) + "</option>";
     }).join("") + "</select>");
   }
@@ -2203,7 +2257,7 @@
   }
   function pickWho(who) {
     if (who === WHO) return;
-    setWho(who); renderAll(false); window.scrollTo({ top: 0 });
+    setWho(who); current = "inicio"; renderAll(false); window.scrollTo({ top: 0 });
   }
   var QUOTES = [
     ["La felicidad solo es real cuando es compartida.", "Christopher McCandless, en Hacia rutas salvajes"],
@@ -2249,7 +2303,7 @@
   function renderView() {
     var v = document.getElementById("view");
     if (!WHO) { v.innerHTML = viewChooser(); drawFlags(); return; }
-    v.innerHTML = (current === "viaje" ? viewViaje() : current === "katmandu" ? viewKtm() : current === "logistica" ? viewLog() : current === "diario" ? viewDiario() : current === "lugares" ? viewLugares() : current === "presupuesto" ? viewPresupuesto() : viewTrek());
+    v.innerHTML = current === "inicio" ? viewHome() : (current === "viaje" ? viewViaje() : current === "katmandu" ? viewKtm() : current === "logistica" ? viewLog() : current === "diario" ? viewDiario() : current === "feedback" ? viewFeedback() : current === "lugares" ? viewLugares() : current === "presupuesto" ? viewPresupuesto() : viewTrek());
     if (current === "viaje") drawFlags();
     decorateHead();
     var gw = v.querySelector(".page-head .gd-wrap");
@@ -2319,12 +2373,12 @@
     var g = e.target.closest && e.target.closest("[data-gd]");
     if (g) { ddOpen = !ddOpen; ddSync(); return; }
     var it = e.target.closest && e.target.closest(".gd-it[data-tab]");
-    if (it) { ddOpen = false; current = it.getAttribute("data-tab"); renderAll(false); window.scrollTo({ top: 0 }); return; }
+    if (it) { ddOpen = false; if (it.getAttribute("data-tab") === "feedback" && current !== "feedback") fbFrom = current; current = it.getAttribute("data-tab"); renderAll(false); window.scrollTo({ top: 0 }); return; }
     if (ddOpen && e.target.isConnected && !e.target.closest(".gd-menu")) { ddOpen = false; ddSync(); }
   });
   document.addEventListener("change", function (e) {
     var t = e.target;
-    if (t.matches && t.matches("select[data-tabsel]")) { ddOpen = false; current = t.value; renderAll(false); window.scrollTo({ top: 0 }); return; }
+    if (t.matches && t.matches("select[data-tabsel]")) { ddOpen = false; if (t.value === "feedback" && current !== "feedback") fbFrom = current; current = t.value; renderAll(false); window.scrollTo({ top: 0 }); return; }
     if (t.matches && t.matches("select[data-whosel]")) { if (t.value !== WHO) pickWho(t.value); return; }
   });
   document.addEventListener("keydown", function (e) {
@@ -2368,6 +2422,22 @@
   document.addEventListener("keydown", function (e) { if (whoOpen && e.key === "Escape") { whoOpen = false; renderWho(); var b = document.querySelector("[data-whodd]"); if (b) b.focus(); } });
   view.addEventListener("click", function (e) {
     var t = e.target;
+    var gt = t.closest("[data-gotab]");
+    if (gt) { var nt = gt.getAttribute("data-gotab"); if (nt === "feedback") fbFrom = null; current = nt; renderAll(false); window.scrollTo({ top: 0 }); return; }
+    if (t.closest("[data-fbsave]")) {
+      var ta = document.getElementById("fbtext"), tx = ta ? ta.value.trim() : "";
+      if (!tx) { if (ta) ta.focus(); return; }
+      var nf = { id: "f" + Date.now().toString(36) + Math.random().toString(36).slice(2, 6), ts: Date.now(), who: WHO, tab: document.getElementById("fbtab").value, text: tx, st: "pendiente" };
+      fbPut(nf); fbFrom = null; renderAll(true); toastMsg("Nota guardada"); return;
+    }
+    var fs = t.closest("[data-fbst]");
+    if (fs) { var f1 = FB[fs.getAttribute("data-fbst")]; if (f1) { f1 = Object.assign({}, f1, { st: f1.st === "aplicado" ? "pendiente" : "aplicado" }); fbPut(f1); renderAll(true); } return; }
+    var fd = t.closest("[data-fbdel]");
+    if (fd) {
+      var fid = fd.getAttribute("data-fbdel");
+      if (fbArmed !== fid) { fbArmed = fid; renderAll(true); return; }
+      fbArmed = null; var f2 = FB[fid]; if (f2) fbPut({ id: fid, ts: f2.ts, del: true }); renderAll(true); return;
+    }
     var wb = t.closest("[data-who]");
     if (wb) { pickWho(wb.getAttribute("data-who")); return; }
     var v = t.closest("[data-visit]");
